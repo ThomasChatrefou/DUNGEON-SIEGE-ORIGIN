@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class VirtualJoystickFloating : VirtualJoystick
 {
-    [HideInInspector]
-    public RectTransform RectTransform;
-    [HideInInspector]
-    public RectTransform Knob;
-
     [SerializeField] private bool hideOnPointerUp = false;
     [SerializeField] private bool centralizeOnPointerUp = true;
 
@@ -17,8 +12,7 @@ public class VirtualJoystickFloating : VirtualJoystick
         joystickType = VirtualJoystickType.Floating;
         _hideOnPointerUp = hideOnPointerUp;
         _centralizeOnPointerUp = centralizeOnPointerUp;
-        RectTransform = GetComponent<RectTransform>();
-
+     
         base.Awake();
     }
 

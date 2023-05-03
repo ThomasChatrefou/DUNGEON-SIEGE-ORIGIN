@@ -2,9 +2,60 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1fce293-4496-4318-b435-b42f06e81d9c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/URP-HighFidelity-Renderer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/URP-HighFidelity-Renderer.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Documentaion.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Documentaion.pdf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Examples.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Examples/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Examples/Materials/GroundExample.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Examples/Materials/GroundExample.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Examples/Materials/PlayerExample.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Examples/Materials/PlayerExample.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Examples/SceneExample.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Examples/SceneExample.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Examples/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Examples/Scripts/VirtualButtonsExamplesScripts.asmref" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Examples/Scripts/VirtualButtonsExamplesScripts.asmref.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Prefabs/Button.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Prefabs/Button.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Prefabs/DPad.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Prefabs/DPad.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Prefabs/DPadX.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Prefabs/DPadX.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Prefabs/DPadY.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Prefabs/DPadY.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Prefabs/Joystick Fixed.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Prefabs/Joystick Fixed.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Prefabs/Joystick Floating.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Prefabs/Joystick Floating.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Scripts/VirtualButton.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Scripts/VirtualButton.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Scripts/VirtualButtonsScripts.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Scripts/VirtualButtonsScripts.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Scripts/VirtualDPad.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Scripts/VirtualDPad.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Scripts/VirtualJoystick.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Scripts/VirtualJoystick.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Scripts/VirtualJoystickFloating.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Scripts/VirtualJoystickFloating.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Sprites.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Sprites/circle-border.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Sprites/circle-border.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Sprites/circle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Sprites/circle.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Sprites/directional-x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Sprites/directional-x.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Sprites/directional-y.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Sprites/directional-y.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Sprites/directional.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Sprites/directional.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Sprites/joystick.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/Sprites/joystick.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VirtualButtonsForUnity/VirtualButtonsForUnity/package.json.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +138,7 @@
       <workItem from="1683127712560" duration="7000" />
       <workItem from="1683128706993" duration="6000" />
       <workItem from="1683128805356" duration="4000" />
+      <workItem from="1683129142569" duration="3000" />
     </task>
     <servers />
   </component>
