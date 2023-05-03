@@ -9,7 +9,6 @@ public class VirtualJoystickFloating : VirtualJoystick
 
     protected override void Awake()
     {
-        joystickType = VirtualJoystickType.Floating;
         _hideOnPointerUp = hideOnPointerUp;
         _centralizeOnPointerUp = centralizeOnPointerUp;
      
