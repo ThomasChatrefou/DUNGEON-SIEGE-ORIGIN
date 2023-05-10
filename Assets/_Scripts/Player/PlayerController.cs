@@ -1,19 +1,41 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
-
     [SerializeField] private float playerSpeed = 2.0f;
 
     protected CharacterController controller;
     protected PlayerAction playerInput;
     private Vector3 playerVelocity;
+    private IWeaponUser weaponUser;
 
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
         playerInput = new PlayerAction();
+        weaponUser = GetComponent<IWeaponUser>();
+
+
+        playerInput.Player.Move.started += OnMoveStarted;
+        playerInput.Player.Move.canceled += OnMoveCanceled;
+    }
+
+    private void OnMoveStarted(InputAction.CallbackContext ctx)
+    {
+        if (weaponUser != null)
+        {
+            weaponUser.StopWeaponUse();
+        }
+    }
+
+    private void OnMoveCanceled(InputAction.CallbackContext ctx)
+    {
+        if (weaponUser != null)
+        {
+            weaponUser.StartWeaponUse();
+        }
     }
 
     private void Update()
