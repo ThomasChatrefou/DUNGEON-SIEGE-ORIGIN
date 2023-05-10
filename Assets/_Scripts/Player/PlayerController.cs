@@ -22,6 +22,14 @@ public class PlayerController : MonoBehaviour
         playerInput.Player.Move.canceled += OnMoveCanceled;
     }
 
+    private void Start()
+    {
+        if (weaponUser != null)
+        {
+            weaponUser.StartWeaponUse();
+        }
+    }
+
     private void OnMoveStarted(InputAction.CallbackContext ctx)
     {
         if (weaponUser != null)

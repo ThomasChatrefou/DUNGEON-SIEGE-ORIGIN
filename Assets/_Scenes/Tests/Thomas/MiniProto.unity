@@ -1498,6 +1498,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5248333124143286885, guid: 05e8e3d8751f59645a20b2f2ae270c4f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5248333124143286887, guid: 05e8e3d8751f59645a20b2f2ae270c4f,
         type: 3}
       propertyPath: m_RootOrder
@@ -1553,10 +1558,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5248333124143286904, guid: 05e8e3d8751f59645a20b2f2ae270c4f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5248333124143286905, guid: 05e8e3d8751f59645a20b2f2ae270c4f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5248333124143286909, guid: 05e8e3d8751f59645a20b2f2ae270c4f,
         type: 3}
       propertyPath: m_Name
       value: PLAYER
+      objectReference: {fileID: 0}
+    - target: {fileID: 5248333124143286909, guid: 05e8e3d8751f59645a20b2f2ae270c4f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05e8e3d8751f59645a20b2f2ae270c4f, type: 3}
@@ -1726,9 +1746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c56c3d0fdd70524b882e3c575304362, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 64
+  hitableLayerName: Hitable
   damageZoneRadius: 2
   damageZoneLifeTime: 0.4
   damages: 1
@@ -1755,6 +1773,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4305953234642176906, guid: b0288a492c4e115408e02b1f9e72f49a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2483645e494770f44baaaff9447beb92, type: 2}
     - target: {fileID: 6832202162796648338, guid: b0288a492c4e115408e02b1f9e72f49a,
         type: 3}
       propertyPath: m_RootOrder
