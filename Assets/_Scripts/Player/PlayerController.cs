@@ -5,7 +5,6 @@ public class PlayerController : MonoBehaviour
 {
 
     [SerializeField] private float playerSpeed = 2.0f;
-    [SerializeField] private float gravityValue = 0;
 
     protected CharacterController controller;
     protected PlayerAction playerInput;
@@ -32,8 +31,6 @@ public class PlayerController : MonoBehaviour
         {
             gameObject.transform.forward = move;
         }
-
-        playerVelocity.y -= gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
     }
 
