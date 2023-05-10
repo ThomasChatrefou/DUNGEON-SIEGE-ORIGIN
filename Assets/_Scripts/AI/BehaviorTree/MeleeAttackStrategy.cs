@@ -25,6 +25,9 @@ public class MeleeAttackStrategy : IBehaviorNode
             }
         }
         return IBehaviorNode.NodeState.Failure;
-
+    }
+    public IBehaviorNode.NodeState Stop()
+    {
+        return IBehaviorNode.NodeState.Success;
     }
 }

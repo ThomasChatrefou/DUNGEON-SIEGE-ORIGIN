@@ -11,7 +11,7 @@ public interface IBehaviorNode
         Failure
     }
     NodeState Execute();
-    
 
-    
+    NodeState Stop();
+
 }
