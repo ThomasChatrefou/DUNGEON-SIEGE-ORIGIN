@@ -94,8 +94,6 @@ MonoBehaviour:
   handle: {fileID: 839489818318001260}
   stickControlPath: <Gamepad>/leftStick
   movementRange: 100
-  RectTransform: {fileID: 0}
-  Knob: {fileID: 0}
   hideOnPointerUp: 1
   centralizeOnPointerUp: 1
 --- !u!1 &839489817767254390
