@@ -44,4 +44,13 @@ public class PlayerController : MonoBehaviour
         playerInput.Disable();
     }
 
+    public float GetPlayerSpeed()
+    {
+        return playerSpeed;
+    }
+
+    public void SetPlayerSpeed(float _speed)
+    {
+        playerSpeed = _speed;
+    }
 }
