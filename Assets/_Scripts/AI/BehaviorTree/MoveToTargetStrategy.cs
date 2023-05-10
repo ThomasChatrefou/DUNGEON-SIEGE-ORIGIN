@@ -36,19 +36,19 @@ public class MoveToTargetStrategy : IBehaviorTree
             
             _agent.destination = _target.position;
           
-                float distanceToTarget = Vector3.Distance(entityTransform.position, _target.position);
-                if (distanceToTarget <= _attackRange)
+            float distanceToTarget = Vector3.Distance(entityTransform.position, _target.position);
+            if (distanceToTarget <= _attackRange)
+            {
+                _agent.isStopped = true;
+                if (Time.time - _lastAttackTime >= _attackCooldown)
                 {
-                    _agent.isStopped = true;
-                    if (Time.time - _lastAttackTime >= _attackCooldown)
+                    //Debug.Log(_agent.isStopped + " " + distanceToTarget);
+                    IBehaviorNode.NodeState attackState = _attackNode.Execute();
+                    if (attackState == IBehaviorNode.NodeState.Success)
                     {
-                        //Debug.Log(_agent.isStopped + " " + distanceToTarget);
-                        IBehaviorNode.NodeState attackState = _attackNode.Execute();
-                        if (attackState == IBehaviorNode.NodeState.Success)
-                        {
-                            _lastAttackTime = Time.time;
-                        }
+                        _lastAttackTime = Time.time;
                     }
+                }
             }
 
         }
