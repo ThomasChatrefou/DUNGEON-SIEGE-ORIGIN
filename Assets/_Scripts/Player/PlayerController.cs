@@ -1,20 +1,19 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float playerSpeed = 2.0f;
 
-    protected CharacterController controller;
     protected PlayerAction playerInput;
+    protected PlayerMovement playerMovement;
     private Vector3 playerVelocity;
     private IWeaponUser weaponUser;
 
     private void Awake()
     {
-        controller = GetComponent<CharacterController>();
         playerInput = new PlayerAction();
+        playerMovement = GetComponent<PlayerMovement>();
         weaponUser = GetComponent<IWeaponUser>();
 
 
@@ -53,8 +52,12 @@ public class PlayerController : MonoBehaviour
             playerVelocity.y = 0f;
         }
 
-        Vector2 movement = playerInput.Player.Move.ReadValue<Vector2>();
-        Vector3 move = new Vector3(movement.x, 0, movement.y);
+        Vector2 direction = playerInput.Player.Move.ReadValue<Vector2>();
+        direction.Normalize();
+
+        playerMovement.Move(direction, playerSpeed);
+
+/*        Vector3 move = new Vector3(direction.x, 0, direction.y);
         controller.Move(move * Time.deltaTime * playerSpeed);
 
         if (move != Vector3.zero)
@@ -62,7 +65,7 @@ public class PlayerController : MonoBehaviour
             gameObject.transform.forward = move;
         }
         controller.Move(playerVelocity * Time.deltaTime);
-    }
+*/    }
 
     private void OnEnable()
     {
