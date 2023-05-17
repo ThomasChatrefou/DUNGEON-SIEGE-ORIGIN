@@ -6,14 +6,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float playerSpeed = 2.0f;
 
     protected PlayerAction playerInput;
-    protected PlayerMovement playerMovement;
+    protected IPlayerMovement playerMovement;
     private Vector3 playerVelocity;
     private IWeaponUser weaponUser;
 
     private void Awake()
     {
         playerInput = new PlayerAction();
-        playerMovement = GetComponent<PlayerMovement>();
+        playerMovement = GetComponent<BrutalPlayerMovement>();
         weaponUser = GetComponent<IWeaponUser>();
 
 

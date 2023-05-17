@@ -4,7 +4,7 @@ using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
 using UnityEngine.InputSystem.XR;
 
-public class PlayerMovement : MonoBehaviour
+public class SmoothPlayerMovement : MonoBehaviour, IPlayerMovement
 {
     float currentSpeed = 0;
     float smoothVelocity = 0;
