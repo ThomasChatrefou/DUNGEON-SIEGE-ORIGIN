@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using UnityEngine;
 
 // [TODO] move this in another script
@@ -8,7 +9,10 @@ public interface IWeapon
 
 public class ProtoWeapon : MonoBehaviour, IWeapon
 {
-    [SerializeField] private LayerMask layerMask;
+    [Layer]
+    [Label("Layer for hitable objects")]
+    [SerializeField] private string hitableLayerName = "Hitable";
+
     [SerializeField] private float damageZoneRadius = 1.0f;
     [SerializeField] private float damageZoneLifeTime = 0.4f;
     [SerializeField] private int damages = 1;
@@ -20,7 +24,7 @@ public class ProtoWeapon : MonoBehaviour, IWeapon
         damageZoneGO.transform.localScale *= damageZoneRadius;
         Destroy(damageZoneGO, damageZoneLifeTime);
 
-        int bitShiftedLayerMask = 1 << layerMask.value;
+        int bitShiftedLayerMask = 1 << LayerMask.NameToLayer(hitableLayerName);
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, damageZoneRadius, bitShiftedLayerMask);
         foreach (Collider collider in hitColliders)
         {
