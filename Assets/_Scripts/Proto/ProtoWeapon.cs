@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public interface IWeapon
 {
     public void Use();
+    public List<Vector3> GetLastHitPositions();
 }
 
 public class ProtoWeapon : MonoBehaviour, IWeapon
@@ -16,23 +17,91 @@ public class ProtoWeapon : MonoBehaviour, IWeapon
 
     [SerializeField] private float damageZoneRadius = 1.0f;
     [SerializeField] private float damageZoneLifeTime = 0.4f;
+    [SerializeField] private int damageZoneRefinement = 10;
     [SerializeField] private int damages = 1;
     [SerializeField] private GameObject damageZonePrefab;
 
+    [Range(0f, 360f)]
+    [SerializeField] private float normalDegLatitude;
+    [Range(0f, 180f)]
+    [SerializeField] private float normalDegLongitude;
+    [SerializeField] private float normalDisplayMagnitude = 2f;
+
+    private List<Vector3> lastHitPositions;
+
     public void Use()
     {
+        lastHitPositions.Clear();
+
         GameObject damageZoneGO = Instantiate(damageZonePrefab, transform.position, damageZonePrefab.transform.rotation);
         damageZoneGO.transform.localScale *= damageZoneRadius;
         Destroy(damageZoneGO, damageZoneLifeTime);
-
+        
         int bitShiftedLayerMask = 1 << LayerMask.NameToLayer(hitableLayerName);
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, damageZoneRadius, bitShiftedLayerMask);
-        foreach (Collider collider in hitColliders)
+
+        if (CircleCaster.CircleCast(out List<Collider> hitColliders, transform.position, Vector3.up, damageZoneRadius, damageZoneRefinement, bitShiftedLayerMask))
         {
-            ICharacterHealth healthComponent = collider.gameObject.GetComponent<ICharacterHealth>();
-            if (healthComponent != null)
+            foreach (Collider collider in hitColliders)
             {
-                healthComponent.TakeDamage(damages);
+                ICharacterHealth healthComponent = collider.gameObject.GetComponent<ICharacterHealth>();
+                healthComponent?.TakeDamage(damages);
+            }
+        }
+    }
+
+    public List<Vector3> GetLastHitPositions()
+    {
+        return lastHitPositions;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Vector3 origin = transform.position;
+
+        float radLatitude = Mathf.Deg2Rad * normalDegLatitude;
+        float radLongitude = Mathf.Deg2Rad * normalDegLongitude;
+        Vector3 normal = new(Mathf.Sin(radLongitude) * Mathf.Cos(radLatitude), 
+                             Mathf.Cos(radLongitude), 
+                             Mathf.Sin(radLongitude) * Mathf.Sin(radLatitude));
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawRay(transform.position, normal * normalDisplayMagnitude);
+
+        //Vector3 normal = Vector3.up + Vector3.right;
+        float radius = damageZoneRadius;
+        int count = damageZoneRefinement;
+
+        if (CircleCaster.GetFirstNonZeroIndex(out int nonZeroIndex, normal))
+        {
+            Vector3 planeVector1 = new();
+            planeVector1[nonZeroIndex] = -normal[(nonZeroIndex + 1) % 3] / normal[nonZeroIndex];
+            planeVector1[(nonZeroIndex + 1) % 3] = 1.0f;
+            planeVector1[(nonZeroIndex + 2) % 3] = 0.0f;
+            planeVector1 = Vector3.Normalize(planeVector1);
+
+            Vector3 planeVector2 = new();
+            planeVector2[nonZeroIndex] = -normal[(nonZeroIndex + 2) % 3] / normal[nonZeroIndex];
+            planeVector2[(nonZeroIndex + 1) % 3] = 0.0f;
+            planeVector2[(nonZeroIndex + 2) % 3] = 1.0f;
+
+            planeVector2 = Vector3.Cross(planeVector1, normal);
+            planeVector2 = Vector3.Normalize(planeVector2);
+
+            Vector3 rayOrigin = origin + radius * planeVector1;
+            float angleStep = 2 * Mathf.PI / count;
+            float angle = angleStep;
+            Vector3 nextPoint = origin + radius * (Mathf.Cos(angleStep) * planeVector1 + Mathf.Sin(angleStep) * planeVector2);
+
+            for (int i = 0; i < count; ++i)
+            {
+                Vector3 rayDirection = nextPoint - rayOrigin;
+
+                Gizmos.color = Color.red;
+                Gizmos.DrawRay(rayOrigin, rayDirection);
+
+                rayOrigin = nextPoint;
+                angle += angleStep;
+                nextPoint = origin + radius * (Mathf.Cos(angle) * planeVector1 + Mathf.Sin(angle) * planeVector2);
             }
         }
     }
@@ -40,25 +109,25 @@ public class ProtoWeapon : MonoBehaviour, IWeapon
 
 public class CircleCaster
 {
-    public static bool CircleCast(out List<RaycastHit> hitResults, Vector3 origin, Vector3 normal, float radius, int count, int layerMask)
+    public static bool CircleCast(out List<Collider> hitColliders, Vector3 origin, Vector3 normal, float radius, int count, int layerMask)
     {
-        hitResults = new List<RaycastHit>();
+        hitColliders = new List<Collider>();
 
         if (GetFirstNonZeroIndex(out int nonZeroIndex, normal))
         {
             Vector3 planeVector1 = new();
-            planeVector1[nonZeroIndex] = -normal[nonZeroIndex + 1 % 3] / normal[nonZeroIndex];
-            planeVector1[nonZeroIndex + 1 % 3] = 1.0f;
-            planeVector1[nonZeroIndex + 2 % 3] = 0.0f;
-            Vector3.Normalize(planeVector1);
+            planeVector1[nonZeroIndex] = -normal[(nonZeroIndex + 1) % 3] / normal[nonZeroIndex];
+            planeVector1[(nonZeroIndex + 1) % 3] = 1.0f;
+            planeVector1[(nonZeroIndex + 2) % 3] = 0.0f;
+            planeVector1 = Vector3.Normalize(planeVector1);
 
             Vector3 planeVector2 = new();
-            planeVector2[nonZeroIndex] = -normal[nonZeroIndex + 2 % 3] / normal[nonZeroIndex];
-            planeVector2[nonZeroIndex + 1 % 3] = 0.0f;
-            planeVector2[nonZeroIndex + 2 % 3] = 1.0f;
-            Vector3.Normalize(planeVector2);
+            planeVector2[nonZeroIndex] = -normal[(nonZeroIndex + 2) % 3] / normal[nonZeroIndex];
+            planeVector2[(nonZeroIndex + 1) % 3] = 0.0f;
+            planeVector2[(nonZeroIndex + 2) % 3] = 1.0f;
+            planeVector2 = Vector3.Normalize(planeVector2);
 
-            Vector3 rayOrigin = origin + planeVector1;
+            Vector3 rayOrigin = origin + radius * planeVector1;
             float angleStep = 2 * Mathf.PI / count;
             float angle = angleStep;
             Vector3 nextPoint = origin + radius * (Mathf.Cos(angleStep) * planeVector1 + Mathf.Sin(angleStep) * planeVector2);
@@ -70,15 +139,20 @@ public class CircleCaster
                 // Raycasts will not detect colliders for which the raycast origin is inside the collider. (cf unity doc)
                 RaycastHit[] hits = Physics.RaycastAll(rayOrigin, rayDirection.normalized, rayDirection.magnitude, layerMask);
 
-                hitResults.Capacity += hits.Length;
-                for (int j = 0, resultIndex = hitResults.Count; j < hits.Length; ++j, ++resultIndex)
+                hitColliders.Capacity += hits.Length;
+                for (int j = 0, resultIndex = hitColliders.Count; j < hits.Length; ++j, ++resultIndex)
                 {
-                    hitResults[resultIndex] = hits[j];
+                    hitColliders.Add(hits[j].collider);
                 }
 
                 rayOrigin = nextPoint;
                 angle += angleStep;
-                nextPoint = radius * (Mathf.Cos(angle) * planeVector1 + Mathf.Sin(angle) * planeVector2);
+                nextPoint = origin + radius * (Mathf.Cos(angle) * planeVector1 + Mathf.Sin(angle) * planeVector2);
+            }
+
+            if (hitColliders.Count > 0)
+            {
+                return true;
             }
         }
 
@@ -95,7 +169,7 @@ public class CircleCaster
         index = 0;
         for (int i = 0; i < array.Length; ++i)
         {
-            if (Mathf.Abs(array[index]) > Mathf.Epsilon)
+            if (Mathf.Abs(array[i]) > Mathf.Epsilon)
             {
                 index = i;
                 return true;
