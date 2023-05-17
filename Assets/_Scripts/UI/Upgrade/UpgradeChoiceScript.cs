@@ -26,7 +26,13 @@ public class UpgradeChoiceScript : MonoBehaviour
     {
         if (_isATrade)
         {
-
+            Debug.Log("Trade");
+            transform.GetComponentInParent<UpgradeUIScript>().ChoseTrade();
+        }
+        else
+        {
+            Debug.Log("Upgrade");
+            transform.GetComponentInParent<UpgradeUIScript>().ChoseUpgrade();
         }
     }
 
