@@ -9,7 +9,7 @@ public class UpgradeChoiceScript : MonoBehaviour
     [SerializeField] TextMeshProUGUI _bottomText;
 
     Choice _choice;
-    bool _isATrade = false
+    bool _isATrade = false;
     // Start is called before the first frame update
     void Start()
     {
