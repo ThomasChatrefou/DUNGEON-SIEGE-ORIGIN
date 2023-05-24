@@ -1,8 +1,8 @@
 using System;
 using UnityEngine;
 
+// [DEPRECATED] Use VoidEventChannelSO
 [CreateAssetMenu(menuName = "ScriptableObjects/Events/CharacterDiedEventChannel", fileName = "ProtoCharacterDiedEventChannel")]
-[Serializable]
 public class ProtoCharacterDiedEventChannelSO : ScriptableObject
 {
     public event Action OnCharacterDied;
