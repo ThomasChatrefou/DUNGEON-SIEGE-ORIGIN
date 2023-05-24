@@ -6,13 +6,16 @@ public interface ICharacterHealth
     public void TakeDamage(int amount);
 }
 
+
 public class ProtoHealth : MonoBehaviour, ICharacterHealth
 {
     [SerializeField] private int maxHealth = 3;
     private int currentHealth;
+    public GameObject deathScreen;
 
     private void Start()
     {
+        deathScreen.SetActive(false);
         currentHealth = maxHealth;
     }
 
@@ -28,5 +31,6 @@ public class ProtoHealth : MonoBehaviour, ICharacterHealth
     private void Die()
     {
         Destroy(gameObject);
+        deathScreen.SetActive(true);
     }
 }

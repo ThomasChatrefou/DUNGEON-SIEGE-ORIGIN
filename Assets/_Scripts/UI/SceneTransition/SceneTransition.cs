@@ -12,4 +12,9 @@ public class SceneTransition : MonoBehaviour
     {
         LoadScene("MiniProto");
     }
+
+    public void LoadMainMenuScene()
+    {
+        LoadScene("MainMenu");
+    }
 }
