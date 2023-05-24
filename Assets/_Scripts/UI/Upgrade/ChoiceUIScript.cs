@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UpgradeUIScript : MonoBehaviour
+public class ChoiceUIScript : MonoBehaviour
 {
     [SerializeField] GameObject _upgradeChoiceHolder;
     [SerializeField] int _numberOfUpgrade = 3;
@@ -13,6 +13,12 @@ public class UpgradeUIScript : MonoBehaviour
     [Header("Scriptable Object")]
     [SerializeField] Choice _upgradeWeaponChoice;
     [SerializeField] Choice _tradeWeaponChoice;
+    [SerializeField] Choice _swordWeaponChoice;
+    [SerializeField] Choice _staffWeaponChoice;
+    [SerializeField] Choice _bookWeaponChoice;
+    [SerializeField] Choice _upgradeOneChoice;
+    [SerializeField] Choice _upgradeTwoChoice;
+    [SerializeField] Choice _upgradeThreeChoice;
 
     float _halfScreenWidth;
     List<GameObject> _upgradeChoiceHolderList = new List<GameObject>();
@@ -32,14 +38,14 @@ public class UpgradeUIScript : MonoBehaviour
             if (i % 2 == 0)
             {
                 _upgradeChoiceHolderList[i].transform.SetLocalPositionAndRotation(new Vector3((_halfScreenWidth / _numberOfChoice) * -1, 0), Quaternion.identity);
-                _upgradeChoiceHolderList[i].GetComponent<UpgradeChoiceScript>().SetChoice(_tradeWeaponChoice);
-                _upgradeChoiceHolderList[i].GetComponent<UpgradeChoiceScript>().SetIsATrade(true);
+                _upgradeChoiceHolderList[i].GetComponent<DisplayChoiceScript>().SetChoice(_tradeWeaponChoice);
+                _upgradeChoiceHolderList[i].GetComponent<DisplayChoiceScript>().SetChoiceType(EChoiceType.TRADESETUP);
             }
             else
             {
                 _upgradeChoiceHolderList[i].transform.SetLocalPositionAndRotation(new Vector3((_halfScreenWidth / _numberOfChoice), 0), Quaternion.identity);
-                _upgradeChoiceHolderList[i].GetComponent<UpgradeChoiceScript>().SetChoice(_upgradeWeaponChoice);
-                _upgradeChoiceHolderList[i].GetComponent<UpgradeChoiceScript>().SetIsATrade(false);
+                _upgradeChoiceHolderList[i].GetComponent<DisplayChoiceScript>().SetChoice(_upgradeWeaponChoice);
+                _upgradeChoiceHolderList[i].GetComponent<DisplayChoiceScript>().SetChoiceType(EChoiceType.UPGRADESETUP);
             }
         }
     }
@@ -68,6 +74,22 @@ public class UpgradeUIScript : MonoBehaviour
             {
                 _upgradeChoiceHolderList[i].transform.SetLocalPositionAndRotation(new Vector3((_halfScreenWidth / _numberOfChoice), 0), Quaternion.identity);
             }
+            int randomChoice = Random.Range(1, 3);
+            switch (randomChoice)
+            {
+                case 1:
+                    _upgradeChoiceHolderList[i].GetComponent<DisplayChoiceScript>().SetChoice(_swordWeaponChoice);
+                    break;
+                case 2:
+                    _upgradeChoiceHolderList[i].GetComponent<DisplayChoiceScript>().SetChoice(_staffWeaponChoice);
+                    break;
+                case 3:
+                    _upgradeChoiceHolderList[i].GetComponent<DisplayChoiceScript>().SetChoice(_bookWeaponChoice);
+                    break;
+                default:
+                    break;
+            }
+            _upgradeChoiceHolderList[i].GetComponent<DisplayChoiceScript>().SetChoiceType(EChoiceType.TRADE);
         }
     }
 
@@ -84,15 +106,19 @@ public class UpgradeUIScript : MonoBehaviour
             if (i % 2 == 1 && i != 0)
             {
                 _upgradeChoiceHolderList[i].transform.SetLocalPositionAndRotation(new Vector3(((_halfScreenWidth / _numberOfUpgrade) * -1 * 1.5f), 0), Quaternion.identity);
+                _upgradeChoiceHolderList[i].GetComponent<DisplayChoiceScript>().SetChoice(_upgradeOneChoice);
             }
             else if (i % 2 == 0 && i != 0)
             {
                 _upgradeChoiceHolderList[i].transform.SetLocalPositionAndRotation(new Vector3(((_halfScreenWidth / _numberOfUpgrade) * 1.5f), 0), Quaternion.identity);
+                _upgradeChoiceHolderList[i].GetComponent<DisplayChoiceScript>().SetChoice(_upgradeThreeChoice);
             }
             else
             {
                 _upgradeChoiceHolderList[i].transform.SetLocalPositionAndRotation(new Vector3(((_halfScreenWidth + _offset) / _numberOfUpgrade) * i, 0), Quaternion.identity);
+                _upgradeChoiceHolderList[i].GetComponent<DisplayChoiceScript>().SetChoice(_upgradeTwoChoice);
             }
+            _upgradeChoiceHolderList[i].GetComponent<DisplayChoiceScript>().SetChoiceType(EChoiceType.UPGRADE);
         }
     }
 
