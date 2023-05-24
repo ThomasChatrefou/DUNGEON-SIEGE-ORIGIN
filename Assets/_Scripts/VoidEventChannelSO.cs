@@ -13,6 +13,7 @@ public class VoidEventChannelSO : ScriptableObject
     [EnableIf("_isEventListenerMissingNotified")]
     [SerializeField] private string _warningLog;
 
+    [Button]
     public void RequestRaiseEvent()
     {
         if (OnEventTrigger != null)
