@@ -9,5 +9,5 @@ public class SpawnerSO : ScriptableObject
     public GameObject Spawner2;
     public GameObject Spawner3;
     public GameObject Spawner4;
-    public GameObject Spawner5;
+    public GameObject Spawner5; 
 }

@@ -8,8 +8,7 @@ public class IAPool : MonoBehaviour
     public GameObject IAPrefab;
     public int PoolSize = 15;
 
-    private Dictionary<GameObject, List<GameObject>> _iaPools;
-    private EnemyTypes[] enemyTypes;
+    private List<GameObject> _iaPools;
 
     private void Awake()
     {
@@ -19,17 +18,13 @@ public class IAPool : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _iaPools = new Dictionary<GameObject, List<GameObject>>();
+        _iaPools = new List<GameObject>();
 
-        foreach (GameObject enemyType in _iaPools.Values)
+        for (int i = 0; i < PoolSize; i++)
         {
-            for (int i = 0; i < PoolSize; i++)
-            {
-                GameObject ia = Instantiate(IAPrefab, transform);
-                ia.SetActive(false);
-                _iaPools.Add(ia);
-            }
-
+            GameObject ia = Instantiate(IAPrefab, transform);
+            ia.SetActive(false);
+            _iaPools.Add(ia);
         }
     }
 

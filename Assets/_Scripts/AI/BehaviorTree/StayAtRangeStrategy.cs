@@ -46,7 +46,8 @@ public class StayAtRangeStrategy : IBehaviorTree
            //Debug.Log(_agent.stoppingDistance - _attackrange);
              if (distanceToTarget < _attackrange+1f && distanceToTarget > _attackrange - 1f)
             {
-                mouvState = _navMeshMouvNode.Stop();
+                if(_navMeshMouvNode != null)
+                    _navMeshMouvNode.Stop();
 
                 if (Time.time - _lastAttackTime >= _attackCooldown)
                 {
