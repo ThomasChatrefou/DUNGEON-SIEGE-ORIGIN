@@ -5,16 +5,17 @@ using UnityEngine.AI;
 
 public class NavMeshMove : IBehaviorNode
 {
-    private Vector3 _target;
+    //private Vector3 _target;
+    private Transform _targetTransform;
     private NavMeshAgent _agent;
     private bool _mouvementSuccess;
     private float _speed;
 
 
 
-    public NavMeshMove(Vector3 target,NavMeshAgent agent,float speed)
+    public NavMeshMove(Transform targetTransform,NavMeshAgent agent,float speed)
     {
-        this._target = target;
+        this._targetTransform = targetTransform;
         this._agent = agent;
         this._speed = speed;
         agent.speed = speed;
@@ -23,10 +24,10 @@ public class NavMeshMove : IBehaviorNode
 
     public IBehaviorNode.NodeState Execute()
     {
-        if(_target !=null && _agent !=null)
+        if(_targetTransform != null && _agent !=null)
         {            
             _agent.isStopped = false;
-            _agent.SetDestination(_target);
+            _agent.SetDestination(_targetTransform.position);
             _mouvementSuccess = true;
             if (_mouvementSuccess)
             {
