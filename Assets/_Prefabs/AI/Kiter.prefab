@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3290044505870710492}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.18, y: 0.22, z: -18.93}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -116,7 +116,8 @@ MonoBehaviour:
   _speed: 1
   _attackRange: 10
   _attackSpeed: 2
-  _projectile: {fileID: 0}
+  _projectileSpeed: 5
+  _projectileLifeTime: 5
 --- !u!195 &3290044505870710486
 NavMeshAgent:
   m_ObjectHideFlags: 0

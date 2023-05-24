@@ -5,15 +5,18 @@ using UnityEngine;
 public class RangeAttackStrategy : IBehaviorNode
 {
     private Transform _target;
-   
-    private bool _attackSucceeded;
     private Transform _entityTransform;
+    private float _projectileSpeed;
+    private float _projectileLifeTime;
+    private bool _attackSucceeded;
 
-    public RangeAttackStrategy(Transform target,Transform entityTransform)
+    public RangeAttackStrategy(Transform target,Transform entityTransform,float projectileSpeed,float projectileLifeTime)
     {
         this._target = target;
         this._attackSucceeded = false;     
         this._entityTransform = entityTransform;
+        this._projectileSpeed = projectileSpeed;
+        this._projectileLifeTime = projectileLifeTime;
     }
 
     public IBehaviorNode.NodeState Execute()
@@ -30,7 +33,7 @@ public class RangeAttackStrategy : IBehaviorNode
             
             ProjectileController projectileController = projectile.GetComponent<ProjectileController>();
             projectileController.Destination = _target.position;
-            projectileController.Launch();
+            projectileController.Launch(_projectileSpeed,_projectileLifeTime);
 
             _attackSucceeded = true;
             if (_attackSucceeded)

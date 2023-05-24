@@ -6,12 +6,14 @@ using UnityEngine;
 public class ProjectileController : MonoBehaviour
 {
     private float _speed;
+    private float _lifeTime;
     public Vector3 Destination;
     private Vector3 direction;
     
-  public void Launch()
+  public void Launch(float speed,float lifeTime)
     {
-        _speed = 5f;
+        _speed = speed;
+        _lifeTime = lifeTime;
         direction = (Destination - transform.position).normalized;
         StartCoroutine(Projectile());
     }
@@ -35,10 +37,20 @@ public class ProjectileController : MonoBehaviour
     IEnumerator Projectile()
     {
         
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(_lifeTime);
         ProjectilePool.Instance.ClearOneProjectile(this.gameObject);
 
        
         yield return null;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag =="Player")
+        {
+            ProjectilePool.Instance.ClearOneProjectile(this.gameObject);
+            //DoDamage
+            Debug.Log("touché a distance");
+
+        }
     }
 }

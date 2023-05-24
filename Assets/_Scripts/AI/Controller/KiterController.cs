@@ -8,13 +8,12 @@ public class KiterController : MonoBehaviour
     private NavMeshAgent _agent;
     public Transform Target;
     private IBehaviorTree _behaviorTree;
-    [SerializeField]
-    private float _speed = 1, _attackRange = 10, _attackSpeed = 2;
+    private float _speed = 3, _attackRange = 20, _attackSpeed = 2, _projectileSpeed = 5, _projectileLifeTime = 4;
    
     private void Start()
     {
         _agent = GetComponent<NavMeshAgent>();
-        _behaviorTree = new StayAtRangeStrategy(Target, _agent, _attackRange,  _speed, _attackSpeed,transform);
+        _behaviorTree = new StayAtRangeStrategy(Target, _agent, _attackRange, _speed, _attackSpeed, transform, _projectileSpeed,_projectileLifeTime);
     }
 
     private void Update()

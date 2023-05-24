@@ -12,7 +12,8 @@ public class StayAtRangeStrategy : IBehaviorTree
     private Transform _target;
     
     private float _attackrange;
-    
+    private float _projectileSpeed;
+    private float _projectileLifeTime;
     private float _speed;
     private float _attackCooldown;
     private float _lastAttackTime;
@@ -20,16 +21,17 @@ public class StayAtRangeStrategy : IBehaviorTree
     private IBehaviorNode _attackNode;
     private IBehaviorNode _navMeshMouvNode;
 
-    public StayAtRangeStrategy(Transform target,NavMeshAgent agent, float attackrange, float speed, float attackCooldown,Transform entityTransform)
+    public StayAtRangeStrategy(Transform target,NavMeshAgent agent, float attackrange, float speed, float attackCooldown,Transform entityTransform,float projectileLifeTime,float projectileSpeed)
     {
         this._agent = agent;
         this._target = target;
         this._attackrange = attackrange;
-        
+        this._projectileSpeed = projectileSpeed;
+        this._projectileLifeTime = projectileLifeTime;
         this._speed = speed;
         this._attackCooldown = attackCooldown;
     
-        _attackNode = new RangeAttackStrategy(target, entityTransform);
+        _attackNode = new RangeAttackStrategy(target, entityTransform,projectileSpeed,projectileLifeTime);
     }
 
     public void Execute(Transform EntityTransform)
