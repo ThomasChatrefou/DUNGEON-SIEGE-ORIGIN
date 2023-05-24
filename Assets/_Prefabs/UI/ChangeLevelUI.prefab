@@ -56,6 +56,7 @@ MonoBehaviour:
   _numberOfWeaponTradable: 2
   _launchLevelTransitionChannel: {fileID: 11400000, guid: 0161a2d43a5f43e4f9516484504474bd,
     type: 2}
+  _sceneToLoad: HomeMenu
   _upgradeWeaponChoice: {fileID: 11400000, guid: 4aa9f1ac6f2107a469964aa494742389,
     type: 2}
   _tradeWeaponChoice: {fileID: 11400000, guid: 11f39eef099995241b08a49017da5010, type: 2}

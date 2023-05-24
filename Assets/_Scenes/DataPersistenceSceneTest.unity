@@ -681,7 +681,7 @@ PrefabInstance:
     - target: {fileID: 159724118978080429, guid: a72510b8ec255654483a3c1994d52a01,
         type: 3}
       propertyPath: _sceneToLoad
-      value: FirstBuildTest
+      value: HomeMenu
       objectReference: {fileID: 0}
     - target: {fileID: 159724118978080430, guid: a72510b8ec255654483a3c1994d52a01,
         type: 3}
