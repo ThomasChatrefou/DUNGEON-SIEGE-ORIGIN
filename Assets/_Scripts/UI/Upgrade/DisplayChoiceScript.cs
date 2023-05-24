@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum EChoiceType
 {
@@ -14,6 +15,8 @@ public enum EChoiceType
 
 public class DisplayChoiceScript : MonoBehaviour
 {
+    public string _sceneToLoad;
+
     [SerializeField] TextMeshProUGUI _topText;
     [SerializeField] TextMeshProUGUI _bottomText;
 
@@ -41,9 +44,11 @@ public class DisplayChoiceScript : MonoBehaviour
                 break;
             case EChoiceType.TRADE:
                 Debug.Log("Trade -> TODO: Actual trade weapon logic");
+                SceneManager.LoadSceneAsync(_sceneToLoad);
                 break;
             case EChoiceType.UPGRADE:
                 Debug.Log("Upgrade -> TODO: Actual upgrade weapon logic");
+                SceneManager.LoadSceneAsync(_sceneToLoad);
                 break;
             case EChoiceType.TRADESETUP:
                 Debug.Log("TradeSetup");
