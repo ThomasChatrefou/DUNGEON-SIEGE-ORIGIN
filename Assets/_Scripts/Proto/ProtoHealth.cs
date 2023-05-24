@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using UnityEngine;
 
 // [TODO] move this in another script
@@ -8,18 +9,21 @@ public interface ICharacterHealth
 
 public class ProtoHealth : MonoBehaviour, ICharacterHealth
 {
-    [SerializeField] private int maxHealth = 3;
-    private int currentHealth;
+    [SerializeField] private bool _raiseDeathEvent;
+    [ShowIf("_raiseDeathEvent")]
+    [SerializeField] private ProtoCharacterDiedEventChannelSO _characterDiedEventChannel;
+    [SerializeField] private int _maxHealth = 3;
+    private int _currentHealth;
 
     private void Start()
     {
-        currentHealth = maxHealth;
+        _currentHealth = _maxHealth;
     }
 
     public void TakeDamage(int amount)
     {
-        currentHealth -= amount;
-        if (currentHealth <= 0)
+        _currentHealth -= amount;
+        if (_currentHealth <= 0)
         {
             Die();
         }
@@ -27,6 +31,10 @@ public class ProtoHealth : MonoBehaviour, ICharacterHealth
 
     private void Die()
     {
+        if (_raiseDeathEvent)
+        {
+            _characterDiedEventChannel.RaiseEvent();
+        }
         Destroy(gameObject);
     }
 }

@@ -514,7 +514,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d60cd25b3250ae4c8f7418ad61beaeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
+  _raiseDeathEvent: 0
+  _characterDiedEventChannel: {fileID: 0}
+  _maxHealth: 3
 --- !u!1001 &429950247
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1256,7 +1258,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d60cd25b3250ae4c8f7418ad61beaeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
+  _raiseDeathEvent: 0
+  _characterDiedEventChannel: {fileID: 0}
+  _maxHealth: 3
 --- !u!1 &1363861106
 GameObject:
   m_ObjectHideFlags: 0
@@ -1629,51 +1633,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PLAYER
-      objectReference: {fileID: 0}
-    - target: {fileID: 8687792955410925936, guid: 05e8e3d8751f59645a20b2f2ae270c4f,
-        type: 3}
-      propertyPath: normal.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8687792955410925936, guid: 05e8e3d8751f59645a20b2f2ae270c4f,
-        type: 3}
-      propertyPath: normal.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8687792955410925936, guid: 05e8e3d8751f59645a20b2f2ae270c4f,
-        type: 3}
-      propertyPath: normal.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8687792955410925936, guid: 05e8e3d8751f59645a20b2f2ae270c4f,
-        type: 3}
-      propertyPath: normalLatitude
-      value: 50.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 8687792955410925936, guid: 05e8e3d8751f59645a20b2f2ae270c4f,
-        type: 3}
-      propertyPath: damageZoneRadius
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8687792955410925936, guid: 05e8e3d8751f59645a20b2f2ae270c4f,
-        type: 3}
-      propertyPath: normalDegLatitude
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8687792955410925936, guid: 05e8e3d8751f59645a20b2f2ae270c4f,
-        type: 3}
-      propertyPath: normalDegLongitude
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8687792955410925936, guid: 05e8e3d8751f59645a20b2f2ae270c4f,
-        type: 3}
-      propertyPath: damageZoneRefinement
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 8687792955410925936, guid: 05e8e3d8751f59645a20b2f2ae270c4f,
-        type: 3}
-      propertyPath: normalDisplayMagnitude
-      value: 2.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05e8e3d8751f59645a20b2f2ae270c4f, type: 3}
