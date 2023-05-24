@@ -3,18 +3,18 @@ using UnityEngine.SceneManagement;
 
 public class SceneTransition : MonoBehaviour
 {
-    private void LoadScene(string sceneName)
+    private void GoToScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
     }
 
     public void LoadPlayScene()
     {
-        LoadScene("MiniProto");
+        GoToScene("MiniProto");
     }
 
     public void LoadMainMenuScene()
     {
-        LoadScene("HomeMenu");
+        GoToScene("HomeMenu");
     }
 }
