@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "CharacterScriptableObject", menuName = "ScriptableObjects/CharacterScriptableObject")]
-public class CharacterScriptableObject : ScriptableObject
+[CreateAssetMenu(fileName = "CharacterSO", menuName = "ScriptableObjects/Character")]
+public class CharacterSO : ScriptableObject
 {
     public float health;
     public float healthMax;
