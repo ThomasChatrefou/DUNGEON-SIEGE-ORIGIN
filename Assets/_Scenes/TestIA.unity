@@ -325,6 +325,7 @@ GameObject:
   - component: {fileID: 701964954}
   - component: {fileID: 701964953}
   - component: {fileID: 701964956}
+  - component: {fileID: 701964957}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -380,7 +381,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 852baa8e6a4065441ba9092ad41225b0, type: 2}
+  - {fileID: 2100000, guid: 07c89ab64d69a7e4bb6a23b4ddf17c50, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -426,6 +427,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &701964957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701964951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d60cd25b3250ae4c8f7418ad61beaeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 3
 --- !u!1001 &835947331
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1129,6 +1143,11 @@ PrefabInstance:
       propertyPath: Target
       value: 
       objectReference: {fileID: 701964952}
+    - target: {fileID: 8315960100409251501, guid: 86e538caf4633b049ae1e90741005ee1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 07c89ab64d69a7e4bb6a23b4ddf17c50, type: 2}
     - target: {fileID: 8315960100409251503, guid: 86e538caf4633b049ae1e90741005ee1,
         type: 3}
       propertyPath: m_RootOrder

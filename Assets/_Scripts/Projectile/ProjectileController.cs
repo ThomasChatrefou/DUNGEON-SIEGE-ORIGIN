@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ProjectileController : MonoBehaviour
 {
+    private int _damage = 1; // ça n'a rien a foutre la 
     private float _speed;
     private float _lifeTime;
     public Vector3 Destination;
@@ -50,6 +51,12 @@ public class ProjectileController : MonoBehaviour
             ProjectilePool.Instance.ClearOneProjectile(this.gameObject);
             //DoDamage
             Debug.Log("touché a distance");
+            bool proHealth = other.TryGetComponent<ICharacterHealth>(out var health);
+            if (proHealth)
+            {
+                health.TakeDamage(_damage);
+            }
+            
 
         }
     }
