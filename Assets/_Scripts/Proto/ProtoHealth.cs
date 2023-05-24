@@ -7,6 +7,7 @@ public interface ICharacterHealth
     public void TakeDamage(int amount);
 }
 
+
 public class ProtoHealth : MonoBehaviour, ICharacterHealth
 {
     [SerializeField] private int _maxHealth = 3;
