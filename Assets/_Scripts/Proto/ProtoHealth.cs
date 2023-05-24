@@ -30,6 +30,7 @@ public class ProtoHealth : MonoBehaviour, ICharacterHealth
         }
     }
 
+    [Button]
     private void Die()
     {
         if (_raiseDeathEvent)
@@ -37,6 +38,5 @@ public class ProtoHealth : MonoBehaviour, ICharacterHealth
             _characterDiedEventChannel.RaiseEvent();
         }
         Destroy(gameObject);
-        deathScreen.SetActive(true);
     }
 }

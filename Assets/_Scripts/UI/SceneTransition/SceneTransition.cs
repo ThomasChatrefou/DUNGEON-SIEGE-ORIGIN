@@ -15,6 +15,6 @@ public class SceneTransition : MonoBehaviour
 
     public void LoadMainMenuScene()
     {
-        LoadScene("MainMenu");
+        LoadScene("HomeMenu");
     }
 }
