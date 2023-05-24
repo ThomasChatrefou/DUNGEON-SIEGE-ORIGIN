@@ -6,7 +6,6 @@ using System.Collections.Generic;
 public interface IWeapon
 {
     public void Use();
-    public List<Vector3> GetLastHitPositions();
 }
 
 public class ProtoWeapon : MonoBehaviour, IWeapon
@@ -27,11 +26,8 @@ public class ProtoWeapon : MonoBehaviour, IWeapon
     [SerializeField] private float normalDegLongitude;
     [SerializeField] private float normalDisplayMagnitude = 2f;
 
-    private List<Vector3> lastHitPositions;
-
     public void Use()
     {
-        lastHitPositions.Clear();
 
         GameObject damageZoneGO = Instantiate(damageZonePrefab, transform.position, damageZonePrefab.transform.rotation);
         damageZoneGO.transform.localScale *= damageZoneRadius;
@@ -47,11 +43,6 @@ public class ProtoWeapon : MonoBehaviour, IWeapon
                 healthComponent?.TakeDamage(damages);
             }
         }
-    }
-
-    public List<Vector3> GetLastHitPositions()
-    {
-        return lastHitPositions;
     }
 
     private void OnDrawGizmosSelected()

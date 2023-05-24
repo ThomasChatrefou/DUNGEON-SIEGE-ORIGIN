@@ -9,10 +9,14 @@ public interface ICharacterHealth
 
 public class ProtoHealth : MonoBehaviour, ICharacterHealth
 {
-    [SerializeField] private bool _raiseDeathEvent;
-    [ShowIf("_raiseDeathEvent")]
-    [SerializeField] private ProtoCharacterDiedEventChannelSO _characterDiedEventChannel;
     [SerializeField] private int _maxHealth = 3;
+
+    [Space(10)]
+    [SerializeField] private bool _isDeathNotified;
+    [ShowIf("_isDeathNotified")]
+    [BoxGroup("Broadcast on")]
+    [SerializeField] private VoidEventChannelSO _deathChannel;
+
     private int _currentHealth;
 
     private void Start()
@@ -29,11 +33,12 @@ public class ProtoHealth : MonoBehaviour, ICharacterHealth
         }
     }
 
+    [Button]
     private void Die()
     {
-        if (_raiseDeathEvent)
+        if (_isDeathNotified)
         {
-            _characterDiedEventChannel.RaiseEvent();
+            _deathChannel.RequestRaiseEvent();
         }
         Destroy(gameObject);
     }
