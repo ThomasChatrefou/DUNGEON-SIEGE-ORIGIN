@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 8687792955410925937}
   m_Layer: 0
   m_Name: ProtoPlayer
-  m_TagString: Character
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -163,10 +163,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d60cd25b3250ae4c8f7418ad61beaeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _raiseDeathEvent: 1
-  _characterDiedEventChannel: {fileID: 11400000, guid: 0d05f7036a66fc849ba32f4ef4f6c414,
-    type: 2}
   _maxHealth: 3
+  _isDeathNotified: 1
+  _deathChannel: {fileID: 11400000, guid: 3571649a06cac1945b6f38689ff288e7, type: 2}
 --- !u!114 &8687792955410925936
 MonoBehaviour:
   m_ObjectHideFlags: 0
