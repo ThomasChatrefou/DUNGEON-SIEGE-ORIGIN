@@ -2,6 +2,18 @@ using NaughtyAttributes;
 using System;
 using UnityEngine;
 
+[Serializable]
+public class FailMessagePrinter
+{
+    [ResizableTextArea]
+    [SerializeField] private string _warningLog;
+
+    public void PrintFailMessage()
+    {
+        Debug.LogWarning(_warningLog);
+    }
+}
+
 [CreateAssetMenu(menuName = "ScriptableObjects/Events/VoidEventChannel", fileName = "VoidEventChannel")]
 public class VoidEventChannelSO : ScriptableObject
 {
@@ -9,9 +21,8 @@ public class VoidEventChannelSO : ScriptableObject
 
     [Label("Enable missing listener warning")]
     [SerializeField] private bool _isEventListenerMissingNotified;
-    [ResizableTextArea]
-    [EnableIf("_isEventListenerMissingNotified")]
-    [SerializeField] private string _warningLog;
+    [ShowIf("_isEventListenerMissingNotified")]
+    [SerializeField] FailMessagePrinter _failMessagePrinter;
 
     [Button]
     public void RequestRaiseEvent()
@@ -22,12 +33,7 @@ public class VoidEventChannelSO : ScriptableObject
         }
         else if (_isEventListenerMissingNotified)
         {
-            PrintRequestFailedMessage();
+            _failMessagePrinter.PrintFailMessage();
         }
-    }
-
-    protected void PrintRequestFailedMessage()
-    {
-        Debug.LogWarning(_warningLog);
     }
 }
