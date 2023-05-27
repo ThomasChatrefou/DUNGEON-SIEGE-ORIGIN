@@ -17,7 +17,7 @@ public class SpawnManager : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(spawnInterval);
-            spawner.SpawnEnemy();
+            //spawner.SpawnEnemy();
         }
     }
 

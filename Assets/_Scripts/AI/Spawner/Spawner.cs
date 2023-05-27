@@ -1,15 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] GameObject prefabToSpawn;
-    [SerializeField] Transform player;
+    [SerializeField] private SpawnerDataSO spawnerDataSO;
+    [SerializeField] private IntSenderEventChannelSO launchWaveChannel;
 
-    public void SpawnEnemy()
+    private void OnEnable()
     {
-        GameObject obj = Instantiate(prefabToSpawn, transform);
-        obj.GetComponent<KiterController>().Target = player;
+        launchWaveChannel.OnEventTrigger += OnLaunchWaveEvent;
     }
+
+    private void OnDisable()
+    {
+        launchWaveChannel.OnEventTrigger -= OnLaunchWaveEvent;
+    }
+
+    private void OnLaunchWaveEvent(int index)
+    {
+        if (spawnerDataSO.Waves.Count <= index)
+            return;
+
+        if (spawnerDataSO.Waves[index].DoSpawn)
+        {
+            SpawnEnemy(spawnerDataSO.Waves[index].Prefab);
+        }
+    }
+
+    private void SpawnEnemy(GameObject prefab)
+    {
+        Instantiate(prefab, transform);
+        //obj.GetComponent<KiterController>().Target = player;
+    }
+
 }
