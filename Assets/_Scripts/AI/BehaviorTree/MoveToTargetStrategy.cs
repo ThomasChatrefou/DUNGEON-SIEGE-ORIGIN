@@ -23,7 +23,7 @@ public class MoveToTargetStrategy : IBehaviorTree
         this._attackRange = attackRange;
         this._attackCooldown = attackSpeed;
         _attackNode = new MeleeAttackStrategy(target);
-        _navMeshMouvNode = new NavMeshMove(target.position, agent, speed);
+        _navMeshMouvNode = new NavMeshMove(target, agent, speed);
     }
 
     public void Execute(Transform entityTransform)
@@ -51,7 +51,7 @@ public class MoveToTargetStrategy : IBehaviorTree
             }
             else
             {
-                _navMeshMouvNode = new NavMeshMove(_target.position, _agent, _speed);
+                _navMeshMouvNode = new NavMeshMove(_target, _agent, _speed);
             }
             mouvState = _navMeshMouvNode.Execute();
 

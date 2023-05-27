@@ -10,7 +10,7 @@ public class StayAtRangeStrategy : IBehaviorTree
 {
     private NavMeshAgent _agent;
     private Transform _target;
-    
+    private float _deltaRange = 1;
     private float _attackrange;
     private float _projectileSpeed;
     private float _projectileLifeTime;
@@ -32,6 +32,7 @@ public class StayAtRangeStrategy : IBehaviorTree
         this._attackCooldown = attackCooldown;
     
         _attackNode = new RangeAttackStrategy(target, entityTransform,projectileSpeed,projectileLifeTime);
+
     }
 
     public void Execute(Transform EntityTransform)
@@ -43,8 +44,8 @@ public class StayAtRangeStrategy : IBehaviorTree
             direction.y = 0;
             IBehaviorNode.NodeState mouvState;
             float distanceToTarget = direction.magnitude;
-           //Debug.Log(_agent.stoppingDistance - _attackrange);
-             if (distanceToTarget < _attackrange+1f && distanceToTarget > _attackrange - 1f)
+           
+             if (distanceToTarget < _attackrange+ _deltaRange && distanceToTarget > _attackrange - _deltaRange)
             {
                 if(_navMeshMouvNode != null)
                     _navMeshMouvNode.Stop();
@@ -59,15 +60,16 @@ public class StayAtRangeStrategy : IBehaviorTree
                 }
             }
             else if (distanceToTarget > _attackrange)
-            {
-               // Debug.Log("on s'approche");
-                _navMeshMouvNode = new NavMeshMove(_target.position, _agent, _speed);
+            {              
+                _navMeshMouvNode = new NavMeshMove(_target, _agent, _speed);
             }
             else if (distanceToTarget < _attackrange)
             {
-                //Debug.Log("on s'éloigne");
+                
+                GameObject emptyObject = new GameObject();
                 Vector3 destination = EntityTransform.position - direction.normalized;
-                _navMeshMouvNode = new NavMeshMove(destination, _agent, _speed);
+                emptyObject.transform.position = destination;
+                _navMeshMouvNode = new NavMeshMove(emptyObject.transform, _agent, _speed);
                 
             }
                 mouvState = _navMeshMouvNode.Execute();

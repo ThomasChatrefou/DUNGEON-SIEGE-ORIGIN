@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &159724118978080431
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 159724118978080430}
+  - component: {fileID: 159724118978080429}
+  m_Layer: 5
+  m_Name: ChangeLevelUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &159724118978080430
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159724118978080431}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &159724118978080429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159724118978080431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0419be9efa1ec644a038c6ac1950ce5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _upgradeChoiceHolder: {fileID: 3327991065404269450, guid: 7e5108fa817762b4ba91765043e26c91,
+    type: 3}
+  _numberOfUpgrade: 3
+  _numberOfChoice: 2
+  _numberOfWeaponTradable: 2
+  _launchLevelTransitionChannel: {fileID: 11400000, guid: 0161a2d43a5f43e4f9516484504474bd,
+    type: 2}
+  _sceneToLoad: HomeMenu
+  _upgradeWeaponChoice: {fileID: 11400000, guid: 4aa9f1ac6f2107a469964aa494742389,
+    type: 2}
+  _tradeWeaponChoice: {fileID: 11400000, guid: 11f39eef099995241b08a49017da5010, type: 2}
+  _swordWeaponChoice: {fileID: 11400000, guid: e0578a536f8d3a14f9b55bada710edff, type: 2}
+  _staffWeaponChoice: {fileID: 11400000, guid: da77691f1bdf5484892f6a9bb3c48057, type: 2}
+  _bookWeaponChoice: {fileID: 11400000, guid: cbe411e6b2fbd3948b269c52f1f3d2a7, type: 2}
+  _upgradeOneChoice: {fileID: 11400000, guid: 181352c9f87d4b548a32505fe255691f, type: 2}
+  _upgradeTwoChoice: {fileID: 11400000, guid: 73fa415aa90d4ee40aca15a6afb6bf0e, type: 2}
+  _upgradeThreeChoice: {fileID: 11400000, guid: fb49499ed6d017540b80783b92f4614c,
+    type: 2}
