@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class MeleeAttackStrategy : MonoBehaviour,IBehaviorNode
+public class MeleeAttackStrategy : IBehaviorNode
 {
     private int _damage =1; // ça n'a rien a foutre la 
     private Transform _target;

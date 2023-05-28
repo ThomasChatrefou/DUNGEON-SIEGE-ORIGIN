@@ -29,7 +29,7 @@ public class IntSenderEventChannelSO : ScriptableObject
     [SerializeField] private int _intToSend;
 
     [Button]
-    public void RequestRaiseEvent()
+    public void RequestRaiseDebugEvent()
     {
         RequestRaiseEvent(_intToSend);
     }

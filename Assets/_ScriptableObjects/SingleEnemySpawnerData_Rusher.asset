@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb713fc36dd0e7849bd33e75920e4384, type: 3}
-  m_Name: LaunchLevelTransitionChannel
+  m_Script: {fileID: 11500000, guid: 782ee4af222cfc0459ddedd05e887c4f, type: 3}
+  m_Name: SingleEnemySpawnerData_Rusher
   m_EditorClassIdentifier: 
-  _isEventListenerMissingNotified: 1
-  _failMessagePrinter:
-    _warningLog: coucou
+  Prefab: {fileID: 1744385130808161210, guid: 4c9d798d96f51f14092c7ea1545d7075, type: 3}
+  DoSpawnOnWaveIndexArray: 010001

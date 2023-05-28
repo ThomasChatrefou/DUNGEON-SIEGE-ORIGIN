@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 3290044505870710482}
   - component: {fileID: 3290044505870710483}
   - component: {fileID: 3290044505870710486}
-  m_Layer: 0
+  - component: {fileID: 9143382118792348012}
+  m_Layer: 6
   m_Name: Kiter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,11 +114,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
-  _speed: 1
-  _attackRange: 10
-  _attackSpeed: 2
-  _projectileSpeed: 5
-  _projectileLifeTime: 5
 --- !u!195 &3290044505870710486
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -140,3 +136,18 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &9143382118792348012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3290044505870710492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d60cd25b3250ae4c8f7418ad61beaeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 3
+  _isDeathNotified: 1
+  _deathChannel: {fileID: 11400000, guid: 4ffae98a4574b6040a3f772755bc44f0, type: 2}
