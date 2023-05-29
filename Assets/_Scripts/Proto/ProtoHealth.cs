@@ -1,13 +1,6 @@
 using NaughtyAttributes;
 using UnityEngine;
 
-// [TODO] move this in another script
-public interface ICharacterHealth
-{
-    public void TakeDamage(int amount);
-}
-
-
 public class ProtoHealth : MonoBehaviour, ICharacterHealth
 {
     [SerializeField] private int _maxHealth = 3;
