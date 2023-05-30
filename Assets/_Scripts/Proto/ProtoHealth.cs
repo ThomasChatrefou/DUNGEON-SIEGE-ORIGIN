@@ -20,6 +20,11 @@ public class ProtoHealth : MonoBehaviour, ICharacterHealth
 
     public void TakeDamage(int amount)
     {
+        if (!isActiveAndEnabled)
+        {
+            return;
+        }
+
         _currentHealth -= amount;
         if (_currentHealth <= 0)
         {

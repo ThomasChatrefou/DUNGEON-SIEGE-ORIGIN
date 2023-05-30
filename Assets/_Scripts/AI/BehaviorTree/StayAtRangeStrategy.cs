@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 /*
@@ -21,6 +18,10 @@ public class StayAtRangeStrategy : IBehaviorTree
     private IBehaviorNode _attackNode;
     private IBehaviorNode _navMeshMouvNode;
 
+    // [HOTFIX] Just to avoid creating new GO each frame when AI wants to go back
+    private GameObject _myPersonalTarget;
+    // [HOTFIX] End
+
     public StayAtRangeStrategy(Transform target,NavMeshAgent agent, float attackrange, float speed, float attackCooldown,Transform entityTransform,float projectileLifeTime,float projectileSpeed)
     {
         this._agent = agent;
@@ -33,6 +34,11 @@ public class StayAtRangeStrategy : IBehaviorTree
     
         _attackNode = new RangeAttackStrategy(target, entityTransform,projectileSpeed,projectileLifeTime);
 
+        // [HOTFIX]
+        _myPersonalTarget = new GameObject("MyPersonalTarget");
+        _myPersonalTarget.transform.parent = _agent.transform;
+        _myPersonalTarget.transform.position = Vector3.zero;
+        // [HOTFIX] End
     }
 
     public void Execute(Transform EntityTransform)
@@ -42,10 +48,9 @@ public class StayAtRangeStrategy : IBehaviorTree
         {
             Vector3 direction = _target.position - EntityTransform.position;
             direction.y = 0;
-            IBehaviorNode.NodeState mouvState;
             float distanceToTarget = direction.magnitude;
            
-             if (distanceToTarget < _attackrange+ _deltaRange && distanceToTarget > _attackrange - _deltaRange)
+            if (distanceToTarget < _attackrange+ _deltaRange && distanceToTarget > _attackrange - _deltaRange)
             {
                 if(_navMeshMouvNode != null)
                     _navMeshMouvNode.Stop();
@@ -65,14 +70,16 @@ public class StayAtRangeStrategy : IBehaviorTree
             }
             else if (distanceToTarget < _attackrange)
             {
-                
-                GameObject emptyObject = new GameObject();
                 Vector3 destination = EntityTransform.position - direction.normalized;
-                emptyObject.transform.position = destination;
-                _navMeshMouvNode = new NavMeshMove(emptyObject.transform, _agent, _speed);
-                
+
+                // [HOTFIX]
+                _myPersonalTarget.transform.position = destination;
+                _navMeshMouvNode = new NavMeshMove(_myPersonalTarget.transform, _agent, _speed);
+                // [HOTFIX] End
             }
-                mouvState = _navMeshMouvNode.Execute();
-          }
+
+            if (_navMeshMouvNode != null)
+                _navMeshMouvNode.Execute();
+        }
     }
 }

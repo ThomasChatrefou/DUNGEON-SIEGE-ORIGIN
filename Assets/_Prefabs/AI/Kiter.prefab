@@ -114,10 +114,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
-  _speed: 3
-  _attackRange: 20
+  _speed: 4
+  _attackRange: 6
   _attackSpeed: 2
-  _projectileSpeed: 5
+  _projectileSpeed: 15
   _projectileLifeTime: 4
 --- !u!195 &3290044505870710486
 NavMeshAgent:
