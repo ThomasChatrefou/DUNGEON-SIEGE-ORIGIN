@@ -14,7 +14,22 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/_Scenes/MiniProto.unity
     guid: a5fa6339e71613e46a0906099547b39b
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/Tests/Thomas/MiniProto.unity
     guid: 3a8b26dcda699f849b1c7e09ae43aeb5
+  - enabled: 1
+    path: Assets/_Scenes/Beta/ProtoBeta.unity
+    guid: 4dd58313a1fb0ee439f89227a6c77d00
+  - enabled: 1
+    path: Assets/_Scenes/Arena/Arena1.unity
+    guid: 303d3df9164e59a479bc74489dca94b0
+  - enabled: 1
+    path: Assets/_Scenes/Arena/Arena2.unity
+    guid: ef744b322b3060f47afddabe1df45c98
+  - enabled: 1
+    path: Assets/_Scenes/Arena/Arena3.unity
+    guid: d59b1324a7c18e949b4632bbec7f1672
+  - enabled: 1
+    path: Assets/_Scenes/Arena/Arena4.unity
+    guid: af43f81f4350d8e469214e19f301a71d
   m_configObjects: {}
