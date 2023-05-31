@@ -153,6 +153,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 5
+  _playerDeathChannel: {fileID: 11400000, guid: 3571649a06cac1945b6f38689ff288e7,
+    type: 2}
+  _exitLevelChannel: {fileID: 11400000, guid: 0161a2d43a5f43e4f9516484504474bd, type: 2}
 --- !u!114 &5248333122905272385
 MonoBehaviour:
   m_ObjectHideFlags: 0
