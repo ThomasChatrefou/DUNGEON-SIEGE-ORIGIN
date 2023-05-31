@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.Layouts;
 using UnityEngine.InputSystem.OnScreen;
-using UnityEngine.UI;
 
 public enum VirtualJoystickType { Fixed, Floating }
 
@@ -16,6 +14,11 @@ public class VirtualJoystick : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     [InputControl(layout = "Vector2")]
     [SerializeField] private string stickControlPath;
     [SerializeField] private float movementRange = 100f;
+
+    [BoxGroup("Listens to")]
+    [SerializeField] private VoidEventChannelSO _playerDeathChannel;
+    [BoxGroup("Listens to")]
+    [SerializeField] private VoidEventChannelSO _exitLevelChannel;
 
     protected bool _hideOnPointerUp = false;
     protected bool _centralizeOnPointerUp = true;
@@ -45,6 +48,23 @@ public class VirtualJoystick : MonoBehaviour, IPointerDownHandler, IPointerUpHan
 
         if (_hideOnPointerUp) bgCanvasGroup.alpha = 0;
         else bgCanvasGroup.alpha = 1;
+    }
+
+    private void OnEnable()
+    {
+        _playerDeathChannel.OnEventTrigger += DisableJoystick;
+        _exitLevelChannel.OnEventTrigger += DisableJoystick;
+    }
+
+    private void OnDisable()
+    {
+        _playerDeathChannel.OnEventTrigger -= DisableJoystick;
+        _exitLevelChannel.OnEventTrigger -= DisableJoystick;
+    }
+
+    private void DisableJoystick()
+    {
+        gameObject.SetActive(false);
     }
 
     public void OnPointerDown(PointerEventData eventData)
