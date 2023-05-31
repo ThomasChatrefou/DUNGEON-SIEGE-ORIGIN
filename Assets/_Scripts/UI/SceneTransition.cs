@@ -10,7 +10,7 @@ public class SceneTransition : MonoBehaviour
 
     public void LoadPlayScene()
     {
-        GoToScene("ProtoBeta");
+        GoToScene("Arena1");
     }
 
     public void LoadMainMenuScene()
