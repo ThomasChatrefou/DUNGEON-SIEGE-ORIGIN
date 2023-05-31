@@ -10,7 +10,7 @@
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
 /[Aa]ndroidBuilds/
-/{Ww]inBuilds/
+/[Ww]inBuilds/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
@@ -58,18 +58,6 @@ ExportedObj/
 sysinfo.txt
 
 # Builds
-*.apk
-*.aab
-*.unitypackage
-*.app
-
-# AndroidBuilds
-*.apk
-*.aab
-*.unitypackage
-*.app
-
-# WinBuilds
 *.apk
 *.aab
 *.unitypackage
