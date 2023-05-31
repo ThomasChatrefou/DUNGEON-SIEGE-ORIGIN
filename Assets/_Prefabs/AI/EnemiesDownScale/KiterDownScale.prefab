@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3290044505870710483}
   - component: {fileID: 3290044505870710486}
   - component: {fileID: 9143382118792348012}
+  - component: {fileID: 1609889791777745055}
   m_Layer: 6
   m_Name: KiterDownScale
   m_TagString: Untagged
@@ -114,6 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
+  _enemyHitEventChannel: {fileID: 0}
   _speed: 4
   _attackRange: 6
   _attackSpeed: 2
@@ -155,4 +157,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 1
   _isDeathNotified: 1
+  _isHitNotified: 0
   _deathChannel: {fileID: 11400000, guid: 4ffae98a4574b6040a3f772755bc44f0, type: 2}
+  _hitChannel: {fileID: 0}
+--- !u!114 &1609889791777745055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3290044505870710492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4581077c1b269bb48a1e5151a2cfa4ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TakeDamageMaterial: {fileID: 2100000, guid: d0ec6cbfc0ec30246b0241f046080b02, type: 2}
