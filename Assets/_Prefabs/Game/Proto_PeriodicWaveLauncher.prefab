@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a3c1a187fa741043bf551bc15ca291a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nbWavesToSpawn: 4
-  _timeBetweenWaves: 3
+  _nbWavesToSpawn: 5
+  _timeBeforeFirstWave: 0
+  _timeBetweenWaves: 10
   _launchWaveChannel: {fileID: 11400000, guid: 358ebba6f77ec9043928989c7af4f875, type: 2}
   _endOfSpawnChannel: {fileID: 11400000, guid: f457eec5285ca5c4c95afb5124b54302, type: 2}

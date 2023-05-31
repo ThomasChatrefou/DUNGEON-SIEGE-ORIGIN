@@ -153,6 +153,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 5
+  _playerDeathChannel: {fileID: 11400000, guid: 3571649a06cac1945b6f38689ff288e7,
+    type: 2}
+  _exitLevelChannel: {fileID: 11400000, guid: 0161a2d43a5f43e4f9516484504474bd, type: 2}
 --- !u!114 &5248333122905272385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d60cd25b3250ae4c8f7418ad61beaeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 3
+  _maxHealth: 10
   _isDeathNotified: 1
   _isHitNotified: 0
   _deathChannel: {fileID: 11400000, guid: 3571649a06cac1945b6f38689ff288e7, type: 2}
