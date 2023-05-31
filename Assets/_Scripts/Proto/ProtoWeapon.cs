@@ -1,6 +1,7 @@
 using NaughtyAttributes;
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 // [TODO] move this in another script
 public interface IWeapon
@@ -19,6 +20,7 @@ public class ProtoWeapon : MonoBehaviour, IWeapon
     [SerializeField] private int damageZoneRefinement = 10;
     [SerializeField] private int damages = 1;
     [SerializeField] private GameObject damageZonePrefab;
+    [SerializeField] private Color damageZoneAlphaWhenInactive;
 
     [Range(0f, 360f)]
     [SerializeField] private float normalDegLatitude;
@@ -26,12 +28,31 @@ public class ProtoWeapon : MonoBehaviour, IWeapon
     [SerializeField] private float normalDegLongitude;
     [SerializeField] private float normalDisplayMagnitude = 2f;
 
+    private GameObject damageZoneInstance;
+    private SpriteRenderer damageZoneRenderer;
+
+    private void Start()
+    {
+        damageZoneInstance = Instantiate(damageZonePrefab, transform.position, damageZonePrefab.transform.rotation, transform);
+        damageZoneInstance.transform.localScale *= damageZoneRadius;
+        damageZoneRenderer = damageZoneInstance.GetComponent<SpriteRenderer>();
+        damageZoneRenderer.color = damageZoneAlphaWhenInactive;
+        //damageZoneInstance.SetActive(false);
+    }
+
+    private IEnumerator EnableBrieflyDamageZone()
+    {
+        damageZoneRenderer.color = Color.white;
+        //damageZoneInstance.SetActive(true);
+        yield return new WaitForSeconds(damageZoneLifeTime);
+        damageZoneRenderer.color = damageZoneAlphaWhenInactive;
+        //damageZoneInstance.SetActive(false);
+        yield break;
+    }
+
     public void Use()
     {
-
-        GameObject damageZoneGO = Instantiate(damageZonePrefab, transform.position, damageZonePrefab.transform.rotation);
-        damageZoneGO.transform.localScale *= damageZoneRadius;
-        Destroy(damageZoneGO, damageZoneLifeTime);
+        StartCoroutine(EnableBrieflyDamageZone());
         
         int bitShiftedLayerMask = 1 << LayerMask.NameToLayer(hitableLayerName);
 
