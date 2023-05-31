@@ -10,6 +10,7 @@ public class ChoiceUIScript : MonoBehaviour
     [SerializeField] int _numberOfUpgrade = 3;
     [SerializeField] int _numberOfChoice = 2;
     [SerializeField] int _numberOfWeaponTradable = 2;
+    [BoxGroup("Listen to")]
     [SerializeField] VoidEventChannelSO _launchLevelTransitionChannel;
     [Scene]
     [SerializeField] string _sceneToLoad;
@@ -39,6 +40,11 @@ public class ChoiceUIScript : MonoBehaviour
         _halfScreenWidth = Screen.width / 2;
     }
 
+    private void Start()
+    {
+        _halfScreenWidth = Screen.width / 2;
+    }
+
     private void StartLevelTransition()
     {
         for (int i = 0; i < _numberOfChoice; i++)
@@ -48,14 +54,14 @@ public class ChoiceUIScript : MonoBehaviour
             if (i % 2 == 0)
             {
 
-                _upgradeChoiceHolderList[i].transform.SetLocalPositionAndRotation(new Vector3((_halfScreenWidth / _numberOfChoice) * -1, 0), Quaternion.identity);
+                _upgradeChoiceHolderList[i].transform.SetLocalPositionAndRotation(new Vector3((_halfScreenWidth / _numberOfChoice) * -1 * 1.5f, 0), Quaternion.identity);
                 displayChoiceScript.SetChoice(_tradeWeaponChoice);
                 displayChoiceScript.SetChoiceType(EChoiceType.TRADESETUP);
             }
             else
             {
 
-                _upgradeChoiceHolderList[i].transform.SetLocalPositionAndRotation(new Vector3((_halfScreenWidth / _numberOfChoice), 0), Quaternion.identity);
+                _upgradeChoiceHolderList[i].transform.SetLocalPositionAndRotation(new Vector3((_halfScreenWidth / _numberOfChoice) * 1.5f, 0), Quaternion.identity);
                 displayChoiceScript.SetChoice(_upgradeWeaponChoice);
                 displayChoiceScript.SetChoiceType(EChoiceType.UPGRADESETUP);
             }
@@ -75,11 +81,11 @@ public class ChoiceUIScript : MonoBehaviour
             DisplayChoiceScript displayChoiceScript = _upgradeChoiceHolderList[i].GetComponent<DisplayChoiceScript>();
             if (i % 2 == 0)
             {
-                _upgradeChoiceHolderList[i].transform.SetLocalPositionAndRotation(new Vector3((_halfScreenWidth / _numberOfChoice) * -1, 0), Quaternion.identity);
+                _upgradeChoiceHolderList[i].transform.SetLocalPositionAndRotation(new Vector3((_halfScreenWidth / _numberOfChoice) * -1 * 2f, 0), Quaternion.identity);
             }
             else
             {
-                _upgradeChoiceHolderList[i].transform.SetLocalPositionAndRotation(new Vector3((_halfScreenWidth / _numberOfChoice), 0), Quaternion.identity);
+                _upgradeChoiceHolderList[i].transform.SetLocalPositionAndRotation(new Vector3((_halfScreenWidth / _numberOfChoice) * 2f, 0), Quaternion.identity);
             }
             int randomChoice = Random.Range(1, 3);
             switch (randomChoice)
@@ -114,12 +120,12 @@ public class ChoiceUIScript : MonoBehaviour
             DisplayChoiceScript displayChoiceScript = _upgradeChoiceHolderList[i].GetComponent<DisplayChoiceScript>();
             if (i % 2 == 1 && i != 0)
             {
-                _upgradeChoiceHolderList[i].transform.SetLocalPositionAndRotation(new Vector3(((_halfScreenWidth / _numberOfUpgrade) * -1 * 1.5f), 0), Quaternion.identity);
+                _upgradeChoiceHolderList[i].transform.SetLocalPositionAndRotation(new Vector3(((_halfScreenWidth / _numberOfUpgrade) * -1 * 4f), 0), Quaternion.identity);
                 displayChoiceScript.SetChoice(_upgradeOneChoice);
             }
             else if (i % 2 == 0 && i != 0)
             {
-                _upgradeChoiceHolderList[i].transform.SetLocalPositionAndRotation(new Vector3(((_halfScreenWidth / _numberOfUpgrade) * 1.5f), 0), Quaternion.identity);
+                _upgradeChoiceHolderList[i].transform.SetLocalPositionAndRotation(new Vector3(((_halfScreenWidth / _numberOfUpgrade) * 4f), 0), Quaternion.identity);
                 displayChoiceScript.SetChoice(_upgradeThreeChoice);
             }
             else
