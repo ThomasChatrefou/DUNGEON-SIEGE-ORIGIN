@@ -5,6 +5,7 @@ using UnityEngine;
 public class PeriodicWaveLauncher : MonoBehaviour
 {
     [SerializeField] private int _nbWavesToSpawn = 3;
+    [SerializeField] private float _timeBeforeFirstWave;
     [SerializeField] private float _timeBetweenWaves;
 
     [BoxGroup("Broadcast on")]
@@ -23,10 +24,18 @@ public class PeriodicWaveLauncher : MonoBehaviour
     {
         while (_currentWaveIndex < _nbWavesToSpawn)
         {
-            yield return new WaitForSeconds(_timeBetweenWaves);
+            if (_currentWaveIndex == 0)
+            {
+                yield return new WaitForSeconds(_timeBeforeFirstWave);
+            }
+            else
+            {
+                yield return new WaitForSeconds(_timeBetweenWaves);
+            }
             _launchWaveChannel.RequestRaiseEvent(_currentWaveIndex);
             _currentWaveIndex++;
         }
+
         _endOfSpawnChannel.RequestRaiseEvent();
     }
 }
