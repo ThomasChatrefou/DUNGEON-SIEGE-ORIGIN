@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WaveOptions:
   - DoSpawn: 1
-    Prefab: {fileID: 3290044505870710492, guid: 685bceea697026347a409c8165e80a1e,
+    Prefab: {fileID: 1744385130808161210, guid: 17ad5e9c3ff02544ab2127d8a8b77c0e,
       type: 3}
+  - DoSpawn: 0
+    Prefab: {fileID: 0}
   - DoSpawn: 0
     Prefab: {fileID: 0}
   - DoSpawn: 1
     Prefab: {fileID: 1744385130808161210, guid: 17ad5e9c3ff02544ab2127d8a8b77c0e,
       type: 3}
-  - DoSpawn: 0
-    Prefab: {fileID: 0}
   - DoSpawn: 1
     Prefab: {fileID: 1744385130808161210, guid: 17ad5e9c3ff02544ab2127d8a8b77c0e,
       type: 3}
