@@ -11,11 +11,9 @@ public class ObjectivePresenter : MonoBehaviour
     [SerializeField] private GameObject _objectiveVCam;
     [SerializeField] private CinemachineBrain _brain;
 
-    [EnumFlags]
     [SerializeField] private CinemachineBlendDefinition.Style _moveInBlend;
     [SerializeField] private float _moveInDuration;
 
-    [EnumFlags]
     [SerializeField] private CinemachineBlendDefinition.Style _moveOutBlend;
     [SerializeField] private float _moveOutDuration;
 

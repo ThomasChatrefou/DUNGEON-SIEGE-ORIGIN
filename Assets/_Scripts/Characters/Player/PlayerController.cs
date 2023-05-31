@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,6 +11,12 @@ public class PlayerController : MonoBehaviour
     private IWeaponUser weaponUser;
     private Vector2 direction;
 
+
+    [BoxGroup("Listens to")]
+    [SerializeField] private VoidEventChannelSO _playerDeathChannel;
+    [BoxGroup("Listens to")]
+    [SerializeField] private VoidEventChannelSO _exitLevelChannel;
+
     private void Awake()
     {
         playerInput = new PlayerAction();
@@ -19,16 +26,18 @@ public class PlayerController : MonoBehaviour
 
     private void OnEnable()
     {
-        playerInput.Enable();
-        playerInput.Player.Move.started += OnMoveStarted;
-        playerInput.Player.Move.canceled += OnMoveCanceled;
+        EnableInputs();
+
+        _playerDeathChannel.OnEventTrigger += DisableInputs;
+        _exitLevelChannel.OnEventTrigger += DisableInputs;
     }
 
     private void OnDisable()
     {
-        playerInput.Player.Move.started -= OnMoveStarted;
-        playerInput.Player.Move.canceled -= OnMoveCanceled;
-        playerInput.Disable();
+        DisableInputs();
+
+        _playerDeathChannel.OnEventTrigger -= DisableInputs;
+        _exitLevelChannel.OnEventTrigger -= DisableInputs;
     }
 
     private void Start()
@@ -64,6 +73,20 @@ public class PlayerController : MonoBehaviour
         {
             weaponUser.StartWeaponUse();
         }
+    }
+
+    private void EnableInputs()
+    {
+        playerInput.Enable();
+        playerInput.Player.Move.started += OnMoveStarted;
+        playerInput.Player.Move.canceled += OnMoveCanceled;
+    }
+
+    private void DisableInputs()
+    {
+        playerInput.Player.Move.started -= OnMoveStarted;
+        playerInput.Player.Move.canceled -= OnMoveCanceled;
+        playerInput.Disable();
     }
 
     public float GetPlayerSpeed()
