@@ -1,4 +1,5 @@
 using NaughtyAttributes;
+using System;
 using UnityEngine;
 
 public class ProtoHealth : MonoBehaviour, ICharacterHealth
@@ -7,9 +8,16 @@ public class ProtoHealth : MonoBehaviour, ICharacterHealth
 
     [Space(10)]
     [SerializeField] private bool _isDeathNotified;
-    [ShowIf("_isDeathNotified")]
+    [SerializeField] private bool _isHitNotified;
     [BoxGroup("Broadcast on")]
+    [ShowIf("_isDeathNotified")]
     [SerializeField] private VoidEventChannelSO _deathChannel;
+    [BoxGroup("Broadcast on")]
+    [ShowIf("_isHitNotified")]
+    [SerializeField] private VoidEventChannelSO _hitChannel;
+
+    //GREYBOX TO REMOVE
+    public event Action _onHitEvent;
 
     private int _currentHealth;
 
@@ -23,6 +31,14 @@ public class ProtoHealth : MonoBehaviour, ICharacterHealth
         if (!isActiveAndEnabled)
         {
             return;
+        }
+        if (_isHitNotified)
+        {
+            _hitChannel.RequestRaiseEvent();
+        }
+        if (_onHitEvent != null)
+        {
+            _onHitEvent.Invoke();
         }
 
         _currentHealth -= amount;

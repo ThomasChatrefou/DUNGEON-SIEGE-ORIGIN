@@ -34,7 +34,12 @@ public class ProtoWeapon : MonoBehaviour, IWeapon
     private void Start()
     {
         damageZoneInstance = Instantiate(damageZonePrefab, transform.position, damageZonePrefab.transform.rotation, transform);
-        damageZoneInstance.transform.localScale *= damageZoneRadius;
+        Vector3 newScale = damageZoneInstance.transform.localScale;
+        newScale.x *= damageZoneRadius / transform.localScale.x;
+        newScale.y *= damageZoneRadius / transform.localScale.y;
+        newScale.z *= damageZoneRadius / transform.localScale.z;
+        damageZoneInstance.transform.localScale = newScale;
+
         damageZoneRenderer = damageZoneInstance.GetComponent<SpriteRenderer>();
         damageZoneRenderer.color = damageZoneAlphaWhenInactive;
         //damageZoneInstance.SetActive(false);
