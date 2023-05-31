@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1744385130808160832}
   - component: {fileID: 1744385130808161211}
   - component: {fileID: 7128787821883694430}
+  - component: {fileID: 9088135220443995781}
   m_Layer: 6
   m_Name: Rusher
   m_TagString: Untagged
@@ -153,6 +154,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
+  _enemyHitEventChannel: {fileID: 11400000, guid: a5f66f8e0b6fdff41bc724eef9a8e119,
+    type: 2}
   _speed: 3
   _attackRange: 2
   _attackSpeed: 5
@@ -170,4 +173,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 3
   _isDeathNotified: 1
+  _isHitNotified: 0
   _deathChannel: {fileID: 11400000, guid: 4ffae98a4574b6040a3f772755bc44f0, type: 2}
+  _hitChannel: {fileID: 11400000, guid: a5f66f8e0b6fdff41bc724eef9a8e119, type: 2}
+--- !u!114 &9088135220443995781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1744385130808161210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4581077c1b269bb48a1e5151a2cfa4ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _protoHealth: {fileID: 7128787821883694430}
+  TakeDamageMaterial: {fileID: 2100000, guid: d0ec6cbfc0ec30246b0241f046080b02, type: 2}
