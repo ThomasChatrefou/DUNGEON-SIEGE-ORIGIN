@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1756,8 +1756,8 @@ RectTransform:
   m_GameObject: {fileID: 904884121}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1690592107}
   - {fileID: 714691080}
@@ -2117,7 +2117,7 @@ PrefabInstance:
     - target: {fileID: 6139764898137429702, guid: 42247dae4bbc9064c9b45133ead049ce,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.07689875
+      value: 0.016898572
       objectReference: {fileID: 0}
     - target: {fileID: 6139764898137429702, guid: 42247dae4bbc9064c9b45133ead049ce,
         type: 3}
@@ -2127,7 +2127,7 @@ PrefabInstance:
     - target: {fileID: 6139764898137429702, guid: 42247dae4bbc9064c9b45133ead049ce,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -17.34394
+      value: -21.132877
       objectReference: {fileID: 0}
     - target: {fileID: 6139764898137429702, guid: 42247dae4bbc9064c9b45133ead049ce,
         type: 3}
@@ -2172,17 +2172,17 @@ PrefabInstance:
     - target: {fileID: 6139764899769258661, guid: 42247dae4bbc9064c9b45133ead049ce,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.060000002
       objectReference: {fileID: 0}
     - target: {fileID: 6139764899769258661, guid: 42247dae4bbc9064c9b45133ead049ce,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 3.0101726
       objectReference: {fileID: 0}
     - target: {fileID: 6139764899769258661, guid: 42247dae4bbc9064c9b45133ead049ce,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 2.3010654
       objectReference: {fileID: 0}
     - target: {fileID: 6139764899769258662, guid: 42247dae4bbc9064c9b45133ead049ce,
         type: 3}
@@ -3532,8 +3532,8 @@ RectTransform:
   m_GameObject: {fileID: 2030168812}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 285477419}
   m_RootOrder: 2
