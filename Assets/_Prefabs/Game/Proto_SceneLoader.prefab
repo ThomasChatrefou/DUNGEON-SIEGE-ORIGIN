@@ -44,6 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d08780d5e8ab8146a00577f164c2eef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: MiniProto
+  scene: HomeMenu
   _loadSceneTriggerChannel: {fileID: 11400000, guid: 0161a2d43a5f43e4f9516484504474bd,
     type: 2}
