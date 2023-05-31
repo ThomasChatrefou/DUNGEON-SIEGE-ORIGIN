@@ -193,11 +193,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitableLayerName: Hitable
   damageZoneRadius: 3.5
-  damageZoneLifeTime: 0.4
+  damageZoneLifeTime: 0.3
   damageZoneRefinement: 20
   damages: 1
   damageZonePrefab: {fileID: 8207281649134700329, guid: 859cd34b54fe38345820d0b7cf352c51,
     type: 3}
+  damageZoneAlphaWhenInactive: {r: 1, g: 0.3433962, b: 0.3433962, a: 0.078431375}
   normalDegLatitude: 0
   normalDegLongitude: 0
   normalDisplayMagnitude: 2.8

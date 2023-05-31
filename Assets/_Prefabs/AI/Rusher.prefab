@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
-  _speed: 2.5
+  _speed: 3
   _attackRange: 2
   _attackSpeed: 5
 --- !u!195 &1744385130808160832

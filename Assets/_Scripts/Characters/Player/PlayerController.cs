@@ -7,18 +7,28 @@ public class PlayerController : MonoBehaviour
 
     protected PlayerAction playerInput;
     protected IPlayerMovement playerMovement;
-    private Vector3 playerVelocity;
     private IWeaponUser weaponUser;
+    private Vector2 direction;
 
     private void Awake()
     {
         playerInput = new PlayerAction();
         playerMovement = GetComponent<IPlayerMovement>();
         weaponUser = GetComponent<IWeaponUser>();
+    }
 
-
+    private void OnEnable()
+    {
+        playerInput.Enable();
         playerInput.Player.Move.started += OnMoveStarted;
         playerInput.Player.Move.canceled += OnMoveCanceled;
+    }
+
+    private void OnDisable()
+    {
+        playerInput.Player.Move.started -= OnMoveStarted;
+        playerInput.Player.Move.canceled -= OnMoveCanceled;
+        playerInput.Disable();
     }
 
     private void Start()
@@ -27,6 +37,12 @@ public class PlayerController : MonoBehaviour
         {
             weaponUser.StartWeaponUse();
         }
+    }
+
+    private void Update()
+    {
+        direction = playerInput.Player.Move.ReadValue<Vector2>();
+        playerMovement.Move(direction.normalized, playerSpeed);
     }
 
     private void OnMoveStarted(InputAction.CallbackContext ctx)
@@ -39,42 +55,15 @@ public class PlayerController : MonoBehaviour
 
     private void OnMoveCanceled(InputAction.CallbackContext ctx)
     {
+        if (!isActiveAndEnabled)
+        {
+            return;
+        }
+
         if (weaponUser != null)
         {
             weaponUser.StartWeaponUse();
         }
-    }
-
-    private void Update()
-    {
-        if (playerVelocity.y < 0)
-        {
-            playerVelocity.y = 0f;
-        }
-
-        Vector2 direction = playerInput.Player.Move.ReadValue<Vector2>();
-        direction.Normalize();
-
-        playerMovement.Move(direction, playerSpeed);
-
-/*        Vector3 move = new Vector3(direction.x, 0, direction.y);
-        controller.Move(move * Time.deltaTime * playerSpeed);
-
-        if (move != Vector3.zero)
-        {
-            gameObject.transform.forward = move;
-        }
-        controller.Move(playerVelocity * Time.deltaTime);
-*/    }
-
-    private void OnEnable()
-    {
-        playerInput.Enable();
-    }
-
-    private void OnDisable()
-    {
-        playerInput.Disable();
     }
 
     public float GetPlayerSpeed()

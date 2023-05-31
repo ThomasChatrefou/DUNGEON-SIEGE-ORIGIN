@@ -33,7 +33,7 @@ public class ProtoHealth : MonoBehaviour, ICharacterHealth
     }
 
     [Button]
-    private void Die()
+    public void Die()
     {
         if (_isDeathNotified)
         {

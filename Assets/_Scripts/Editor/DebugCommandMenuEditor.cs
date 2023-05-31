@@ -33,8 +33,12 @@ public class DebugCommandMenuEditor : EditorWindow
         {
             foreach (AIBaseController aiController in go.GetComponentsInChildren<AIBaseController>())
             {
-                Destroy(aiController.gameObject);
-                ++nbEnemiesKilled;
+                ICharacterHealth aiHealth = aiController.gameObject.GetComponent<ICharacterHealth>();
+                if (aiHealth != null)
+                {
+                    aiHealth.Die();
+                    ++nbEnemiesKilled;
+                }
             }
         }
         Debug.Log("Command Kill all enemies : " + nbEnemiesKilled + " enemies killed");
