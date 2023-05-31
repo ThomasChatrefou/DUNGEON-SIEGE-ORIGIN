@@ -11,6 +11,7 @@ public class MenuUI : MonoBehaviour
 
     void Start()
     {
+        transit = gameObject.GetComponent<SceneTransition>();
         HideSettings();
     }
 

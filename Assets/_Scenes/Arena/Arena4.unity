@@ -1073,9 +1073,9 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 2560, y: 1440}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -3047,7 +3047,7 @@ PrefabInstance:
     - target: {fileID: 6139764898137429702, guid: 42247dae4bbc9064c9b45133ead049ce,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.016898572
+      value: 0.016898751
       objectReference: {fileID: 0}
     - target: {fileID: 6139764898137429702, guid: 42247dae4bbc9064c9b45133ead049ce,
         type: 3}
@@ -5207,7 +5207,7 @@ PrefabInstance:
         type: 3}
       propertyPath: currentSceneData
       value: 
-      objectReference: {fileID: 11400000, guid: 35dcbfae8a899aa4db6c0652d078312b,
+      objectReference: {fileID: 11400000, guid: b1dbf58a2c1c2f642b3cf4a14da2dd14,
         type: 2}
     - target: {fileID: 4997977044625170523, guid: 90c73aaf4ce4ee04996d1e00e1eae436,
         type: 3}
@@ -5574,7 +5574,6 @@ GameObject:
   - component: {fileID: 2088608219}
   - component: {fileID: 2088608218}
   - component: {fileID: 2088608217}
-  - component: {fileID: 2088608216}
   m_Layer: 5
   m_Name: PauseButton
   m_TagString: PauseButton
@@ -5582,18 +5581,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &2088608216
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2088608215}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a63b6f9f6e8a08a4cb95dc3d1c361052, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2088608217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5637,19 +5624,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2088608218}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: InGameUI, Assembly-CSharp
-        m_MethodName: Pause
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &2088608218
 MonoBehaviour:
   m_ObjectHideFlags: 0
