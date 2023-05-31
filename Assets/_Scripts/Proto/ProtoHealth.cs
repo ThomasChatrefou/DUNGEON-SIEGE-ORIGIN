@@ -1,12 +1,6 @@
 using NaughtyAttributes;
 using UnityEngine;
 
-// [TODO] move this in another script
-public interface ICharacterHealth
-{
-    public void TakeDamage(int amount);
-}
-
 public class ProtoHealth : MonoBehaviour, ICharacterHealth
 {
     [SerializeField] private int _maxHealth = 3;
@@ -26,6 +20,11 @@ public class ProtoHealth : MonoBehaviour, ICharacterHealth
 
     public void TakeDamage(int amount)
     {
+        if (!isActiveAndEnabled)
+        {
+            return;
+        }
+
         _currentHealth -= amount;
         if (_currentHealth <= 0)
         {
@@ -34,7 +33,7 @@ public class ProtoHealth : MonoBehaviour, ICharacterHealth
     }
 
     [Button]
-    private void Die()
+    public void Die()
     {
         if (_isDeathNotified)
         {

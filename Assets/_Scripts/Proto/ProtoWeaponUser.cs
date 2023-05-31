@@ -49,4 +49,12 @@ public class ProtoWeaponUser : MonoBehaviour, IWeaponUser
             yield return new WaitForSeconds(1.0f / attackSpeed);
         }
     }
+
+    private void OnDisable()
+    {
+        if (runningCoroutine != null)
+        {
+            StopCoroutine(runningCoroutine);
+        }
+    }
 }
