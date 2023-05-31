@@ -50,7 +50,7 @@ public class ProjectileController : MonoBehaviour
         {
             ProjectilePool.Instance.ClearOneProjectile(this.gameObject);
             //DoDamage
-            Debug.Log("touché a distance");
+            //Debug.Log("touché a distance");
             bool proHealth = other.TryGetComponent<ICharacterHealth>(out var health);
             if (proHealth)
             {
