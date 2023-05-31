@@ -35,9 +35,9 @@ public class ProtoWeapon : MonoBehaviour, IWeapon
     {
         damageZoneInstance = Instantiate(damageZonePrefab, transform.position, damageZonePrefab.transform.rotation, transform);
         Vector3 newScale = damageZoneInstance.transform.localScale;
-        newScale.x *= damageZoneRadius * transform.localScale.x;
-        newScale.y *= damageZoneRadius * transform.localScale.y;
-        newScale.z *= damageZoneRadius * transform.localScale.z;
+        newScale.x *= damageZoneRadius / transform.localScale.x;
+        newScale.y *= damageZoneRadius / transform.localScale.y;
+        newScale.z *= damageZoneRadius / transform.localScale.z;
         damageZoneInstance.transform.localScale = newScale;
 
         damageZoneRenderer = damageZoneInstance.GetComponent<SpriteRenderer>();
