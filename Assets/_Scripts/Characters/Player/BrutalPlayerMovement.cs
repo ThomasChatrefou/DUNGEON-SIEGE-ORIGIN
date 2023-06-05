@@ -1,114 +1,57 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BrutalPlayerMovement : MonoBehaviour, IPlayerMovement
 {
-    private Vector3 _stepMovement = Vector3.zero;
-    private bool[] _isConstrained = new bool[2] { false, false };
-    private Vector3[] _constraintNormals = new Vector3[2] { Vector3.zero, Vector3.zero };
-    private bool _isBlocked => _isConstrained[0] && _isConstrained[1];
+    private Dictionary<Collider, Vector3> _contactNormalByColliderHitMap = new();
 
     public void Move(Vector2 direction, float playerSpeed)
     {
-        _stepMovement = playerSpeed * Time.deltaTime * Vector3.Normalize(new Vector3(direction.x, 0, direction.y));
-        
-        Vector3 constrainedStep = _stepMovement;
-        if (_isBlocked)
+        Vector3 stepMovement = playerSpeed * Time.fixedDeltaTime * Vector3.Normalize(new Vector3(direction.x, 0, direction.y));
+
+        int nbConstraints = _contactNormalByColliderHitMap.Count;
+        if (nbConstraints == 1 || nbConstraints == 2)
         {
-            float proj0 = Vector3.Dot(_stepMovement, _constraintNormals[0]);
-            float proj1 = Vector3.Dot(_stepMovement, _constraintNormals[1]);
+            Dictionary<Collider, Vector3>.Enumerator enumerator = _contactNormalByColliderHitMap.GetEnumerator();
+            enumerator.MoveNext();
+            Vector3 firstConstraint = enumerator.Current.Value;
 
-            if (proj0 < 0 && proj1 < 0)
+            if (nbConstraints == 1)
             {
-                return;
+                stepMovement = Convex2DCollisionHandler.ComputeConstrainedMove(stepMovement, firstConstraint);
             }
-
-            if (proj0 < 0)
+            else
             {
-                constrainedStep -= proj0 * _constraintNormals[0];
-            }
-            if (proj1 < 0)
-            {
-                constrainedStep -= proj1 * _constraintNormals[1];
+                enumerator.MoveNext();
+                Vector3 secondConstraint = enumerator.Current.Value;
+                stepMovement = Convex2DCollisionHandler.ComputeConstrainedMove(stepMovement, firstConstraint, secondConstraint);
             }
         }
-
-        if (_isConstrained[0])
+        else if (nbConstraints > 2)
         {
-            float proj = Vector3.Dot(_stepMovement, _constraintNormals[0]);
-            if (proj < 0)
-            {
-                constrainedStep -=  proj * _constraintNormals[0];
-            }
-        }
-        if (_isConstrained[1])
-        {
-            float proj = Vector3.Dot(_stepMovement, _constraintNormals[1]);
-            if (proj < 0)
-            {
-                constrainedStep -= proj * _constraintNormals[1];
-            }
+            Debug.LogWarning("MOVE : unhandled constraint state, more than 2 constraints applied on move");
         }
 
-        transform.position += constrainedStep;
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        if (_isBlocked)
-        {
-            if (Vector3.Dot(_stepMovement, _constraintNormals[0]) > 0)
-            {
-                _isConstrained[0] = false;
-                _constraintNormals[0] = Vector3.zero;
-            }
-            if (Vector3.Dot(_stepMovement, _constraintNormals[1]) > 0)
-            {
-                _isConstrained[1] = false;
-                _constraintNormals[1] = Vector3.zero;
-            }
-            print("Exit2 : " + _isConstrained[0] + " | " + _isConstrained[1] + _stepMovement);
-            return;
-        }
-
-        if (_isConstrained[0])
-        {
-            _isConstrained[0] = false;
-            _constraintNormals[0] = Vector3.zero;
-            print("Exit1 : " + _isConstrained[0] + " | " + _isConstrained[1] + _stepMovement);
-        }
-
-        if (_isConstrained[1])
-        {
-            _isConstrained[1] = false;
-            _constraintNormals[1] = Vector3.zero;
-            print("Exit1 : " + _isConstrained[0] + " | " + _isConstrained[1] + _stepMovement);
-            return;
-        }
-
-        print("Exit0  : " + _isConstrained[0] + " | " + _isConstrained[1] + "-");
+        transform.position += stepMovement;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         Vector3 contactNormal = ComputeContactNormalMean(collision);
-
-        if (_isBlocked)
+        if (_contactNormalByColliderHitMap.TryAdd(collision.collider, contactNormal))
         {
-            Debug.LogWarning("Player movement should not have more than 2 contraints");
-            return;
+            Debug.Log("ENTER : " + _contactNormalByColliderHitMap[collision.collider] + " | " + _contactNormalByColliderHitMap.Count);
         }
-
-        if (_isConstrained[0])
+        else
         {
-            _isConstrained[1] = true;
-            _constraintNormals[1] = contactNormal;
-            print("Enter : " + _isConstrained[0] + " | " + _isConstrained[1] + contactNormal);
-            return;
+            Debug.LogWarning("ENTER : Trying to add already colliding collider" + contactNormal);
         }
+    }
 
-        _isConstrained[0] = true;
-        _constraintNormals[0] = contactNormal;
-        print("Enter : " + _isConstrained[0] + " | " + _isConstrained[1] + contactNormal);
+    private void OnCollisionExit(Collision collision)
+    {
+        Debug.Log("EXIT   : " + _contactNormalByColliderHitMap[collision.collider] + " | " + (_contactNormalByColliderHitMap.Count - 1));
+        _contactNormalByColliderHitMap.Remove(collision.collider);
     }
 
     private Vector3 ComputeContactNormalMean(Collision collision)

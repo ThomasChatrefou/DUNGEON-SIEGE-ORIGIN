@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         direction = playerInput.Player.Move.ReadValue<Vector2>();
         playerMovement.Move(direction.normalized, playerSpeed);
