@@ -130,4 +130,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 3
   _isDeathNotified: 1
+  _isHitNotified: 0
   _deathChannel: {fileID: 11400000, guid: 4ffae98a4574b6040a3f772755bc44f0, type: 2}
+  _hitChannel: {fileID: 0}

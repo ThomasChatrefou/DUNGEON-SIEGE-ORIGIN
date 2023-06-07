@@ -12,7 +12,11 @@ public class Lava: MonoBehaviour
     {
         if (other.gameObject.CompareTag("Character"))
         {
-            dealDamage = StartCoroutine(DealDamagePerSecond());
+            ICharacterHealth healthComponant = other.gameObject.GetComponent<ICharacterHealth>();
+            if (healthComponant != null)
+            {
+                dealDamage = StartCoroutine(DealDamagePerSecond(healthComponant));
+            }
         }
     }
 
@@ -24,10 +28,11 @@ public class Lava: MonoBehaviour
         }
     }
 
-    IEnumerator DealDamagePerSecond()
+    IEnumerator DealDamagePerSecond(ICharacterHealth _healthComponant)
     {
         while (true)
         {
+            _healthComponant.TakeDamage(damage);
             // Call for the function to take damage
             Debug.Log("deal damage");
             yield return new WaitForSeconds(timeBetweenTwoTick);
