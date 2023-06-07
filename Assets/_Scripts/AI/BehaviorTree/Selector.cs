@@ -9,7 +9,7 @@ public class Selector : IBehaviorNode
     public Selector(params IBehaviorNode[] nodes)
     {
         _childNodes.AddRange(nodes);
-        Debug.Log(_childNodes.Count);
+        //Debug.Log(_childNodes.Count);
     }
     public bool Evaluate()
     {

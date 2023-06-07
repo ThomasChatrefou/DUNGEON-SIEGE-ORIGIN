@@ -13,7 +13,7 @@ public class KiterStrategy : IBehaviorTree
 
     private NavMeshAgent _agent;
     private Transform _target;
-    private float _deltaRange = 3f;
+    private float _deltaRange = 1f;
     private float _attackrange = 30;
     private float _projectileSpeed = 3;
     private float _projectileLifeTime = 15;
