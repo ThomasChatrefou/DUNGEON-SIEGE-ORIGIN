@@ -48,6 +48,16 @@ public class ProtoHealth : MonoBehaviour, ICharacterHealth
         }
     }
 
+    public int GetCurrentHealth()
+    {
+        return _currentHealth;
+    }
+
+    public int GetMaxHealth()
+    {
+        return _maxHealth;
+    }
+
     [Button]
     public void Die()
     {
