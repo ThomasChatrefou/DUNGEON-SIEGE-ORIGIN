@@ -51,7 +51,7 @@ public class MoveToTargetStrategy : IBehaviorTree
             }
             else
             {
-                _navMeshMouvNode = new NavMeshMove(_target, _agent, _speed);
+                //_navMeshMouvNode = new NavMeshMove(_target, _agent, _speed);
             }
             mouvState = _navMeshMouvNode.Execute();
 

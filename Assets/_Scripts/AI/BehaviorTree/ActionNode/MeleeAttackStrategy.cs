@@ -8,6 +8,7 @@ public class MeleeAttackStrategy : IBehaviorNode
     private int _damage =1; // ça n'a rien a foutre la 
     private Transform _target;
     private bool _attackSucceeded;
+    BlackBoard _blackBoard;
     public MeleeAttackStrategy(Transform target)
     {
         this._target = target;
@@ -36,5 +37,13 @@ public class MeleeAttackStrategy : IBehaviorNode
     public IBehaviorNode.NodeState Stop()
     {
         return IBehaviorNode.NodeState.Success;
+    }
+    public bool Evaluate()
+    {
+        return true;
+    }
+    public void SetBlackBoard(BlackBoard bb)
+    {
+        _blackBoard = bb;
     }
 }
