@@ -24,7 +24,7 @@ public class NodeNavMeshCoord : IBehaviorNode
         
     }
 
-    public IBehaviorNode.NodeState Execute()
+    public void Execute()
     {
         if( _agent !=null)
         {         
@@ -34,13 +34,13 @@ public class NodeNavMeshCoord : IBehaviorNode
             _mouvementSuccess = true;
             if (_mouvementSuccess)
             {
-                return IBehaviorNode.NodeState.Success;
+                
             }           
         }
-        return IBehaviorNode.NodeState.Failure;
+        
 
     }
-    public IBehaviorNode.NodeState Stop()
+    public void Stop()
     {
        
         _agent.speed = 0;   
@@ -48,9 +48,9 @@ public class NodeNavMeshCoord : IBehaviorNode
         _mouvementSuccess = true;
         if (_mouvementSuccess)
         {
-            return IBehaviorNode.NodeState.Success;
+           
         }
-        else return IBehaviorNode.NodeState.Failure;
+      
     }
     public bool Evaluate()
     {

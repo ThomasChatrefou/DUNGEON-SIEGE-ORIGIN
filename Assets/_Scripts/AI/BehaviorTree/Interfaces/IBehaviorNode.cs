@@ -7,13 +7,8 @@ public interface IBehaviorNode
 {
     bool Evaluate();
     
-    public enum NodeState
-    {
-        Running,
-        Success,
-        Failure
-    }
-    NodeState Execute();
-    NodeState Stop();
+   
+    void Execute();
+    void Stop();
     public void SetBlackBoard(BlackBoard board);
 }

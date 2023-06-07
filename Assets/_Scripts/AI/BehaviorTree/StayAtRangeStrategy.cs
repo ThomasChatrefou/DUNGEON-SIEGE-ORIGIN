@@ -57,11 +57,9 @@ public class StayAtRangeStrategy : IBehaviorTree
 
                 if (Time.time - _lastAttackTime >= _attackCooldown)
                 {
-                    IBehaviorNode.NodeState attackState = _attackNode.Execute();
-                    if (attackState == IBehaviorNode.NodeState.Success)
-                    {
-                        _lastAttackTime = Time.time;
-                    }
+                    _attackNode.Execute();                   
+                    _lastAttackTime = Time.time;
+                    
                 }
             }
             else if (distanceToTarget > _attackrange)

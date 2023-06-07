@@ -37,7 +37,7 @@ public class TurretStrategy : IBehaviorTree
         {
             if (Time.time - _lastAttackTime >= _attackCooldown)
             {
-                IBehaviorNode.NodeState attackState = _attackNode.Execute();
+                _attackNode.Execute();
                 _attackSucceeded = true;
                 if (_attackSucceeded)
                 {                 

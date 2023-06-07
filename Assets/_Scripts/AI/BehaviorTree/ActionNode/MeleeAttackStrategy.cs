@@ -15,7 +15,7 @@ public class MeleeAttackStrategy : IBehaviorNode
         this._attackSucceeded = false;
     }
 
-    public IBehaviorNode.NodeState Execute()
+    public void Execute()
     {
         if (_target != null)
         {
@@ -28,15 +28,15 @@ public class MeleeAttackStrategy : IBehaviorNode
             }
             if (_attackSucceeded)
             {              
-                return IBehaviorNode.NodeState.Success;
+               
             }
           
         }
-        return IBehaviorNode.NodeState.Failure;
+        
     }
-    public IBehaviorNode.NodeState Stop()
+    public void Stop()
     {
-        return IBehaviorNode.NodeState.Success;
+        
     }
     public bool Evaluate()
     {

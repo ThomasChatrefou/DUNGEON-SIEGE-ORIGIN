@@ -24,14 +24,14 @@ public class RangeAttackStrategy : IBehaviorNode
         
     }
 
-    public IBehaviorNode.NodeState Execute()
+    public void Execute()
     {
         //Debug.Log("execute attack");
         if (_target != null)
         {
             
                 //fire logic
-                Debug.DrawLine(_entityTransform.transform.position, _target.position, Color.red, 3f);
+                //Debug.DrawLine(_entityTransform.transform.position, _target.position, Color.red, 3f);
 
                 // object pooling in projectile pool
                 GameObject projectile = ProjectilePool.Instance.GetProjectile();
@@ -45,11 +45,11 @@ public class RangeAttackStrategy : IBehaviorNode
               
             
         }
-        return IBehaviorNode.NodeState.Failure;
+       
     }
-    public IBehaviorNode.NodeState Stop()
+    public void Stop()
     {
-        return IBehaviorNode.NodeState.Success;
+        
     }
     public bool Evaluate()
     {

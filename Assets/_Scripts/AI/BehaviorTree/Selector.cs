@@ -13,37 +13,24 @@ public class Selector : IBehaviorNode
     }
     public bool Evaluate()
     {
-        foreach(IBehaviorNode node in _childNodes)
-        {
-            if(node.Evaluate())
-            {
-                Debug.Log("on rentre dans evaluate : "+node.ToString());
-                node.Execute();
-                return true;
-            }
-        }
-        return false;
+        return true;
     }
-    public IBehaviorNode.NodeState Execute()
+    public void Execute()
     {
-        foreach(IBehaviorNode node in _childNodes)
+        foreach (IBehaviorNode node in _childNodes)
         {
             if (node.Evaluate())
             {
-                Debug.Log("on rentre dans un execute "+node.ToString());
+                //Debug.Log("on rentre dans evaluate : "+node.ToString());
                 node.Execute();
-               
-                return IBehaviorNode.NodeState.Success;
+                
             }
-            
-            return IBehaviorNode.NodeState.Failure;
         }
         
-        return IBehaviorNode.NodeState.Failure;
     }
-    public IBehaviorNode.NodeState Stop()
+    public void Stop()
     {
-        return IBehaviorNode.NodeState.Success;
+        
     }
     public void SetBlackBoard(BlackBoard bb)
     {

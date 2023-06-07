@@ -29,15 +29,15 @@ public class KiterMovetoPlayer : IBehaviorNode
         _speed = _blackBoard.GetVariable<float>("speed");
         _navMeshMove = new NavMeshMove(_target, _agent, _speed);
     }
-    public IBehaviorNode.NodeState Execute()
+    public void Execute()
     {
         //Debug.Log("on rentre dans execute de movetoplayer");
         _navMeshMove.Execute();
-        return IBehaviorNode.NodeState.Success;
+        
     }
-    public IBehaviorNode.NodeState Stop()
+    public void Stop()
     {
-        return IBehaviorNode.NodeState.Success;
+        
     }
     public bool Evaluate()
     {      

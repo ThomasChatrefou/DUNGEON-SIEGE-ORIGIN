@@ -49,7 +49,7 @@ public class AtRangeNode : IBehaviorNode
         //Debug.Log("At range False");
         return false;
     }
-    public IBehaviorNode.NodeState Execute()
+    public void Execute()
     {
         _stopMoveNode.Stop();
         if (Time.time - _lastAttackTime >= _attackCooldown)
@@ -58,16 +58,12 @@ public class AtRangeNode : IBehaviorNode
             _lastAttackTime = Time.time;
             _attackNode.Execute();
             _attackSucceeded = true;
-            if (_attackSucceeded)
-            {
-                return IBehaviorNode.NodeState.Success;
-
-            }
+            
         }
-        return IBehaviorNode.NodeState.Failure;
+        
     }
-    public IBehaviorNode.NodeState Stop()
+    public void Stop()
     {
-        return IBehaviorNode.NodeState.Success;
+        
     }
 }

@@ -21,17 +21,17 @@ public class Sequence : IBehaviorNode
         }
         return true;
     }
-    public IBehaviorNode.NodeState Execute()
+    public void Execute()
     {
         foreach(IBehaviorNode node in _childNodes)
         {
-            return node.Execute();
+            node.Execute();
         }
-        return IBehaviorNode.NodeState.Success;
+       
     }
-    public IBehaviorNode.NodeState Stop()
+    public void Stop()
     {
-        return IBehaviorNode.NodeState.Success;
+        
     }
     public void SetBlackBoard(BlackBoard bb)
     {

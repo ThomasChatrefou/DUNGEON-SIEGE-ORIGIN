@@ -13,10 +13,10 @@ public class KiterStrategy : IBehaviorTree
 
     private NavMeshAgent _agent;
     private Transform _target;
-    private float _deltaRange = 1;
+    private float _deltaRange = 3f;
     private float _attackrange = 30;
     private float _projectileSpeed = 3;
-    private float _projectileLifeTime = 4;
+    private float _projectileLifeTime = 15;
     private float _speed = 3;
     private float _attackCooldown=3;
     private float _lastAttackTime;
@@ -50,8 +50,8 @@ public class KiterStrategy : IBehaviorTree
     
     public void Execute(Transform entityTransform)
     {
-        root.Evaluate();      
-        //root.Execute();
+        //root.Evaluate();      
+        root.Execute();
 
     }
     

@@ -30,21 +30,21 @@ public class MoveBackNode : IBehaviorNode
         _speed = _blackBoard.GetVariable<float>("speed");
         _navMeshMove = new NodeNavMeshCoord(bb);
     }
-    public IBehaviorNode.NodeState Execute()
+    public void Execute()
     {
         _direction = _target.position - _entityTransform.position;
         _direction.y = 0;
         Vector3 destination = _entityTransform.position - _direction.normalized;
         _navMeshMove.Target = destination;
-        Debug.Log(_direction.magnitude+" " +_target.position+" "+_entityTransform.position);
+        //Debug.Log(_direction.magnitude+" " +_target.position+" "+_entityTransform.position);
 
         
         _navMeshMove.Execute();
-        return IBehaviorNode.NodeState.Success;
+        
     }
-    public IBehaviorNode.NodeState Stop()
+    public void Stop()
     {
-        return IBehaviorNode.NodeState.Success;
+        
     }
     public bool Evaluate()
     {
