@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3478167057047468376}
   - component: {fileID: 5248333124143286884}
   - component: {fileID: 5248333122905272385}
+  - component: {fileID: 6982400624264888926}
   - component: {fileID: 8687792955410925935}
   - component: {fileID: 8687792955410925936}
   - component: {fileID: 8687792955410925937}
@@ -149,6 +150,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb59a5282278c5b43bb39ba6b6352131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6982400624264888926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5248333124143286909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6918a46ffbd61f4a8a9e1a2fbe3e251, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8687792955410925935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,16 +192,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitableLayerName: Hitable
-  damageZoneRadius: 3.5
-  damageZoneLifeTime: 0.3
-  damageZoneRefinement: 20
   damages: 1
+  damageZoneLifeTime: 0.3
+  damageZoneRadius: 3.5
+  damageZoneRefinement: 20
   damageZonePrefab: {fileID: 8207281649134700329, guid: 859cd34b54fe38345820d0b7cf352c51,
     type: 3}
   damageZoneAlphaWhenInactive: {r: 1, g: 0.3433962, b: 0.3433962, a: 0.078431375}
-  normalDegLatitude: 0
-  normalDegLongitude: 0
-  normalDisplayMagnitude: 2.8
 --- !u!114 &8687792955410925937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,8 +211,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6e2e25d57a14d4c9dd9bda00f29b85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackSpeed: 1
-  weaponTransform: {fileID: 5248333124143286887}
+  _attackSpeed: 0
+  _damages: 0
+  _weapon: {fileID: 0}
 --- !u!114 &3346002878405884995
 MonoBehaviour:
   m_ObjectHideFlags: 0

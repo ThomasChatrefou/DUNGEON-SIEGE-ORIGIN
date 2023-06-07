@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06da3fa2c2a3fc0448098a391b8fbd9a, type: 3}
   m_Name: Player
   m_EditorClassIdentifier: 
-  health: 100
-  healthMax: 100
-  damages: 5
-  movementSpeed: 1
-  attackSpeed: 1
-  mesh: {fileID: 0}
-  weapon: {fileID: 0}
+  Health: 3
+  HealthMax: 3
+  Damages: 1
+  MovementSpeed: 5
+  AttackSpeed: 1
+  Mesh: {fileID: 0}

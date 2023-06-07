@@ -11,7 +11,6 @@ public class PlayerController : MonoBehaviour
     private IWeaponUser weaponUser;
     private Vector2 direction;
 
-
     [BoxGroup("Listens to")]
     [SerializeField] private VoidEventChannelSO _playerDeathChannel;
     [BoxGroup("Listens to")]
