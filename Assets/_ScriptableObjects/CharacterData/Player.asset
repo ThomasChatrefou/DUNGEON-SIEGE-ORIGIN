@@ -16,5 +16,5 @@ MonoBehaviour:
   HealthMax: 3
   Damages: 1
   MovementSpeed: 5
-  AttackSpeed: 1
+  AttackSpeed: 0.5
   Mesh: {fileID: 0}

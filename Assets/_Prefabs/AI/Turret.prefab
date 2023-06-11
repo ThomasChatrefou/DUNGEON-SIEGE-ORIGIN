@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: -6869512549145657924}
   m_Layer: 6
   m_Name: Turret
-  m_TagString: Untagged
+  m_TagString: AI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -212,6 +212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
+  _enemyHitEventChannel: {fileID: 0}
   _attackSpeed: 4
   _projectileSpeed: 7
   _projectileLifeTime: 15
@@ -229,7 +230,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 2
   _isDeathNotified: 1
+  _isHitNotified: 0
   _deathChannel: {fileID: 11400000, guid: 4ffae98a4574b6040a3f772755bc44f0, type: 2}
+  _hitChannel: {fileID: 0}
 --- !u!54 &-6869512549145657924
 Rigidbody:
   m_ObjectHideFlags: 0

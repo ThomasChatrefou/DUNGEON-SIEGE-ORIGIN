@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: SpellBookAbility
   m_EditorClassIdentifier: 
   children:
-  - {fileID: 11400000, guid: 73f8172fe1e91184c813d30c7ce56ab8, type: 2}
   - {fileID: 11400000, guid: df7080639e0fa8a4c962bd888bcfa458, type: 2}
+  - {fileID: 11400000, guid: 84c2508a4fb8cac4ebe0dfab34873610, type: 2}
+  - {fileID: 11400000, guid: 73f8172fe1e91184c813d30c7ce56ab8, type: 2}

@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 9056894664265916977}
   m_Layer: 6
   m_Name: TurretDownScale
-  m_TagString: Untagged
+  m_TagString: AI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -211,6 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
+  _enemyHitEventChannel: {fileID: 0}
   _attackSpeed: 4
   _projectileSpeed: 7
   _projectileLifeTime: 15
@@ -228,4 +229,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 2
   _isDeathNotified: 1
+  _isHitNotified: 0
   _deathChannel: {fileID: 11400000, guid: 4ffae98a4574b6040a3f772755bc44f0, type: 2}
+  _hitChannel: {fileID: 0}

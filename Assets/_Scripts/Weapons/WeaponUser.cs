@@ -15,13 +15,15 @@ public class WeaponUser : MonoBehaviour, IWeaponUser
 
     private void Start()
     {
-        _weaponVisuals = Instantiate(_weaponData.AbilityVisualEffectPrefab, transform);
-        Vector3 newScale = _weaponVisuals.transform.localScale;
-        newScale.x *= _weaponData.Range / transform.localScale.x;
-        newScale.y *= _weaponData.Range / transform.localScale.y;
-        newScale.z *= _weaponData.Range / transform.localScale.z;
-        _weaponVisuals.transform.localScale = newScale;
-        _weaponAbilityVisualEffect = _weaponVisuals.GetComponent<IAbilityVisualEffect>();
+        if (_weaponData.AbilityVisualEffectPrefab != null)
+        {
+            _weaponVisuals = Instantiate(_weaponData.AbilityVisualEffectPrefab, transform);
+        
+            _weaponAbilityVisualEffect = _weaponVisuals.GetComponentInChildren<IAbilityVisualEffect>();
+
+            IRescaler weaponEffectRescaler = _weaponVisuals.GetComponentInChildren<IRescaler>();
+            weaponEffectRescaler?.Rescale(_weaponData.Range);
+        }
         
         _damages = _weaponData.Damages + _characterData.Damages;
         _attackSpeed = _weaponData.AttackSpeed + _characterData.AttackSpeed;
@@ -56,6 +58,7 @@ public class WeaponUser : MonoBehaviour, IWeaponUser
             AbilityBlackboard abilitydata = new()
             {
                 Caster = transform,
+                Targets = new(),
                 VisualEffect = _weaponAbilityVisualEffect,
                 Damages = _damages,
                 Range = _weaponData.Range

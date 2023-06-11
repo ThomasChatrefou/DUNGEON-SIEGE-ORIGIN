@@ -1,11 +1,15 @@
+using NaughtyAttributes;
 using System.Collections;
 using UnityEngine;
 
+[ExecuteInEditMode]
 [RequireComponent(typeof(SpriteRenderer))]
 public class SpriteChangeColorEffect : MonoBehaviour, IAbilityVisualEffect
 {
     [SerializeField] private float _playDuration = 0.4f;
+    [OnValueChanged("DisplayPlayColor")]
     [SerializeField] private Color _playColor = Color.white;
+    [OnValueChanged("DisplayPreviewColor")]
     [SerializeField] private Color _previewColor;
 
     private SpriteRenderer _renderer;
@@ -26,5 +30,18 @@ public class SpriteChangeColorEffect : MonoBehaviour, IAbilityVisualEffect
     public void Play()
     {
         StartCoroutine(ChangeSpriteColorForPlayDuration());
+    }
+
+    [Button]
+    private void DisplayPlayColor()
+    {
+        _renderer.color = _playColor;
+
+    }
+
+    [Button]
+    private void DisplayPreviewColor()
+    {
+        _renderer.color = _previewColor;
     }
 }
