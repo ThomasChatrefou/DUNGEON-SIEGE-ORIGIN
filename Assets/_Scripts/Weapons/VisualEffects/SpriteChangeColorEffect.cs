@@ -35,6 +35,10 @@ public class SpriteChangeColorEffect : MonoBehaviour, IAbilityVisualEffect
     [Button]
     private void DisplayPlayColor()
     {
+        if (_renderer == null)
+        {
+            _renderer = GetComponent<SpriteRenderer>();
+        }
         _renderer.color = _playColor;
 
     }
@@ -42,6 +46,10 @@ public class SpriteChangeColorEffect : MonoBehaviour, IAbilityVisualEffect
     [Button]
     private void DisplayPreviewColor()
     {
+        if (_renderer == null)
+        {
+            _renderer = GetComponent<SpriteRenderer>();
+        }
         _renderer.color = _previewColor;
     }
 }

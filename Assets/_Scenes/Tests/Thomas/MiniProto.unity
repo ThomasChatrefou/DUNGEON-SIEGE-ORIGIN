@@ -3206,7 +3206,7 @@ PrefabInstance:
     - target: {fileID: 1937929690477609749, guid: 7fd7baef5f4cb1a4eac5c92f9a4c6a66,
         type: 3}
       propertyPath: _nbWavesToSpawn
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1937929690477609749, guid: 7fd7baef5f4cb1a4eac5c92f9a4c6a66,
         type: 3}
@@ -3531,14 +3531,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4347801599905000734, guid: 127471c57cae8fa449322af96e79296e,
         type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000,
+        type: 0}
+    - target: {fileID: 4347801599905000734, guid: 127471c57cae8fa449322af96e79296e,
+        type: 3}
       propertyPath: m_Name
       value: PLAYER
       objectReference: {fileID: 0}
+    - target: {fileID: 7779843334727222998, guid: 127471c57cae8fa449322af96e79296e,
+        type: 3}
+      propertyPath: _data
+      value: 
+      objectReference: {fileID: 11400000, guid: 65fbae804fc9c984cbaa4d55ccc2bdad,
+        type: 2}
     - target: {fileID: 8395745100085094166, guid: 127471c57cae8fa449322af96e79296e,
         type: 3}
       propertyPath: _weaponData
       value: 
-      objectReference: {fileID: 11400000, guid: d764cf70ad9ae234992ecd39bcab30e1,
+      objectReference: {fileID: 11400000, guid: 89a55d2ae80f3ac43b6eaa43dc9873fb,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 127471c57cae8fa449322af96e79296e, type: 3}

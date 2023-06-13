@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 06da3fa2c2a3fc0448098a391b8fbd9a, type: 3}
-  m_Name: Enemy 3
+  m_Name: AIBossData
   m_EditorClassIdentifier: 
-  health: 10
-  healthMax: 10
-  damages: 5
-  movementSpeed: 1.5
-  attackSpeed: 2
+  health: 20
+  healthMax: 20
+  damages: 10
+  movementSpeed: 1
+  attackSpeed: 0.5
   mesh: {fileID: 0}
   weapon: {fileID: 0}

@@ -3,55 +3,59 @@ using UnityEngine;
 
 public class WeaponUser : MonoBehaviour, IWeaponUser
 {
-    [SerializeField] private CharacterDataSO _characterData;
-    [SerializeField] private WeaponDataSO _weaponData;
-
-    private Coroutine runningCoroutine = null;
+    private CharacterDataManager _characterDataManager;
     private GameObject _weaponVisuals;
     private IAbilityVisualEffect _weaponAbilityVisualEffect;
-
+    private Coroutine _runningCoroutine = null;
     private float _damages;
     private float _attackSpeed;
-
-    private void Start()
-    {
-        if (_weaponData.AbilityVisualEffectPrefab != null)
-        {
-            _weaponVisuals = Instantiate(_weaponData.AbilityVisualEffectPrefab, transform);
-        
-            _weaponAbilityVisualEffect = _weaponVisuals.GetComponentInChildren<IAbilityVisualEffect>();
-
-            IRescaler weaponEffectRescaler = _weaponVisuals.GetComponentInChildren<IRescaler>();
-            weaponEffectRescaler?.Rescale(_weaponData.Range);
-        }
-        
-        _damages = _weaponData.Damages + _characterData.Damages;
-        _attackSpeed = _weaponData.AttackSpeed + _characterData.AttackSpeed;
-    }
+    private float _range;
+    private IAbility _ability;
 
     public void StartWeaponUse()
     {
-        if (runningCoroutine == null)
-        {
-            runningCoroutine = StartCoroutine(HandleUseWeapon());
-        }
+        if (_runningCoroutine != null) return;
+        _runningCoroutine = StartCoroutine(HandleUseWeapon());
     }
 
     public void StopWeaponUse()
     {
-        if (runningCoroutine != null)
+        if (_runningCoroutine == null) return;
+        StopCoroutine(_runningCoroutine);
+        _runningCoroutine = null;
+    }
+
+    private void Awake()
+    {
+        _characterDataManager = GetComponent<CharacterDataManager>();
+        CharacterDataSO data = _characterDataManager.Data;
+        _damages = data.Weapon.Damages + data.BaseDamages;
+        _attackSpeed = data.Weapon.AttackSpeed + data.BaseAttackSpeed;
+        _range = data.Weapon.Range + data.BaseRange;
+        _ability = data.Weapon.Ability;
+    }
+
+    private void Start()
+    {
+        WeaponDataSO weapon = _characterDataManager.Data.Weapon;
+        if (weapon.AbilityVisualEffectPrefab != null)
         {
-            StopCoroutine(runningCoroutine);
-            runningCoroutine = null;
+            _weaponVisuals = Instantiate(weapon.AbilityVisualEffectPrefab, transform);
+            _weaponAbilityVisualEffect = _weaponVisuals.GetComponentInChildren<IAbilityVisualEffect>();
+            IRescaler weaponEffectRescaler = _weaponVisuals.GetComponentInChildren<IRescaler>();
+            weaponEffectRescaler?.Rescale(weapon.Range);
         }
+    }
+
+    private void OnDisable()
+    {
+        if (_runningCoroutine == null) return;
+        StopCoroutine(_runningCoroutine);
     }
 
     private IEnumerator HandleUseWeapon()
     {
-        if (Mathf.Abs(_attackSpeed) < Mathf.Epsilon)
-        {
-            yield break;
-        }
+        if (Mathf.Abs(_attackSpeed) < Mathf.Epsilon) yield break;
 
         while (true)
         {
@@ -61,18 +65,10 @@ public class WeaponUser : MonoBehaviour, IWeaponUser
                 Targets = new(),
                 VisualEffect = _weaponAbilityVisualEffect,
                 Damages = _damages,
-                Range = _weaponData.Range
+                Range = _range
             };
-            _weaponData.Ability.Use(ref abilitydata);
+            _ability.Use(ref abilitydata);
             yield return new WaitForSeconds(1.0f / _attackSpeed);
-        }
-    }
-
-    private void OnDisable()
-    {
-        if (runningCoroutine != null)
-        {
-            StopCoroutine(runningCoroutine);
         }
     }
 }

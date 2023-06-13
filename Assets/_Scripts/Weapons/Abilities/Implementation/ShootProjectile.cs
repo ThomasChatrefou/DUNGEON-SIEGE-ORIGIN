@@ -14,7 +14,7 @@ public class ShootProjectile : BaseAbilitySO
         if (abilityData.Targets.Count == 0) return;
 
         // [TODO] create a pool for this projectile
-        GameObject projectileGO = Instantiate(_projectilePrefab, abilityData.Caster.position, _projectilePrefab.transform.rotation, abilityData.Caster);
+        GameObject projectileGO = Instantiate(_projectilePrefab, abilityData.Caster.position, _projectilePrefab.transform.rotation);
         LogicSenderProjectile projectile = projectileGO.GetComponent<LogicSenderProjectile>();
         if (projectile != null)
         {
