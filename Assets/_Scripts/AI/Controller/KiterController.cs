@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(NavMeshAgent))]
+[RequireComponent(typeof(NavMeshAgent), typeof(CharacterDataManager))]
 public class KiterController : AIBaseController
 {
     [SerializeField] private float _speed = 3;
