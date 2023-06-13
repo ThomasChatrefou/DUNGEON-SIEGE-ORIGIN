@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06da3fa2c2a3fc0448098a391b8fbd9a, type: 3}
   m_Name: AIRusherData
   m_EditorClassIdentifier: 
-  health: 20
-  healthMax: 20
-  damages: 2
-  movementSpeed: 1
-  attackSpeed: 1
-  mesh: {fileID: 0}
-  weapon: {fileID: 0}
+  MaxHealth: 3
+  MovementSpeed: 3
+  BaseDamages: 2
+  BaseAttackSpeed: 0.5
+  BaseRange: 0.7
+  Weapon: {fileID: 0}
+  CharacterLook: {fileID: 0}
