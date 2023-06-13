@@ -17,9 +17,10 @@ GameObject:
   - component: {fileID: 9143382118792348012}
   - component: {fileID: 9174743785065597616}
   - component: {fileID: 293470529339929295}
+  - component: {fileID: -8867959400488616808}
   m_Layer: 6
   m_Name: Kiter
-  m_TagString: AI
+  m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -191,3 +192,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TakeDamageMaterial: {fileID: 2100000, guid: d0ec6cbfc0ec30246b0241f046080b02, type: 2}
+--- !u!114 &-8867959400488616808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3290044505870710492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17cd7287292287f429d0d23649c94e73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -10,27 +10,19 @@ public class Lava: MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Character"))
+        LavaInteraction lavaInteractionComponent = other.gameObject.GetComponent<LavaInteraction>();
+        if (lavaInteractionComponent != null)
         {
-            dealDamage = StartCoroutine(DealDamagePerSecond());
+            lavaInteractionComponent.StartDotCoroutine(damage, timeBetweenTwoTick);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Character"))
+        LavaInteraction lavaInteractionComponent = other.gameObject.GetComponent<LavaInteraction>();
+        if (lavaInteractionComponent != null)
         {
-            StopCoroutine(dealDamage);
-        }
-    }
-
-    IEnumerator DealDamagePerSecond()
-    {
-        while (true)
-        {
-            // Call for the function to take damage
-            Debug.Log("deal damage");
-            yield return new WaitForSeconds(timeBetweenTwoTick);
+            lavaInteractionComponent.StopDotCoroutine();
         }
     }
 }

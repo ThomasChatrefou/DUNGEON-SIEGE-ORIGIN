@@ -430,7 +430,7 @@ MonoBehaviour:
   childContainer: {fileID: 0}
   _somebodySpawnedChannel: {fileID: 11400000, guid: b019ce02f8f377746ae460a160bf7c83,
     type: 2}
-  _spawnerDataSO: {fileID: 11400000, guid: 21083ecf074b3df4a8943ee0afa1e4d4, type: 2}
+  _spawnerDataSO: {fileID: 11400000, guid: 27d34bc35702edf4cbb1843af294069c, type: 2}
   _launchWaveChannel: {fileID: 11400000, guid: 358ebba6f77ec9043928989c7af4f875, type: 2}
 --- !u!1 &8959659450176522701
 GameObject:

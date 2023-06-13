@@ -25,13 +25,11 @@ public class InGameUI : MonoBehaviour
     private void ShowDeathScreen()
     {
         deathScreen.SetActive(true);
-        Debug.Log("Show death screen");
     }
 
     public void HideDeathScreen()
     {
         deathScreen.SetActive(false);
-        Debug.Log("Hide death screen");
     }
 
 
