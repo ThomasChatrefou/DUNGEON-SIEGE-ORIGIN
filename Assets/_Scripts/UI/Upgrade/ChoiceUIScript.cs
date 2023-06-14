@@ -11,6 +11,8 @@ public class ChoiceUIScript : MonoBehaviour
     [SerializeField] List<GameObject> _twoChoiceList = new List<GameObject>();
     [SerializeField] GameObject _threeChoice;
     [SerializeField] List<GameObject> _threeChoiceList = new List<GameObject>();
+    [SerializeField] float _fadeTimer;
+    [SerializeField] GameObject _backgroundGO;
     [BoxGroup("Listen to")]
     [SerializeField] VoidEventChannelSO _launchLevelTransitionChannel;
     [Scene]
@@ -38,8 +40,14 @@ public class ChoiceUIScript : MonoBehaviour
 
     private void StartLevelTransition()
     {
+        _backgroundGO.SetActive(true);
+        StartCoroutine(BackgroundFadeIn());
+    }
 
+    private void AfterFade()
+    {
         _twoChoice.SetActive(true);
+        StartCoroutine(TwoChoiceFadeIn());
         for (int i = 0; i < NumberOfFirstChoice; i++)
         {
             DisplayChoiceScript displayChoiceScript = _twoChoiceList[i].GetComponent<DisplayChoiceScript>();
@@ -61,6 +69,8 @@ public class ChoiceUIScript : MonoBehaviour
 
     public void ChoseTrade()
     {
+        StartCoroutine(TwoChoiceFadeIn());
+        StartCoroutine(TwoChoiceFadeOut());
         for (int i = 0; i < NumberOfTradeChoice; i++)
         {
             DisplayChoiceScript displayChoiceScript = _twoChoiceList[i].GetComponent<DisplayChoiceScript>();
@@ -86,8 +96,11 @@ public class ChoiceUIScript : MonoBehaviour
 
     public void ChoseUpgrade()
     {
+        StartCoroutine(TwoChoiceFadeOut());
         _twoChoice.SetActive(false);
         _threeChoice.SetActive(true);
+        StartCoroutine(ThreeChoiceFadeIn());
+
         for (int i = 0; i < NumberOfUpgradeChoice; i++)
         {
             DisplayChoiceScript displayChoiceScript = _threeChoiceList[i].GetComponent<DisplayChoiceScript>();
@@ -115,4 +128,76 @@ public class ChoiceUIScript : MonoBehaviour
         _launchLevelTransitionChannel.OnEventTrigger -= StartLevelTransition;
     }
 
+
+    private IEnumerator BackgroundFadeIn()
+    {
+        Image _backgroundImage = _backgroundGO.GetComponent<Image>();
+        for (float i = 0; i <= _fadeTimer; i += Time.fixedDeltaTime)
+        {
+            _backgroundImage.color = new Color(0, 0, 0, i);
+            yield return new WaitForSeconds(Time.fixedDeltaTime);
+        }        
+        yield return new WaitForEndOfFrame();
+        AfterFade();
+    }
+
+    private IEnumerator TwoChoiceFadeIn()
+    {
+        Image ChoiceOneImage = _twoChoiceList[0].GetComponentInChildren<Image>();
+        Image ChoiceTwoImage = _twoChoiceList[1].GetComponentInChildren<Image>();
+
+        for (float i = 0; i <= _fadeTimer / 2; i += Time.fixedDeltaTime)
+        {
+            ChoiceOneImage.color = new Color(1, 1, 1, i);
+            ChoiceTwoImage.color = new Color(1, 1, 1, i);
+            yield return new WaitForSeconds(Time.fixedDeltaTime);
+        }
+        yield return new WaitForEndOfFrame();
+    }
+
+    private IEnumerator TwoChoiceFadeOut()
+    {
+        Image ChoiceOneImage = _twoChoiceList[0].GetComponentInChildren<Image>();
+        Image ChoiceTwoImage = _twoChoiceList[1].GetComponentInChildren<Image>();
+
+        for (float i = 0; i >= _fadeTimer / 2; i -= Time.fixedDeltaTime)
+        {
+            ChoiceOneImage.color = new Color(1, 1, 1, i);
+            ChoiceTwoImage.color = new Color(1, 1, 1, i);
+            yield return new WaitForSeconds(Time.fixedDeltaTime);
+        }
+        yield return new WaitForEndOfFrame();
+    }
+
+    private IEnumerator ThreeChoiceFadeIn()
+    {
+        Image ChoiceOneImage = _threeChoiceList[0].GetComponentInChildren<Image>();
+        Image ChoiceTwoImage = _threeChoiceList[1].GetComponentInChildren<Image>();
+        Image ChoiceThreeImage = _threeChoiceList[2].GetComponentInChildren<Image>();
+
+        for (float i = 0; i <= _fadeTimer / 2; i += Time.fixedDeltaTime)
+        {
+            ChoiceOneImage.color = new Color(1, 1, 1, i);
+            ChoiceTwoImage.color = new Color(1, 1, 1, i);
+            ChoiceThreeImage.color = new Color(1, 1, 1, i);
+            yield return new WaitForSeconds(Time.fixedDeltaTime);
+        }
+        yield return new WaitForEndOfFrame();
+    }
+
+    private IEnumerator ThreeChoiceFadeOut()
+    {
+        Image ChoiceOneImage = _threeChoiceList[0].GetComponentInChildren<Image>();
+        Image ChoiceTwoImage = _threeChoiceList[1].GetComponentInChildren<Image>();
+        Image ChoiceThreeImage = _threeChoiceList[2].GetComponentInChildren<Image>();
+
+        for (float i = 0; i >= _fadeTimer / 2; i -= Time.fixedDeltaTime)
+        {
+            ChoiceOneImage.color = new Color(1, 1, 1, i);
+            ChoiceTwoImage.color = new Color(1, 1, 1, i);
+            ChoiceThreeImage.color = new Color(1, 1, 1, i);
+            yield return new WaitForSeconds(Time.fixedDeltaTime);
+        }
+        yield return new WaitForEndOfFrame();
+    }
 }
