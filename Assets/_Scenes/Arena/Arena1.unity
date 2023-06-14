@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: a256c5f06060ea24a8ec1b70155e645e, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 31f3ab21da562094581644faee5cee54, type: 2}
 --- !u!1 &46827675
 GameObject:
   m_ObjectHideFlags: 0
@@ -3169,7 +3169,7 @@ PrefabInstance:
         type: 3}
       propertyPath: currentSceneData
       value: 
-      objectReference: {fileID: 11400000, guid: 35dcbfae8a899aa4db6c0652d078312b,
+      objectReference: {fileID: 11400000, guid: 0042efe59862bd84a9ac0916740bd6c3,
         type: 2}
     - target: {fileID: 4997977044625170523, guid: 90c73aaf4ce4ee04996d1e00e1eae436,
         type: 3}
@@ -3763,11 +3763,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 657672407}
     - target: {fileID: 2113135803, guid: 066fd20c7ec28ba4990eb764a6183685, type: 3}
-      propertyPath: childContainer
-      value: 
-      objectReference: {fileID: 657672407}
-    - target: {fileID: 4950829476391719447, guid: 066fd20c7ec28ba4990eb764a6183685,
-        type: 3}
       propertyPath: childContainer
       value: 
       objectReference: {fileID: 657672407}
