@@ -7,10 +7,11 @@ public class MenuUI : MonoBehaviour
     [SerializeField] public GameObject settingsPanel;
     [SerializeField] public GameObject menuPanel;
     [SerializeField] public GameObject weaponsPanel;
-    SceneTransition transit = new SceneTransition();
+    SceneTransition transit;
 
     void Start()
     {
+        transit = gameObject.GetComponent<SceneTransition>();
         HideSettings();
     }
 

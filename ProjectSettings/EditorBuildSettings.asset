@@ -6,20 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Scenes/HomeMenu.unity
-    guid: 086e9c4f6e8b98c41b3e2a5b31386ad0
-  - enabled: 0
-    path: Assets/_Scenes/Tests/Thomas/FirstBuildTest.unity
-    guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 0
-    path: Assets/_Scenes/MiniProto.unity
-    guid: a5fa6339e71613e46a0906099547b39b
-  - enabled: 0
-    path: Assets/_Scenes/Tests/Thomas/MiniProto.unity
-    guid: 3a8b26dcda699f849b1c7e09ae43aeb5
+    path: Assets/_Scenes/Tutorial/Tutorial 1.unity
+    guid: a014523125727594cba3dca10f2d1037
   - enabled: 1
-    path: Assets/_Scenes/Beta/ProtoBeta.unity
-    guid: 4dd58313a1fb0ee439f89227a6c77d00
+    path: Assets/_Scenes/Tutorial/Tutorial 2.unity
+    guid: 5a9187742d3033c45b66b3828dbf291a
+  - enabled: 1
+    path: Assets/_Scenes/Tutorial/Tutorial 3.unity
+    guid: c02f6837923ffc34ab591138f2eeb1a8
+  - enabled: 1
+    path: Assets/_Scenes/Tutorial/Tutorial 4.unity
+    guid: 880db324be27f3f42a123e244d1e13d1
+  - enabled: 1
+    path: Assets/_Scenes/Menu/HomeMenu.unity
+    guid: 086e9c4f6e8b98c41b3e2a5b31386ad0
   - enabled: 1
     path: Assets/_Scenes/Arena/Arena1.unity
     guid: 303d3df9164e59a479bc74489dca94b0

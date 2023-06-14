@@ -1,10 +1,12 @@
+using NaughtyAttributes;
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class ProjectileController : MonoBehaviour
 {
+    [Tag]
+    [SerializeField] private string _targetTag = "Player";
+
     private int _damage = 1; // ça n'a rien a foutre la 
     private float _speed;
     private float _lifeTime;
@@ -46,11 +48,11 @@ public class ProjectileController : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag =="Player")
+        if (other.CompareTag(_targetTag))
         {
             ProjectilePool.Instance.ClearOneProjectile(this.gameObject);
             //DoDamage
-            Debug.Log("touché a distance");
+            //Debug.Log("touché a distance");
             bool proHealth = other.TryGetComponent<ICharacterHealth>(out var health);
             if (proHealth)
             {

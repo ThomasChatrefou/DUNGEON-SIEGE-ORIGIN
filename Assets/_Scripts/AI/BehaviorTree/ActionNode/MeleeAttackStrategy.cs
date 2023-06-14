@@ -19,7 +19,7 @@ public class MeleeAttackStrategy : IBehaviorNode
     {
         if (_target != null)
         {
-            Debug.Log("touché");
+            //Debug.Log("touché");
             bool proHealth = _target.gameObject.TryGetComponent<ICharacterHealth>(out var health);
             if (proHealth)
             {

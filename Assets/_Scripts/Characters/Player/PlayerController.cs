@@ -1,55 +1,65 @@
+using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(CharacterDataManager))]
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float playerSpeed = 2.0f;
+    [BoxGroup("Listens to")]
+    [SerializeField] private VoidEventChannelSO _playerDeathChannel;
+    [BoxGroup("Listens to")]
+    [SerializeField] private VoidEventChannelSO _exitLevelChannel;
 
-    protected PlayerAction playerInput;
-    protected IPlayerMovement playerMovement;
-    private IWeaponUser weaponUser;
-    private Vector2 direction;
+    private CharacterDataManager _characterDataManager;
+    private PlayerAction _playerInput;
+    private IPlayerMovement _playerMovement;
+    private IWeaponUser _weaponUser;
+    private float _playerSpeed;
 
     private void Awake()
     {
-        playerInput = new PlayerAction();
-        playerMovement = GetComponent<IPlayerMovement>();
-        weaponUser = GetComponent<IWeaponUser>();
+        _characterDataManager = GetComponent<CharacterDataManager>();
+        _playerInput = new PlayerAction();
+        _playerMovement = GetComponent<IPlayerMovement>();
+        _weaponUser = GetComponent<IWeaponUser>();
+        _playerSpeed = _characterDataManager.Data.MovementSpeed;
     }
 
     private void OnEnable()
     {
-        playerInput.Enable();
-        playerInput.Player.Move.started += OnMoveStarted;
-        playerInput.Player.Move.canceled += OnMoveCanceled;
+        EnableInputs();
+
+        _playerDeathChannel.OnEventTrigger += DisableInputs;
+        _exitLevelChannel.OnEventTrigger += DisableInputs;
     }
 
     private void OnDisable()
     {
-        playerInput.Player.Move.started -= OnMoveStarted;
-        playerInput.Player.Move.canceled -= OnMoveCanceled;
-        playerInput.Disable();
+        DisableInputs();
+
+        _playerDeathChannel.OnEventTrigger -= DisableInputs;
+        _exitLevelChannel.OnEventTrigger -= DisableInputs;
     }
 
     private void Start()
     {
-        if (weaponUser != null)
+        if (_weaponUser != null)
         {
-            weaponUser.StartWeaponUse();
+            _weaponUser.StartWeaponUse();
         }
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        direction = playerInput.Player.Move.ReadValue<Vector2>();
-        playerMovement.Move(direction.normalized, playerSpeed);
+        Vector3 inputDirection = _playerInput.Player.Move.ReadValue<Vector2>();
+        _playerMovement.Move(inputDirection.normalized, _playerSpeed);
     }
 
     private void OnMoveStarted(InputAction.CallbackContext ctx)
     {
-        if (weaponUser != null)
+        if (_weaponUser != null)
         {
-            weaponUser.StopWeaponUse();
+            _weaponUser.StopWeaponUse();
         }
     }
 
@@ -60,19 +70,33 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        if (weaponUser != null)
+        if (_weaponUser != null)
         {
-            weaponUser.StartWeaponUse();
+            _weaponUser.StartWeaponUse();
         }
+    }
+
+    private void EnableInputs()
+    {
+        _playerInput.Enable();
+        _playerInput.Player.Move.started += OnMoveStarted;
+        _playerInput.Player.Move.canceled += OnMoveCanceled;
+    }
+
+    private void DisableInputs()
+    {
+        _playerInput.Player.Move.started -= OnMoveStarted;
+        _playerInput.Player.Move.canceled -= OnMoveCanceled;
+        _playerInput.Disable();
     }
 
     public float GetPlayerSpeed()
     {
-        return playerSpeed;
+        return _playerSpeed;
     }
 
     public void SetPlayerSpeed(float _speed)
     {
-        playerSpeed = _speed;
+        _playerSpeed = _speed;
     }
 }

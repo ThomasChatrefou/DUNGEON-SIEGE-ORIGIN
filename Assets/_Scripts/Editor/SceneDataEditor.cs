@@ -144,6 +144,7 @@ public class SceneDataEditor : EditorWindow
             _sceneData.EnemiesType.Add(pair.Key);
             _sceneData.EnemiesCount.Add(pair.Value);
         }
+        EditorUtility.SetDirty(_sceneData);
 
         // Need this otherwise new sceneData display is not updated until we select it.
         Selection.activeObject = _sceneData;

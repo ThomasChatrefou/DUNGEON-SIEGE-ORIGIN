@@ -32,6 +32,11 @@ public class KilledEnemiesCounter : MonoBehaviour
         {
             _objective += currentSceneData.EnemiesCount[i];
         }
+
+        if (_count >= _objective)
+        {
+            _mapClearedChannel.RequestRaiseEvent();
+        }
     }
 
     private void IncrementKilledEnemiesCount()

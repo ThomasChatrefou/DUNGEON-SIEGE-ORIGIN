@@ -7,9 +7,11 @@ using UnityEngine.UI;
 public class ChoiceUIScript : MonoBehaviour
 {
     [SerializeField] GameObject _upgradeChoiceHolder;
-    [SerializeField] int _numberOfUpgrade = 3;
-    [SerializeField] int _numberOfChoice = 2;
-    [SerializeField] int _numberOfWeaponTradable = 2;
+    [SerializeField] GameObject _twoChoice;
+    [SerializeField] List<GameObject> _twoChoiceList = new List<GameObject>();
+    [SerializeField] GameObject _threeChoice;
+    [SerializeField] List<GameObject> _threeChoiceList = new List<GameObject>();
+    [BoxGroup("Listen to")]
     [SerializeField] VoidEventChannelSO _launchLevelTransitionChannel;
     [Scene]
     [SerializeField] string _sceneToLoad;
@@ -24,63 +26,44 @@ public class ChoiceUIScript : MonoBehaviour
     [SerializeField] Choice _upgradeTwoChoice;
     [SerializeField] Choice _upgradeThreeChoice;
 
-    float _halfScreenWidth;
-    List<GameObject> _upgradeChoiceHolderList = new List<GameObject>();
-    float _offset = 0;
+    //Constants
+    const int NumberOfFirstChoice = 2;
+    const int NumberOfTradeChoice = 2;
+    const int NumberOfUpgradeChoice = 3;
 
     private void OnEnable()
     {
         _launchLevelTransitionChannel.OnEventTrigger += StartLevelTransition;
     }
 
-    // Start is called before the first frame update
-    private void Awake()
-    {
-        _halfScreenWidth = Screen.width / 2;
-    }
-
     private void StartLevelTransition()
     {
-        for (int i = 0; i < _numberOfChoice; i++)
+
+        _twoChoice.SetActive(true);
+        for (int i = 0; i < NumberOfFirstChoice; i++)
         {
-            _upgradeChoiceHolderList.Add(Instantiate(_upgradeChoiceHolder, transform, false));
-            DisplayChoiceScript displayChoiceScript = _upgradeChoiceHolderList[i].GetComponent<DisplayChoiceScript>();
-            if (i % 2 == 0)
+            DisplayChoiceScript displayChoiceScript = _twoChoiceList[i].GetComponent<DisplayChoiceScript>();
+            switch (i)
             {
-
-                _upgradeChoiceHolderList[i].transform.SetLocalPositionAndRotation(new Vector3((_halfScreenWidth / _numberOfChoice) * -1, 0), Quaternion.identity);
-                displayChoiceScript.SetChoice(_tradeWeaponChoice);
-                displayChoiceScript.SetChoiceType(EChoiceType.TRADESETUP);
-            }
-            else
-            {
-
-                _upgradeChoiceHolderList[i].transform.SetLocalPositionAndRotation(new Vector3((_halfScreenWidth / _numberOfChoice), 0), Quaternion.identity);
-                displayChoiceScript.SetChoice(_upgradeWeaponChoice);
-                displayChoiceScript.SetChoiceType(EChoiceType.UPGRADESETUP);
+                case 0:
+                    displayChoiceScript.SetChoice(_tradeWeaponChoice);
+                    displayChoiceScript.SetChoiceType(EChoiceType.TRADESETUP);
+                    break;
+                case 1:
+                    displayChoiceScript.SetChoice(_upgradeWeaponChoice);
+                    displayChoiceScript.SetChoiceType(EChoiceType.UPGRADESETUP);
+                    break;
+                default:
+                    break;
             }
         }
     }
 
     public void ChoseTrade()
     {
-        foreach (GameObject gameObject in _upgradeChoiceHolderList)
+        for (int i = 0; i < NumberOfTradeChoice; i++)
         {
-            Destroy(gameObject);
-        }
-        _upgradeChoiceHolderList.Clear();
-        for (int i = 0; i < _numberOfWeaponTradable; i++)
-        {
-            _upgradeChoiceHolderList.Add(Instantiate(_upgradeChoiceHolder, transform, false));
-            DisplayChoiceScript displayChoiceScript = _upgradeChoiceHolderList[i].GetComponent<DisplayChoiceScript>();
-            if (i % 2 == 0)
-            {
-                _upgradeChoiceHolderList[i].transform.SetLocalPositionAndRotation(new Vector3((_halfScreenWidth / _numberOfChoice) * -1, 0), Quaternion.identity);
-            }
-            else
-            {
-                _upgradeChoiceHolderList[i].transform.SetLocalPositionAndRotation(new Vector3((_halfScreenWidth / _numberOfChoice), 0), Quaternion.identity);
-            }
+            DisplayChoiceScript displayChoiceScript = _twoChoiceList[i].GetComponent<DisplayChoiceScript>();
             int randomChoice = Random.Range(1, 3);
             switch (randomChoice)
             {
@@ -103,29 +86,24 @@ public class ChoiceUIScript : MonoBehaviour
 
     public void ChoseUpgrade()
     {
-        foreach (GameObject gameObject in _upgradeChoiceHolderList)
+        _twoChoice.SetActive(false);
+        _threeChoice.SetActive(true);
+        for (int i = 0; i < NumberOfUpgradeChoice; i++)
         {
-            Destroy(gameObject);
-        }
-        _upgradeChoiceHolderList.Clear();
-        for (int i = 0; i < _numberOfUpgrade; i++)
-        {
-            _upgradeChoiceHolderList.Add(Instantiate(_upgradeChoiceHolder, transform, false));
-            DisplayChoiceScript displayChoiceScript = _upgradeChoiceHolderList[i].GetComponent<DisplayChoiceScript>();
-            if (i % 2 == 1 && i != 0)
+            DisplayChoiceScript displayChoiceScript = _threeChoiceList[i].GetComponent<DisplayChoiceScript>();
+            switch (i)
             {
-                _upgradeChoiceHolderList[i].transform.SetLocalPositionAndRotation(new Vector3(((_halfScreenWidth / _numberOfUpgrade) * -1 * 1.5f), 0), Quaternion.identity);
-                displayChoiceScript.SetChoice(_upgradeOneChoice);
-            }
-            else if (i % 2 == 0 && i != 0)
-            {
-                _upgradeChoiceHolderList[i].transform.SetLocalPositionAndRotation(new Vector3(((_halfScreenWidth / _numberOfUpgrade) * 1.5f), 0), Quaternion.identity);
-                displayChoiceScript.SetChoice(_upgradeThreeChoice);
-            }
-            else
-            {
-                _upgradeChoiceHolderList[i].transform.SetLocalPositionAndRotation(new Vector3(((_halfScreenWidth + _offset) / _numberOfUpgrade) * i, 0), Quaternion.identity);
-                displayChoiceScript.SetChoice(_upgradeTwoChoice);
+                case 0:
+                    displayChoiceScript.SetChoice(_upgradeOneChoice);
+                    break;
+                case 1:
+                    displayChoiceScript.SetChoice(_upgradeTwoChoice);
+                    break;
+                case 2:
+                    displayChoiceScript.SetChoice(_upgradeThreeChoice);
+                    break;
+                default:
+                    break;
             }
             displayChoiceScript.SetChoiceType(EChoiceType.UPGRADE);
             displayChoiceScript._sceneToLoad = _sceneToLoad;
