@@ -1,26 +1,22 @@
 using System.Collections;
 using UnityEngine;
 
-// [TODO] move this in another script
-public interface IWeaponUser
-{
-    public void StartWeaponUse();
-    public void StopWeaponUse();
-}
-
 public class ProtoWeaponUser : MonoBehaviour, IWeaponUser
 {
     // Variable that should belong to a SO
-    [SerializeField] private float attackSpeed = 1.0f;
+    [SerializeField] private float _attackSpeed;
+    [SerializeField] private int _damages;
 
-    [SerializeField] private Transform weaponTransform;
-    private IWeapon weapon;
+    [SerializeField] private WeaponDataSO _weapon;
+    private GameObject _weaponVisuals;
+    private IAbilityVisualEffect _weaponAbilityVisualEffect;
 
     private Coroutine runningCoroutine = null;
 
-    private void Awake()
+    private void Start()
     {
-        weapon = weaponTransform.GetComponent<IWeapon>();
+        _weaponVisuals = Instantiate(_weapon.AbilityVisualEffectPrefab, transform);
+        _weaponAbilityVisualEffect = _weaponVisuals.GetComponent<IAbilityVisualEffect>();
     }
 
     public void StartWeaponUse()
@@ -42,11 +38,21 @@ public class ProtoWeaponUser : MonoBehaviour, IWeaponUser
 
     public IEnumerator HandleUseWeapon()
     {
+        if (Mathf.Abs(_attackSpeed) < Mathf.Epsilon)
+        {
+            yield break;
+        }
+
         while (true)
         {
-            // 
-            weapon.Use();
-            yield return new WaitForSeconds(1.0f / attackSpeed);
+            AbilityBlackboard abilitydata = new()
+            {
+                Caster = transform,
+                Damages = _damages,
+                VisualEffect = _weaponAbilityVisualEffect
+            };
+            _weapon.Ability.Use(ref abilitydata);
+            yield return new WaitForSeconds(1.0f / _attackSpeed);
         }
     }
 

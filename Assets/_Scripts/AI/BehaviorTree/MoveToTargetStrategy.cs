@@ -31,29 +31,28 @@ public class MoveToTargetStrategy : IBehaviorTree
         if (_target != null)
         {
 
-            IBehaviorNode.NodeState mouvState;
+           
             //Debug.Log(_target.position);
             float distanceToTarget = Vector3.Distance(entityTransform.position, _target.position);
             if (distanceToTarget <= _attackRange)
             {
                
-                mouvState = _navMeshMouvNode.Stop();
+                _navMeshMouvNode.Stop();
                 if (Time.time - _lastAttackTime >= _attackCooldown)
                 {
                     //Debug.Log(_agent.isStopped + " " + distanceToTarget);
-                    IBehaviorNode.NodeState attackState = _attackNode.Execute();
-                    if (attackState == IBehaviorNode.NodeState.Success)
-                    {
+                    _attackNode.Execute();
+                    
                         _lastAttackTime = Time.time;
-                    }
+                    
                 }
                
             }
             else
             {
-                _navMeshMouvNode = new NavMeshMove(_target, _agent, _speed);
+                //_navMeshMouvNode = new NavMeshMove(_target, _agent, _speed);
             }
-            mouvState = _navMeshMouvNode.Execute();
+            _navMeshMouvNode.Execute();
 
         }
 

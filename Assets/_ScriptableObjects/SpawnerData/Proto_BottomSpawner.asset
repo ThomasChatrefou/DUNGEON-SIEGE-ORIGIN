@@ -16,6 +16,6 @@ MonoBehaviour:
   - DoSpawn: 1
     Prefab: {fileID: 1744385130808161210, guid: 4c9d798d96f51f14092c7ea1545d7075,
       type: 3}
-  - DoSpawn: 1
+  - DoSpawn: 0
     Prefab: {fileID: 3290044505870710492, guid: f4cf0644149087643a396928a7b22f31,
       type: 3}

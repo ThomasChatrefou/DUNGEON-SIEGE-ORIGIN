@@ -1,6 +1,6 @@
 using UnityEngine;
 
-// /!\/!\ WIP /!\/!\ For now, only use weapon in Proto floder
+// /!\/!\ WIP /!\/!\ For now, only use weapon in Proto folder
 public class WeaponData : ScriptableObject
 {
     public int Damages;

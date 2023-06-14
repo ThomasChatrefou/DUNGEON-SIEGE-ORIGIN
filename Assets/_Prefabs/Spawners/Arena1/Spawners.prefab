@@ -96,7 +96,7 @@ MonoBehaviour:
   childContainer: {fileID: 0}
   _somebodySpawnedChannel: {fileID: 11400000, guid: b019ce02f8f377746ae460a160bf7c83,
     type: 2}
-  _spawnerDataSO: {fileID: 11400000, guid: b83b5758f7c8e9242ad41904447322a3, type: 2}
+  _spawnerDataSO: {fileID: 11400000, guid: 5e69e7b47f905ca479694539f2e4ed8d, type: 2}
   _launchWaveChannel: {fileID: 11400000, guid: 358ebba6f77ec9043928989c7af4f875, type: 2}
 --- !u!1 &4950829476114433959
 GameObject:
@@ -194,7 +194,7 @@ MonoBehaviour:
   childContainer: {fileID: 0}
   _somebodySpawnedChannel: {fileID: 11400000, guid: b019ce02f8f377746ae460a160bf7c83,
     type: 2}
-  _spawnerDataSO: {fileID: 11400000, guid: 9228e750ca978ea48b974b8c0a5ac84e, type: 2}
+  _spawnerDataSO: {fileID: 11400000, guid: 8266100c1deb3654bb9b99e358fb5b82, type: 2}
   _launchWaveChannel: {fileID: 11400000, guid: 358ebba6f77ec9043928989c7af4f875, type: 2}
 --- !u!1 &4950829476438911509
 GameObject:

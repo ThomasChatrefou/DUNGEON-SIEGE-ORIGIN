@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 5975783942875511211}
   m_Layer: 0
   m_Name: LeftDoor
-  m_TagString: Untagged
+  m_TagString: EnvironmentCollision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -200,7 +200,7 @@ GameObject:
   - component: {fileID: 5975783942875511210}
   m_Layer: 0
   m_Name: RightDoor
-  m_TagString: Untagged
+  m_TagString: EnvironmentCollision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
