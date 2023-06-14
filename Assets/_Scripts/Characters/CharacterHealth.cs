@@ -8,10 +8,11 @@ public class CharacterHealth : MonoBehaviour, ICharacterHealth
 {
     //GREYBOX TO REMOVE
     public event Action OnHitEvent;
+    public event Action OnInvincibilityEvent;
 
     [SerializeField] private bool _isDeathNotified;
     [SerializeField] private bool _isHitNotified;
-    [SerializeField] private bool _isInInvincibleState;
+    [SerializeField] public bool _isInInvincibleState;
     [SerializeField] private float _invincibilityTime = 1.5f;
     [BoxGroup("Broadcast on")]
     [ShowIf("_isDeathNotified")]
@@ -21,7 +22,7 @@ public class CharacterHealth : MonoBehaviour, ICharacterHealth
     [SerializeField] private VoidEventChannelSO _hitChannel;
 
     private CharacterDataManager _characterDataManager;
-    private float _currentHealth;
+    [SerializeField] private float _currentHealth;
 
     public void TakeDamage(int amount)
     {
@@ -41,10 +42,11 @@ public class CharacterHealth : MonoBehaviour, ICharacterHealth
         {
             Die();
         }
-        else
+        else if(tag == "Player")
         {
             _isInInvincibleState = true;
             StartCoroutine(PlayerInvincible());
+            OnInvincibilityEvent?.Invoke();
         }
 
     }
