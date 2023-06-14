@@ -1373,6 +1373,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5093352137839235628, guid: 127471c57cae8fa449322af96e79296e,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5093352137839235628, guid: 127471c57cae8fa449322af96e79296e,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6551838384864451360, guid: 127471c57cae8fa449322af96e79296e,
+        type: 3}
+      propertyPath: _invincibilityMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: fd1bac80474f4244da101f01f72b720b, type: 2}
     - target: {fileID: 7779843334727222998, guid: 127471c57cae8fa449322af96e79296e,
         type: 3}
       propertyPath: _data
