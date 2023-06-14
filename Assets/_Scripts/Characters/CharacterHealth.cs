@@ -59,6 +59,16 @@ public class CharacterHealth : MonoBehaviour, ICharacterHealth
         Destroy(gameObject);
     }
 
+    public float GetCurrentHealth()
+    {
+        return _currentHealth;
+    }
+
+    public float GetMaxHealth()
+    {
+        return _characterDataManager.Data.MaxHealth;
+    }
+
     private void Awake()
     {
         _characterDataManager = GetComponent<CharacterDataManager>();
