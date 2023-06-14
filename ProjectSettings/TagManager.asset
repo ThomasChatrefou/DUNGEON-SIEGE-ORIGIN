@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Character
   - PauseButton
+  - EnvironmentCollision
+  - EnemiesContainer
+  - AI
   layers:
   - Default
   - TransparentFX

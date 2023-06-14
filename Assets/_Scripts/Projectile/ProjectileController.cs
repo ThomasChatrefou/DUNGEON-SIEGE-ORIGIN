@@ -1,8 +1,12 @@
+using NaughtyAttributes;
 using System.Collections;
 using UnityEngine;
 
 public class ProjectileController : MonoBehaviour
 {
+    [Tag]
+    [SerializeField] private string _targetTag = "Player";
+
     private int _damage = 1; // ça n'a rien a foutre la 
     private float _speed;
     private float _lifeTime;
@@ -44,7 +48,7 @@ public class ProjectileController : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag =="Player")
+        if (other.CompareTag(_targetTag))
         {
             ProjectilePool.Instance.ClearOneProjectile(this.gameObject);
             //DoDamage

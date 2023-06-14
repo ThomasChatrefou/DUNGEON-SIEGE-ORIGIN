@@ -1,12 +1,9 @@
-using System.Collections;
 using UnityEngine;
 
 public class Lava: MonoBehaviour
 {
     [SerializeField] private int damage;
     [SerializeField] private float timeBetweenTwoTick = 1f;
-
-    private Coroutine dealDamage = null;
 
     private void OnTriggerEnter(Collider other)
     {
