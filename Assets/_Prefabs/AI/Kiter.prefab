@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 7849432030261738435}
   - component: {fileID: 293470529339929295}
   - component: {fileID: -8867959400488616808}
+  - component: {fileID: 9041901533141217053}
   m_Layer: 6
   m_Name: Kiter
   m_TagString: AI
@@ -169,11 +170,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
-  _speed: 4
-  _attackRange: 6
-  _attackSpeed: 2
-  _projectileSpeed: 20
-  _projectileLifeTime: 4
 --- !u!114 &7849432030261738435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,5 +210,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17cd7287292287f429d0d23649c94e73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9041901533141217053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3290044505870710492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ef4c85fb45aeac41b01cee25d38edd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

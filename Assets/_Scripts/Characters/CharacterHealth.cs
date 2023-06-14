@@ -1,5 +1,6 @@
 using NaughtyAttributes;
 using System;
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterDataManager))]
@@ -10,6 +11,8 @@ public class CharacterHealth : MonoBehaviour, ICharacterHealth
 
     [SerializeField] private bool _isDeathNotified;
     [SerializeField] private bool _isHitNotified;
+    [SerializeField] private bool _isInInvincibleState;
+    [SerializeField] private float _invincibilityTime = 1.5f;
     [BoxGroup("Broadcast on")]
     [ShowIf("_isDeathNotified")]
     [SerializeField] private VoidEventChannelSO _deathChannel;
@@ -24,6 +27,8 @@ public class CharacterHealth : MonoBehaviour, ICharacterHealth
     {
         if (!isActiveAndEnabled) return;
 
+        if (_isInInvincibleState) return;
+
         if (_isHitNotified)
         {
             _hitChannel.RequestRaiseEvent();
@@ -36,6 +41,12 @@ public class CharacterHealth : MonoBehaviour, ICharacterHealth
         {
             Die();
         }
+        else
+        {
+            _isInInvincibleState = true;
+            StartCoroutine(PlayerInvincible());
+        }
+
     }
 
     [Button]
@@ -48,9 +59,25 @@ public class CharacterHealth : MonoBehaviour, ICharacterHealth
         Destroy(gameObject);
     }
 
+    public float GetCurrentHealth()
+    {
+        return _currentHealth;
+    }
+
+    public float GetMaxHealth()
+    {
+        return _characterDataManager.Data.MaxHealth;
+    }
+
     private void Awake()
     {
         _characterDataManager = GetComponent<CharacterDataManager>();
         _currentHealth = _characterDataManager.Data.MaxHealth;
+    }
+
+    IEnumerator PlayerInvincible()
+    {
+        yield return new WaitForSeconds(_invincibilityTime);
+        _isInInvincibleState = false;
     }
 }
