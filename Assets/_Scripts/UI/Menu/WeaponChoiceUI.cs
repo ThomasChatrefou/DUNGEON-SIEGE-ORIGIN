@@ -7,6 +7,8 @@ using TMPro;
 public class WeaponChoiceUI : MonoBehaviour
 {
 
+    public MenuUI menu;
+
     [SerializeField] private WeaponDataSO swordData;
     [SerializeField] private WeaponDataSO spellbookData;
     [SerializeField] private WeaponDataSO wandData;
@@ -49,7 +51,9 @@ public class WeaponChoiceUI : MonoBehaviour
         
     }
 
-    public void Test(){
-        Debug.Log("test");
+    public void ChangeWeapon()
+    {
+        /* To link here */
+        menu.WeaponsBack();
     }
 }
