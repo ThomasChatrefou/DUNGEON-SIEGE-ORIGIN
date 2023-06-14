@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 8315960100409251488, guid: 86e538caf4633b049ae1e90741005ee1,
         type: 3}
       propertyPath: m_Name
-      value: TurretDownscale
+      value: TurretDownScale
       objectReference: {fileID: 0}
     - target: {fileID: 8315960100409251503, guid: 86e538caf4633b049ae1e90741005ee1,
         type: 3}

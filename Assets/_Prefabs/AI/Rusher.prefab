@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 9088135220443995781}
   - component: {fileID: 1505427400593587440}
   - component: {fileID: -5619853530511555733}
+  - component: {fileID: 3523855243635054853}
   m_Layer: 6
   m_Name: Rusher
   m_TagString: AI
@@ -187,8 +188,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDeathNotified: 1
   _isHitNotified: 0
+  _isInInvincibleState: 0
+  _invincibilityTime: 1.5
   _deathChannel: {fileID: 11400000, guid: 4ffae98a4574b6040a3f772755bc44f0, type: 2}
   _hitChannel: {fileID: 0}
+  _currentHealth: 0
 --- !u!114 &9088135220443995781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,6 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _takeDamageMaterial: {fileID: 2100000, guid: d0ec6cbfc0ec30246b0241f046080b02, type: 2}
+  _invincibilityMaterial: {fileID: 0}
   _duration: 0.1
 --- !u!114 &1505427400593587440
 MonoBehaviour:
@@ -227,3 +232,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ef4c85fb45aeac41b01cee25d38edd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3523855243635054853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1744385130808161210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 680506f94d725ae4a810e2367bcd8257, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _destroyObjectChannel: {fileID: 11400000, guid: 4a687312c5918334bb6568fa59d8f2a3,
+    type: 2}
+  _timeForScaling: 0.2

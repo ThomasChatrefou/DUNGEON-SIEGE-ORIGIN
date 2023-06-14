@@ -10,6 +10,8 @@ public class CharacterHealth : MonoBehaviour, ICharacterHealth
     public event Action OnHitEvent;
     public event Action OnInvincibilityEvent;
 
+    public event Action OnDeathEvent;
+
     [SerializeField] private bool _isDeathNotified;
     [SerializeField] private bool _isHitNotified;
     [SerializeField] public bool _isInInvincibleState;
@@ -57,8 +59,8 @@ public class CharacterHealth : MonoBehaviour, ICharacterHealth
         if (_isDeathNotified)
         {
             _deathChannel.RequestRaiseEvent();
+            OnDeathEvent?.Invoke();
         }
-        Destroy(gameObject);
     }
 
     public float GetCurrentHealth()
