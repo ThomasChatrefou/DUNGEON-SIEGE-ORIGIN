@@ -9,11 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8654cebf9905d7469325def88fb7a70, type: 3}
-  m_Name: MagicWandWeapon
+  m_Script: {fileID: 11500000, guid: 06da3fa2c2a3fc0448098a391b8fbd9a, type: 3}
+  m_Name: CurrentPlayerData
   m_EditorClassIdentifier: 
-  Damages: 1
-  AttackSpeed: 0.5
-  Range: 5
-  Ability: {fileID: 11400000, guid: 850ce9158f9507b4c9c1bf823a15daf1, type: 2}
-  AbilityVisualEffectPrefab: {fileID: 0}
+  MaxHealth: 0
+  MovementSpeed: 0
+  BaseDamages: 0
+  BaseAttackSpeed: 0
+  BaseRange: 0
+  Weapon: {fileID: 0}
+  CharacterLook: {fileID: 0}

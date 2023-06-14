@@ -11,4 +11,9 @@ public class CharacterDataManager : MonoBehaviour
     {
         _data.Weapon = inWeapon;
     }
+
+    public void ChangeCharacter(CharacterDataSO inCharacter)
+    {
+        _data = inCharacter;
+    }
 }

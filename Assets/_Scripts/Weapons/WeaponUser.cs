@@ -43,7 +43,10 @@ public class WeaponUser : MonoBehaviour, IWeaponUser
             _weaponVisuals = Instantiate(weapon.AbilityVisualEffectPrefab, transform);
             _weaponAbilityVisualEffect = _weaponVisuals.GetComponentInChildren<IAbilityVisualEffect>();
             IRescaler weaponEffectRescaler = _weaponVisuals.GetComponentInChildren<IRescaler>();
-            weaponEffectRescaler?.Rescale(weapon.Range);
+
+            // [HOTFIX] Rescale according to player's scale to match visuals and logic
+            float newScale = weapon.Range / transform.localScale.x;
+            weaponEffectRescaler?.Rescale(newScale);
         }
     }
 
@@ -70,5 +73,17 @@ public class WeaponUser : MonoBehaviour, IWeaponUser
             _ability.Use(ref abilitydata);
             yield return new WaitForSeconds(1.0f / _attackSpeed);
         }
+    }
+
+    public float Damages
+    {
+        get { return _damages; }
+        set { _damages = value; }
+    }
+
+    public void ResetDamages()
+    {
+        CharacterDataSO data = _characterDataManager.Data;
+        _damages = data.Weapon.Damages + data.BaseDamages;
     }
 }
