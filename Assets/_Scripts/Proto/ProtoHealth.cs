@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using UnityEngine;
 
 public class ProtoHealth : MonoBehaviour, ICharacterHealth
@@ -19,14 +20,14 @@ public class ProtoHealth : MonoBehaviour, ICharacterHealth
         }
     }
 
-    public int GetCurrentHealth()
+    public float GetCurrentHealth()
     {
-        return _currentHealth;
+        return currentHealth;
     }
 
-    public int GetMaxHealth()
+    public float GetMaxHealth()
     {
-        return _maxHealth;
+        return maxHealth;
     }
 
     [Button]
