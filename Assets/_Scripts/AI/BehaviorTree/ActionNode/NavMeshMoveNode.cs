@@ -11,7 +11,7 @@ public class NavMeshMove : IBehaviorNode
     private bool _mouvementSuccess;
     private float _speed;
 
-
+    BlackBoard _blackBoard;
 
     public NavMeshMove(Transform targetTransform,NavMeshAgent agent,float speed)
     {
@@ -22,31 +22,43 @@ public class NavMeshMove : IBehaviorNode
         
     }
 
-    public IBehaviorNode.NodeState Execute()
+    public void Execute()
     {
-        if(_targetTransform != null && _agent !=null)
-        {            
+        //Debug.Log("l'ia avance");
+        if (_targetTransform != null && _agent !=null)
+        {
+            //Debug.Log("l'ia avance");
+            _agent.speed = _speed;
             _agent.isStopped = false;
             _agent.SetDestination(_targetTransform.position);
             _mouvementSuccess = true;
             if (_mouvementSuccess)
             {
-                return IBehaviorNode.NodeState.Success;
+               
             }           
         }
-        return IBehaviorNode.NodeState.Failure;
+        
 
     }
-    public IBehaviorNode.NodeState Stop()
+    public void Stop()
     {
        
         _agent.speed = 0;   
-        _agent.isStopped = true;
+        //_agent.isStopped = true;
         _mouvementSuccess = true;
         if (_mouvementSuccess)
         {
-            return IBehaviorNode.NodeState.Success;
+           
         }
-        else return IBehaviorNode.NodeState.Failure;
+       
     }
+    public bool Evaluate()
+    {
+        return true;
+    }
+    public void SetBlackBoard(BlackBoard bb)
+    {
+        _blackBoard = bb;
+    }
+    
 }

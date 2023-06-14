@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class TurretStrategy : IBehaviorTree
 {
+    BlackBoard _blackBoard;
     private Transform _target;
-
+    private bool _attackSucceeded = true;
     private float _attackRange;
     private float _attackCooldown;
     private float _lastAttackTime;
@@ -15,10 +17,16 @@ public class TurretStrategy : IBehaviorTree
 
     public TurretStrategy(Transform target, float attackCooldown, Transform entityTransform, float projectileSpeed, float projectileLifeTime)
     {
+        _blackBoard = new BlackBoard();
+        _blackBoard.SetVariable<float>("attackCooldown", attackCooldown);
+        _blackBoard.SetVariable<float>("projectileSpeed",projectileSpeed);
+        _blackBoard.SetVariable<float>("projectileLifeTime", projectileLifeTime);
+        _blackBoard.SetVariable<Transform>("target", target);
+        //Debug.Log(target + " " + attackCooldown + " " + projectileSpeed);
         _target = target;
         _attackCooldown = attackCooldown;
+        _attackNode = new RangeAttackStrategy(entityTransform, _blackBoard);
         
-        _attackNode = new RangeAttackStrategy(target, entityTransform,projectileSpeed,projectileLifeTime);
         _projectileSpeed = projectileSpeed;
         _projectileLifeTime = projectileLifeTime;
     }
@@ -29,12 +37,13 @@ public class TurretStrategy : IBehaviorTree
         {
             if (Time.time - _lastAttackTime >= _attackCooldown)
             {
-                IBehaviorNode.NodeState attackState = _attackNode.Execute();
-                if (attackState == IBehaviorNode.NodeState.Success)
-                {
+                _attackNode.Execute();
+                _attackSucceeded = true;
+                if (_attackSucceeded)
+                {                 
                     _lastAttackTime = Time.time;
                 }
-            }
+            }     
         }
     }
 }

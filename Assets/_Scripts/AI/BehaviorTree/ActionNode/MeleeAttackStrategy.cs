@@ -8,13 +8,14 @@ public class MeleeAttackStrategy : IBehaviorNode
     private int _damage =1; // ça n'a rien a foutre la 
     private Transform _target;
     private bool _attackSucceeded;
+    BlackBoard _blackBoard;
     public MeleeAttackStrategy(Transform target)
     {
         this._target = target;
         this._attackSucceeded = false;
     }
 
-    public IBehaviorNode.NodeState Execute()
+    public void Execute()
     {
         if (_target != null)
         {
@@ -27,14 +28,22 @@ public class MeleeAttackStrategy : IBehaviorNode
             }
             if (_attackSucceeded)
             {              
-                return IBehaviorNode.NodeState.Success;
+               
             }
           
         }
-        return IBehaviorNode.NodeState.Failure;
+        
     }
-    public IBehaviorNode.NodeState Stop()
+    public void Stop()
     {
-        return IBehaviorNode.NodeState.Success;
+        
+    }
+    public bool Evaluate()
+    {
+        return true;
+    }
+    public void SetBlackBoard(BlackBoard bb)
+    {
+        _blackBoard = bb;
     }
 }

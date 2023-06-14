@@ -22,7 +22,7 @@ public class StayAtRangeStrategy : IBehaviorTree
     private GameObject _myPersonalTarget;
     // [HOTFIX] End
 
-    public StayAtRangeStrategy(Transform target,NavMeshAgent agent, float attackrange, float speed, float attackCooldown,Transform entityTransform,float projectileLifeTime,float projectileSpeed)
+    public StayAtRangeStrategy(Transform target,NavMeshAgent agent, float attackrange, float speed, float attackCooldown,Transform entityTransform,float projectileLifeTime,float projectileSpeed,BlackBoard bb)
     {
         this._agent = agent;
         this._target = target;
@@ -32,7 +32,7 @@ public class StayAtRangeStrategy : IBehaviorTree
         this._speed = speed;
         this._attackCooldown = attackCooldown;
     
-        _attackNode = new RangeAttackStrategy(target, entityTransform,projectileSpeed,projectileLifeTime);
+        _attackNode = new RangeAttackStrategy(entityTransform,bb);
 
         // [HOTFIX]
         _myPersonalTarget = new GameObject("MyPersonalTarget");
@@ -57,11 +57,9 @@ public class StayAtRangeStrategy : IBehaviorTree
 
                 if (Time.time - _lastAttackTime >= _attackCooldown)
                 {
-                    IBehaviorNode.NodeState attackState = _attackNode.Execute();
-                    if (attackState == IBehaviorNode.NodeState.Success)
-                    {
-                        _lastAttackTime = Time.time;
-                    }
+                    _attackNode.Execute();                   
+                    _lastAttackTime = Time.time;
+                    
                 }
             }
             else if (distanceToTarget > _attackrange)
