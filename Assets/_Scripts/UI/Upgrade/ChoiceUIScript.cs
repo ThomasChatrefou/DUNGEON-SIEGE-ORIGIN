@@ -9,8 +9,6 @@ public class ChoiceUIScript : MonoBehaviour
     [SerializeField] GameObject _upgradeChoiceHolder;
     [SerializeField] GameObject _twoChoice;
     [SerializeField] List<GameObject> _twoChoiceList = new List<GameObject>();
-    [SerializeField] GameObject _threeChoice;
-    [SerializeField] List<GameObject> _threeChoiceList = new List<GameObject>();
     [SerializeField] float _fadeTimer;
     [SerializeField] GameObject _backgroundGO;
     [BoxGroup("Listen to")]
@@ -18,15 +16,12 @@ public class ChoiceUIScript : MonoBehaviour
     [Scene]
     [SerializeField] string _sceneToLoad;
 
-    [Header("Scriptable Object")]
-    [SerializeField] Choice _upgradeWeaponChoice;
-    [SerializeField] Choice _tradeWeaponChoice;
-    [SerializeField] Choice _swordWeaponChoice;
-    [SerializeField] Choice _staffWeaponChoice;
-    [SerializeField] Choice _bookWeaponChoice;
-    [SerializeField] Choice _upgradeOneChoice;
-    [SerializeField] Choice _upgradeTwoChoice;
-    [SerializeField] Choice _upgradeThreeChoice;
+    [Header("Sprite")]
+    [SerializeField] Sprite _tradeSprite;
+    [SerializeField] Sprite _upgradeSprite;
+    [SerializeField] Sprite _swordSprite;
+    [SerializeField] Sprite _bookSprite;
+    [SerializeField] Sprite _wandSprite;
 
     //Constants
     const int NumberOfFirstChoice = 2;
@@ -44,27 +39,28 @@ public class ChoiceUIScript : MonoBehaviour
         StartCoroutine(BackgroundFadeIn());
     }
 
-    private void AfterFade()
+    private void SetupFirstChoice()
     {
         _twoChoice.SetActive(true);
-        StartCoroutine(TwoChoiceFadeIn());
         for (int i = 0; i < NumberOfFirstChoice; i++)
         {
             DisplayChoiceScript displayChoiceScript = _twoChoiceList[i].GetComponent<DisplayChoiceScript>();
             switch (i)
             {
                 case 0:
-                    displayChoiceScript.SetChoice(_tradeWeaponChoice);
                     displayChoiceScript.SetChoiceType(EChoiceType.TRADESETUP);
+                    displayChoiceScript.SetImageSprite(_tradeSprite);
                     break;
                 case 1:
-                    displayChoiceScript.SetChoice(_upgradeWeaponChoice);
-                    displayChoiceScript.SetChoiceType(EChoiceType.UPGRADESETUP);
+                    displayChoiceScript.SetChoiceType(EChoiceType.UPGRADE);
+                    displayChoiceScript.SetImageSprite(_upgradeSprite);
+                    displayChoiceScript._sceneToLoad = _sceneToLoad;
                     break;
                 default:
                     break;
             }
         }
+        StartCoroutine(TwoChoiceFadeIn());
     }
 
     public void ChoseTrade()
@@ -78,47 +74,18 @@ public class ChoiceUIScript : MonoBehaviour
             switch (randomChoice)
             {
                 case 1:
-                    displayChoiceScript.SetChoice(_swordWeaponChoice);
+                    displayChoiceScript.SetImageSprite(_swordSprite);
                     break;
                 case 2:
-                    displayChoiceScript.SetChoice(_staffWeaponChoice);
+                    displayChoiceScript.SetImageSprite(_wandSprite);
                     break;
                 case 3:
-                    displayChoiceScript.SetChoice(_bookWeaponChoice);
+                    displayChoiceScript.SetImageSprite(_bookSprite);
                     break;
                 default:
                     break;
             }
             displayChoiceScript.SetChoiceType(EChoiceType.TRADE);
-            displayChoiceScript._sceneToLoad = _sceneToLoad;
-        }
-    }
-
-    public void ChoseUpgrade()
-    {
-        StartCoroutine(TwoChoiceFadeOut());
-        _twoChoice.SetActive(false);
-        _threeChoice.SetActive(true);
-        StartCoroutine(ThreeChoiceFadeIn());
-
-        for (int i = 0; i < NumberOfUpgradeChoice; i++)
-        {
-            DisplayChoiceScript displayChoiceScript = _threeChoiceList[i].GetComponent<DisplayChoiceScript>();
-            switch (i)
-            {
-                case 0:
-                    displayChoiceScript.SetChoice(_upgradeOneChoice);
-                    break;
-                case 1:
-                    displayChoiceScript.SetChoice(_upgradeTwoChoice);
-                    break;
-                case 2:
-                    displayChoiceScript.SetChoice(_upgradeThreeChoice);
-                    break;
-                default:
-                    break;
-            }
-            displayChoiceScript.SetChoiceType(EChoiceType.UPGRADE);
             displayChoiceScript._sceneToLoad = _sceneToLoad;
         }
     }
@@ -136,9 +103,9 @@ public class ChoiceUIScript : MonoBehaviour
         {
             _backgroundImage.color = new Color(0, 0, 0, i);
             yield return new WaitForSeconds(Time.fixedDeltaTime);
-        }        
+        }
         yield return new WaitForEndOfFrame();
-        AfterFade();
+        SetupFirstChoice();
     }
 
     private IEnumerator TwoChoiceFadeIn()
@@ -152,6 +119,10 @@ public class ChoiceUIScript : MonoBehaviour
             ChoiceTwoImage.color = new Color(1, 1, 1, i);
             yield return new WaitForSeconds(Time.fixedDeltaTime);
         }
+
+        ChoiceOneImage.color = new Color(1, 1, 1, 1);
+        ChoiceTwoImage.color = new Color(1, 1, 1, 1);
+
         yield return new WaitForEndOfFrame();
     }
 
@@ -166,38 +137,9 @@ public class ChoiceUIScript : MonoBehaviour
             ChoiceTwoImage.color = new Color(1, 1, 1, i);
             yield return new WaitForSeconds(Time.fixedDeltaTime);
         }
-        yield return new WaitForEndOfFrame();
-    }
+        ChoiceOneImage.color = new Color(1, 1, 1, 0);
+        ChoiceTwoImage.color = new Color(1, 1, 1, 0);
 
-    private IEnumerator ThreeChoiceFadeIn()
-    {
-        Image ChoiceOneImage = _threeChoiceList[0].GetComponentInChildren<Image>();
-        Image ChoiceTwoImage = _threeChoiceList[1].GetComponentInChildren<Image>();
-        Image ChoiceThreeImage = _threeChoiceList[2].GetComponentInChildren<Image>();
-
-        for (float i = 0; i <= _fadeTimer / 2; i += Time.fixedDeltaTime)
-        {
-            ChoiceOneImage.color = new Color(1, 1, 1, i);
-            ChoiceTwoImage.color = new Color(1, 1, 1, i);
-            ChoiceThreeImage.color = new Color(1, 1, 1, i);
-            yield return new WaitForSeconds(Time.fixedDeltaTime);
-        }
-        yield return new WaitForEndOfFrame();
-    }
-
-    private IEnumerator ThreeChoiceFadeOut()
-    {
-        Image ChoiceOneImage = _threeChoiceList[0].GetComponentInChildren<Image>();
-        Image ChoiceTwoImage = _threeChoiceList[1].GetComponentInChildren<Image>();
-        Image ChoiceThreeImage = _threeChoiceList[2].GetComponentInChildren<Image>();
-
-        for (float i = 0; i >= _fadeTimer / 2; i -= Time.fixedDeltaTime)
-        {
-            ChoiceOneImage.color = new Color(1, 1, 1, i);
-            ChoiceTwoImage.color = new Color(1, 1, 1, i);
-            ChoiceThreeImage.color = new Color(1, 1, 1, i);
-            yield return new WaitForSeconds(Time.fixedDeltaTime);
-        }
         yield return new WaitForEndOfFrame();
     }
 }

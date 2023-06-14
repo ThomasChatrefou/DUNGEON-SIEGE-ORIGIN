@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,19 +11,15 @@ public enum EChoiceType
     TRADE,
     UPGRADE,
     TRADESETUP,
-    UPGRADESETUP
 }
 
 public class DisplayChoiceScript : MonoBehaviour
 {
+    [SerializeField] Image _backgroundImage;
+
     public string _sceneToLoad;
-
-    [SerializeField] TextMeshProUGUI _topText;
-    [SerializeField] TextMeshProUGUI _bottomText;
-
     Choice _choice;
     EChoiceType _type = EChoiceType.NONE;
-    List<GameObject> _otherChoicesInCurrentChoice = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
@@ -54,10 +51,6 @@ public class DisplayChoiceScript : MonoBehaviour
                 Debug.Log("TradeSetup");
                 transform.GetComponentInParent<ChoiceUIScript>().ChoseTrade();
                 break;
-            case EChoiceType.UPGRADESETUP:
-                Debug.Log("UpgradeSetup");
-                transform.GetComponentInParent<ChoiceUIScript>().ChoseUpgrade();
-                break;
             default:
                 break;
         }
@@ -66,21 +59,13 @@ public class DisplayChoiceScript : MonoBehaviour
         //    Destroy(choice);
         //}
     }
-
-    public void SetChoice(Choice choice)
-    {
-        _choice = choice;
-        _topText.text = _choice.name;
-        _bottomText.text = _choice.description;
-    }
-
     public void SetChoiceType(EChoiceType choiceType)
     {
         _type = choiceType;
     }
 
-    public void AddChoice(GameObject newChoice)
+    public void SetImageSprite(Sprite newSprite)
     {
-        _otherChoicesInCurrentChoice.Add(newChoice);
+        _backgroundImage.sprite = newSprite;
     }
 }
