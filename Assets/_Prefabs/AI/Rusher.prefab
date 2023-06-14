@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 1872307244484212254}
   - component: {fileID: 9088135220443995781}
   - component: {fileID: 1505427400593587440}
+  - component: {fileID: -5619853530511555733}
   m_Layer: 6
   m_Name: Rusher
   m_TagString: AI
@@ -212,5 +213,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17cd7287292287f429d0d23649c94e73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-5619853530511555733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1744385130808161210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ef4c85fb45aeac41b01cee25d38edd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
