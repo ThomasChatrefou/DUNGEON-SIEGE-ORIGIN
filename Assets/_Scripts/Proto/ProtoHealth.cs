@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using UnityEngine;
 
 public class ProtoHealth : MonoBehaviour, ICharacterHealth
@@ -19,6 +20,17 @@ public class ProtoHealth : MonoBehaviour, ICharacterHealth
         }
     }
 
+    public float GetCurrentHealth()
+    {
+        return currentHealth;
+    }
+
+    public float GetMaxHealth()
+    {
+        return maxHealth;
+    }
+
+    [Button]
     public void Die()
     {
         Destroy(gameObject);

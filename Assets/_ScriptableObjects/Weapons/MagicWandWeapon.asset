@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damages: 1
   AttackSpeed: 0.5
-  Range: 10
+  Range: 5
   Ability: {fileID: 11400000, guid: 850ce9158f9507b4c9c1bf823a15daf1, type: 2}
   AbilityVisualEffectPrefab: {fileID: 0}

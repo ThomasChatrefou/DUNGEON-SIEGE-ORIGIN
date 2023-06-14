@@ -13,6 +13,7 @@ public class MenuUI : MonoBehaviour
     {
         transit = gameObject.GetComponent<SceneTransition>();
         HideSettings();
+        HideWeapons();
     }
 
     /* 
@@ -31,9 +32,16 @@ public class MenuUI : MonoBehaviour
 
     public void MenuWeapons()
     {
-        // HideMenu();
-        // ShowWeapons();
+        HideMenu();
+        ShowWeapons();
     }
+
+    public void WeaponsBack()
+    {
+        HideWeapons();
+        ShowMenu();
+    }
+
 
     public void SettingsReset()
     {
