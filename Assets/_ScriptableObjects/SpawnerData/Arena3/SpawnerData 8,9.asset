@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2efa1caf50ec64943a22c7e0303786b2, type: 3}
-  m_Name: SpawnerData11
+  m_Name: SpawnerData 8,9
   m_EditorClassIdentifier: 
   WaveOptions:
   - DoSpawn: 0
@@ -18,5 +18,5 @@ MonoBehaviour:
   - DoSpawn: 0
     Prefab: {fileID: 0}
   - DoSpawn: 1
-    Prefab: {fileID: 1744385130808161210, guid: 17ad5e9c3ff02544ab2127d8a8b77c0e,
+    Prefab: {fileID: 8202297556173530283, guid: 9a24b63e746f3494ebb81c13218f2b5b,
       type: 3}
