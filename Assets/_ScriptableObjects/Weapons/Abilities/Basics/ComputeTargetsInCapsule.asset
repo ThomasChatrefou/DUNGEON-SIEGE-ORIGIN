@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd760519f5a6f114f9e9ce21146b2fb6, type: 3}
   m_Name: ComputeTargetsInCapsule
   m_EditorClassIdentifier: 
-  _hitableLayerName: Hitable
+  _hitableLayerName: Enemies

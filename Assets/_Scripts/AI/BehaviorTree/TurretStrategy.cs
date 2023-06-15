@@ -1,34 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 
 public class TurretStrategy : IBehaviorTree
 {
     BlackBoard _blackBoard;
     private Transform _target;
-    private bool _attackSucceeded = true;
-    private float _attackRange;
     private float _attackCooldown;
     private float _lastAttackTime;
-    private float _projectileSpeed;
-    private float _projectileLifeTime;
     private IBehaviorNode _attackNode;
 
-    public TurretStrategy(Transform target, float attackCooldown, Transform entityTransform, float projectileSpeed, float projectileLifeTime)
+    public TurretStrategy(Transform entityTransform, Transform target, CharacterDataSO characterData, AIRangeSpecificDataSO turretData)
     {
         _blackBoard = new BlackBoard();
-        _blackBoard.SetVariable<float>("attackCooldown", attackCooldown);
-        _blackBoard.SetVariable<float>("projectileSpeed",projectileSpeed);
-        _blackBoard.SetVariable<float>("projectileLifeTime", projectileLifeTime);
+
         _blackBoard.SetVariable<Transform>("target", target);
-        //Debug.Log(target + " " + attackCooldown + " " + projectileSpeed);
+        _blackBoard.SetVariable<float>("damages", characterData.BaseDamages);
+        _blackBoard.SetVariable<float>("projectileSpeed", turretData.ProjectileSpeed);
+        _blackBoard.SetVariable<float>("projectileLifeTime", turretData.ProjectileLifeTime);
+
         _target = target;
-        _attackCooldown = attackCooldown;
+        _attackCooldown = 1.0f / characterData.BaseAttackSpeed;
         _attackNode = new RangeAttackStrategy(entityTransform, _blackBoard);
-        
-        _projectileSpeed = projectileSpeed;
-        _projectileLifeTime = projectileLifeTime;
     }
 
     public void Execute(Transform entityTransform)
@@ -38,11 +29,7 @@ public class TurretStrategy : IBehaviorTree
             if (Time.time - _lastAttackTime >= _attackCooldown)
             {
                 _attackNode.Execute();
-                _attackSucceeded = true;
-                if (_attackSucceeded)
-                {                 
-                    _lastAttackTime = Time.time;
-                }
+                _lastAttackTime = Time.time;
             }     
         }
     }

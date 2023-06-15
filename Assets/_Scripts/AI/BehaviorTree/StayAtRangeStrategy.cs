@@ -3,15 +3,16 @@ using UnityEngine.AI;
 /*
 Stay at Range and auto attack 
 */
+// [DEPRECATED]
 public class StayAtRangeStrategy : IBehaviorTree
 {
     private NavMeshAgent _agent;
     private Transform _target;
     private float _deltaRange = 1;
     private float _attackrange;
-    private float _projectileSpeed;
-    private float _projectileLifeTime;
-    private float _speed;
+    //private float _projectileSpeed;
+    //private float _projectileLifeTime;
+    //private float _speed;
     private float _attackCooldown;
     private float _lastAttackTime;
     
@@ -27,9 +28,9 @@ public class StayAtRangeStrategy : IBehaviorTree
         this._agent = agent;
         this._target = target;
         this._attackrange = attackrange;
-        this._projectileSpeed = projectileSpeed;
-        this._projectileLifeTime = projectileLifeTime;
-        this._speed = speed;
+        //this._projectileSpeed = projectileSpeed;
+        //this._projectileLifeTime = projectileLifeTime;
+        //this._speed = speed;
         this._attackCooldown = attackCooldown;
     
         _attackNode = new RangeAttackStrategy(entityTransform,bb);
@@ -63,8 +64,9 @@ public class StayAtRangeStrategy : IBehaviorTree
                 }
             }
             else if (distanceToTarget > _attackrange)
-            {              
-                _navMeshMouvNode = new NavMeshMove(_target, _agent, _speed);
+            {
+                // [DEPRECATED] NavMeshMove changed !
+                //_navMeshMouvNode = new NavMeshMove(_target, _agent, _speed);
             }
             else if (distanceToTarget < _attackrange)
             {
@@ -72,7 +74,8 @@ public class StayAtRangeStrategy : IBehaviorTree
 
                 // [HOTFIX]
                 _myPersonalTarget.transform.position = destination;
-                _navMeshMouvNode = new NavMeshMove(_myPersonalTarget.transform, _agent, _speed);
+                // [DEPRECATED] NavMeshMove changed !
+                //_navMeshMouvNode = new NavMeshMove(_myPersonalTarget.transform, _agent, _speed);
                 // [HOTFIX] End
             }
 

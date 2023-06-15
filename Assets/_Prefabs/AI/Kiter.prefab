@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 293470529339929295}
   - component: {fileID: -8867959400488616808}
   - component: {fileID: 9041901533141217053}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Kiter
   m_TagString: AI
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20afb263781ee724fb29b4b6d85618b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: {fileID: 0}
+  _kiterData: {fileID: 11400000, guid: 4852b8a840c8bc04a99663ba94093673, type: 2}
 --- !u!114 &7849432030261738435
 MonoBehaviour:
   m_ObjectHideFlags: 0

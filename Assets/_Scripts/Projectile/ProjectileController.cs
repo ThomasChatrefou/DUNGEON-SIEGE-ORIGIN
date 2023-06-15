@@ -1,65 +1,47 @@
-using NaughtyAttributes;
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class ProjectileController : MonoBehaviour
 {
-    [Tag]
-    [SerializeField] private string _targetTag = "Player";
+    private Rigidbody _rigidbody;
 
-    private int _damage = 1; // ça n'a rien a foutre la 
-    private float _speed;
-    private float _lifeTime;
-    public Vector3 Destination;
-    private Vector3 direction;
+    private float _damages;
     
-  public void Launch(float speed,float lifeTime)
+    public void Launch(Vector3 destination, float damages, float speed, float lifeTime)
     {
-        _speed = speed;
-        _lifeTime = lifeTime;
-        direction = (Destination - transform.position).normalized;
-        StartCoroutine(Projectile());
+        _damages = damages;
+        _rigidbody.isKinematic = false;
+        _rigidbody.velocity = speed * (destination - transform.position).normalized;
+        StartCoroutine(HandleLifeTime(lifeTime));
     }
 
-    private void Update()
+    private void Awake()
     {
-        if (gameObject.activeSelf)
-        {
-            transform.position += direction * _speed * Time.deltaTime;
-        }
+        _rigidbody = GetComponent<Rigidbody>();
     }
-
 
     private void OnDisable()
     {
-        _speed = 0f;
-        Destination = Vector3.zero;
+        _rigidbody.velocity = Vector3.zero;
+        _rigidbody.isKinematic = true;
         transform.position = new Vector3(1000f, 1000f, 1000f);
         gameObject.SetActive(false);
     }
-    IEnumerator Projectile()
-    {
-        
-        yield return new WaitForSeconds(_lifeTime);
-        ProjectilePool.Instance.ClearOneProjectile(this.gameObject);
 
-       
+    IEnumerator HandleLifeTime(float lifeTime)
+    {
+        yield return new WaitForSeconds(lifeTime);
+        ProjectilePool.Instance.ClearOneProjectile(this.gameObject);
         yield return null;
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag(_targetTag))
-        {
-            ProjectilePool.Instance.ClearOneProjectile(this.gameObject);
-            //DoDamage
-            //Debug.Log("touché a distance");
-            bool proHealth = other.TryGetComponent<ICharacterHealth>(out var health);
-            if (proHealth)
-            {
-                health.TakeDamage(_damage);
-            }
-            
 
+    private void OnCollisionEnter(Collision other)
+    {
+        ProjectilePool.Instance.ClearOneProjectile(this.gameObject);
+        if (other.gameObject.TryGetComponent<ICharacterHealth>(out var health))
+        {
+            health.TakeDamage(_damages);
         }
     }
 }

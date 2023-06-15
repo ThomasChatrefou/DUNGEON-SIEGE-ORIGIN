@@ -4,14 +4,14 @@ using UnityEngine;
 public class ProtoHealth : MonoBehaviour, ICharacterHealth
 {
     [SerializeField] private int maxHealth = 3;
-    private int currentHealth;
+    private float currentHealth;
 
     private void Start()
     {
         currentHealth = maxHealth;
     }
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(float amount)
     {
         currentHealth -= amount;
         if (currentHealth <= 0)

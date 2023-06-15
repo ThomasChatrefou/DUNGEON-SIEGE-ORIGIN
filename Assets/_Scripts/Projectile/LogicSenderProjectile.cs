@@ -1,6 +1,7 @@
 using NaughtyAttributes;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class LogicSenderProjectile : MonoBehaviour
 {
     [Tag]
@@ -8,36 +9,22 @@ public class LogicSenderProjectile : MonoBehaviour
     [Tag]
     [SerializeField] private string _senderTag;
 
+    private Rigidbody _rigidbody;
     private BaseAbilitySO _logicToSend;
     private AbilityBlackboard _dataToSend;
-    private Vector3 _direction;
-    private float _speed;
 
     public void Shoot(BaseAbilitySO logicToSend, AbilityBlackboard dataToSend, Vector3 direction, float speed)
     {
         _logicToSend = logicToSend;
         _dataToSend = dataToSend;
-        _direction = direction;
-        _speed = speed;
+        _rigidbody.velocity = speed * direction;
     }
 
-    private void Update()
+    private void Awake()
     {
-        transform.position += _direction * _speed * Time.deltaTime;
+        _rigidbody = GetComponent<Rigidbody>();
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-
-        if (other.transform.CompareTag(_senderTag)) return;
-        if (other.transform.CompareTag(_targetTag))
-        {
-            _logicToSend.Use(ref _dataToSend);
-        }
-        Destroy(gameObject);
-    }
-
-    /* // Does targets have a rigidbody ?
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.CompareTag(_senderTag)) return;
@@ -47,5 +34,4 @@ public class LogicSenderProjectile : MonoBehaviour
         }
         Destroy(gameObject);
     }
-    */
 }

@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -5,6 +6,9 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class CollisionHandler : MonoBehaviour
 {
+    [Layer]
+    [SerializeField] private int layerToCollideWith;
+
     private Dictionary<Collider, Vector3> _contactNormalByColliderHitMap = new();
 
     public void AlterMovement(ref Vector3 movement)
@@ -35,11 +39,14 @@ public class CollisionHandler : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.layer != layerToCollideWith) return;
+
         Vector3 contactNormal = ComputeContactNormalMean(collision);
         if (_contactNormalByColliderHitMap.TryAdd(collision.collider, contactNormal))
         {
             return;
         }
+
         Debug.LogWarning("ENTER : Trying to add already colliding collider" + contactNormal);
     }
 

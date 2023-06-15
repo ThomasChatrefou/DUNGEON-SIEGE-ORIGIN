@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Proto_TopSpawner
   m_EditorClassIdentifier: 
   WaveOptions:
-  - DoSpawn: 0
+  - DoSpawn: 1
     Prefab: {fileID: 8315960100409251488, guid: 86e538caf4633b049ae1e90741005ee1,
       type: 3}
   - DoSpawn: 0

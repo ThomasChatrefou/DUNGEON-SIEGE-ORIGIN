@@ -5,7 +5,6 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterDataManager))]
 public class CharacterHealth : MonoBehaviour, ICharacterHealth
 {
-    //GREYBOX TO REMOVE
     public event Action OnHitEvent;
 
     [SerializeField] private bool _isDeathNotified;
@@ -20,7 +19,7 @@ public class CharacterHealth : MonoBehaviour, ICharacterHealth
     private CharacterDataManager _characterDataManager;
     private float _currentHealth;
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(float amount)
     {
         if (!isActiveAndEnabled) return;
 

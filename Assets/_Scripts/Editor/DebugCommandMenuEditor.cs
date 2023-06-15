@@ -22,6 +22,20 @@ public class DebugCommandMenuEditor : EditorWindow
         _completeLevelChannel = AssetDatabase.LoadAssetAtPath("Assets/_ScriptableObjects/Events/Level/LevelCompletedChannel.asset", typeof(VoidEventChannelSO)) as VoidEventChannelSO;
         _launchLevelTransitionChannel = AssetDatabase.LoadAssetAtPath("Assets/_ScriptableObjects/Events/Level/LaunchLevelTransitionChannel.asset", typeof(VoidEventChannelSO)) as VoidEventChannelSO;
         _player = GameObject.FindGameObjectWithTag("Player");
+
+        EditorApplication.playModeStateChanged += ResetCommands;
+    }
+
+    private void OnDisable()
+    {
+        EditorApplication.playModeStateChanged -= ResetCommands;
+
+    }
+
+    private void ResetCommands(PlayModeStateChange state)
+    {
+        _playerHealthEnabled = true;
+        _playerDamagesEnabled = true;
     }
 
     private void OnGUI()

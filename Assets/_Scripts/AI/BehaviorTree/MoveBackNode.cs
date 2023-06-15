@@ -1,16 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class MoveBackNode : IBehaviorNode
 {
     protected BlackBoard _blackBoard;
-    NavMeshAgent _agent;
     Transform _target;
     Transform _entityTransform;
     float _range;
-    float _speed;
     Vector3 _direction;
     float _distanceToTarget;
     NodeNavMeshCoord _navMeshMove;
@@ -24,10 +20,8 @@ public class MoveBackNode : IBehaviorNode
     {
         SetBlackBoard(bb);
         this._entityTransform = entityTransform;
-        _agent = _blackBoard.GetVariable<NavMeshAgent>("agent");
         _target = _blackBoard.GetVariable<Transform>("target");
         _range = _blackBoard.GetVariable<float>("range");
-        _speed = _blackBoard.GetVariable<float>("speed");
         _navMeshMove = new NodeNavMeshCoord(bb);
     }
     public void Execute()

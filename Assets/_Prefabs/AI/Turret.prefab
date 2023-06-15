@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 9192890628145016184}
   - component: {fileID: -1792114314689731091}
   - component: {fileID: 7928833726321325408}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Turret
   m_TagString: AI
   m_Icon: {fileID: 0}
@@ -243,10 +243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98cd5fdcb61bf2045a52035c25288d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: {fileID: 0}
-  _attackSpeed: 4
-  _projectileSpeed: 7
-  _projectileLifeTime: 15
+  _turretData: {fileID: 11400000, guid: bf2974700500649479a6183b2204f352, type: 2}
 --- !u!114 &9192890628145016184
 MonoBehaviour:
   m_ObjectHideFlags: 0

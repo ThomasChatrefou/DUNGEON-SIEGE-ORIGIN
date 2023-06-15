@@ -1,15 +1,17 @@
+using NaughtyAttributes;
 using UnityEngine;
 
 public class TurretController : AIBaseController
 {
-    [SerializeField] private float _attackSpeed = 4;
-    [SerializeField] private float _projectileSpeed = 3f;
-    [SerializeField] private float _projectileLifeTime = 15f;
+    [Expandable]
+    [SerializeField] private AIRangeSpecificDataSO _turretData;
 
-    private void Start()
+    private new void Start()
     {
-        _behaviorTree = new TurretStrategy(Target,_attackSpeed,transform,_projectileSpeed,_projectileLifeTime);
+        base.Start();
+        _behaviorTree = new TurretStrategy(transform, Target, _characterDataManager.Data, _turretData);
     }
+
     private void Update()
     {
         _behaviorTree.Execute(transform);

@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d4b7ad3aae1e6547864231210acf092, type: 3}
-  m_Name: ProtoSceneDataSO
+  m_Script: {fileID: 11500000, guid: 0110777183d9f474889fb0bf777a9a62, type: 3}
+  m_Name: AIRangeSpecificData_Turret
   m_EditorClassIdentifier: 
-  EnemiesType:
-  - {fileID: 8315960100409251488, guid: 86e538caf4633b049ae1e90741005ee1, type: 3}
-  EnemiesCount: 02000000
+  DeltaRange: 0
+  ProjectileSpeed: 20
+  ProjectileLifeTime: 6

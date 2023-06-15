@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 282c1ce2bbbaebd418438a4ac817c358, type: 3}
   m_Name: ComputeTargetsOnCircle
   m_EditorClassIdentifier: 
-  _hitableLayerName: Hitable
+  _hitableLayerName: Enemies
   _circleAccuracy: 10

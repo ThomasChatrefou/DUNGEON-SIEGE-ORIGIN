@@ -17,12 +17,12 @@ TagManager:
   - Water
   - UI
   - Hitable
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Environment
+  - Player
+  - Enemies
+  - PlayerProjectiles
+  - PlayerUgradedProjectiles
+  - EnemiesProjectiles
   - 
   - 
   - 

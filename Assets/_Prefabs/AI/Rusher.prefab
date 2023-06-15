@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 9088135220443995781}
   - component: {fileID: 1505427400593587440}
   - component: {fileID: -5619853530511555733}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Rusher
   m_TagString: AI
   m_Icon: {fileID: 0}
@@ -169,10 +169,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9153841a6b5c424aa2efad2cec842a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: {fileID: 0}
-  _speed: 3
-  _attackRange: 1
-  _attackSpeed: 5
 --- !u!114 &1872307244484212254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,7 +184,7 @@ MonoBehaviour:
   _isDeathNotified: 1
   _isHitNotified: 0
   _deathChannel: {fileID: 11400000, guid: 4ffae98a4574b6040a3f772755bc44f0, type: 2}
-  _hitChannel: {fileID: 0}
+  _hitChannel: {fileID: 11400000, guid: 1bff3ba0d8fa36a46b5fcd523d67ab93, type: 2}
 --- !u!114 &9088135220443995781
 MonoBehaviour:
   m_ObjectHideFlags: 0
