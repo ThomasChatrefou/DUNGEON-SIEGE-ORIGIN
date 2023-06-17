@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8654cebf9905d7469325def88fb7a70, type: 3}
-  m_Name: MagicWandWeapon
+  m_Script: {fileID: 11500000, guid: e68631681df36614cbef5708b1ead4a1, type: 3}
+  m_Name: WeaponStatisticUgrade_SpellBook_Example
   m_EditorClassIdentifier: 
   Damages: 1
-  AttackSpeed: 0.5
-  Range: 5
-  Ability: {fileID: 11400000, guid: 850ce9158f9507b4c9c1bf823a15daf1, type: 2}
-  AbilityVisualEffectPrefab: {fileID: 0}
+  AttackSpeed: 1
+  Range: 1

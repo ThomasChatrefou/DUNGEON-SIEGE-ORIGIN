@@ -547,7 +547,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 494648453}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ==GROUND== (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -891,6 +891,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
         type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
@@ -954,7 +959,7 @@ GameObject:
   - component: {fileID: 929226664}
   - component: {fileID: 929226663}
   - component: {fileID: 929226662}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1134,7 +1139,7 @@ GameObject:
   - component: {fileID: 993792988}
   - component: {fileID: 993792987}
   - component: {fileID: 993792986}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1837,7 +1842,7 @@ GameObject:
   - component: {fileID: 1489999180}
   - component: {fileID: 1489999179}
   - component: {fileID: 1489999178}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1947,7 +1952,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1516071057}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: OuterWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2786,6 +2791,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
         type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
@@ -2869,6 +2879,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Doors
       objectReference: {fileID: 0}
+    - target: {fileID: 5975783942381465643, guid: ef983a61ab0558442ba0db9237c69ce1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5975783942739955501, guid: ef983a61ab0558442ba0db9237c69ce1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5975783943167393191, guid: ef983a61ab0558442ba0db9237c69ce1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef983a61ab0558442ba0db9237c69ce1, type: 3}
 --- !u!4 &2057469871 stripped
@@ -2890,7 +2915,7 @@ GameObject:
   - component: {fileID: 2066710490}
   - component: {fileID: 2066710489}
   - component: {fileID: 2066710488}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3004,7 +3029,7 @@ GameObject:
   - component: {fileID: 2070087595}
   - component: {fileID: 2070087594}
   - component: {fileID: 2070087593}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3114,7 +3139,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2115814215}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Obstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

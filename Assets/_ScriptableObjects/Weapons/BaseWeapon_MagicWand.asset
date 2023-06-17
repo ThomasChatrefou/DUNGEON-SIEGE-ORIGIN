@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a8654cebf9905d7469325def88fb7a70, type: 3}
-  m_Name: SwordWeapon
+  m_Name: BaseWeapon_MagicWand
   m_EditorClassIdentifier: 
+  Name: Baguette
+  UISprite: {fileID: 0}
   Damages: 1
   AttackSpeed: 0.5
-  Range: 2
-  Ability: {fileID: 11400000, guid: 540aed5729d680341aadbcb13d6a4629, type: 2}
-  AbilityVisualEffectPrefab: {fileID: 3806561042892059308, guid: 5eac8b5a2c9a13f48a86f532bc4cad72,
-    type: 3}
+  Range: 5
+  Ability: {fileID: 11400000, guid: 850ce9158f9507b4c9c1bf823a15daf1, type: 2}
+  AbilityVisualEffectPrefab: {fileID: 0}

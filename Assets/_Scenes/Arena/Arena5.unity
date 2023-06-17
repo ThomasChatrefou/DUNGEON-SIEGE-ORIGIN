@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 46827678}
   - component: {fileID: 46827677}
   - component: {fileID: 46827680}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -384,7 +384,7 @@ GameObject:
   - component: {fileID: 57605624}
   - component: {fileID: 57605623}
   - component: {fileID: 57605622}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -569,6 +569,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
         type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -655,6 +660,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
         type: 3}
@@ -823,7 +833,7 @@ GameObject:
   - component: {fileID: 183766526}
   - component: {fileID: 183766525}
   - component: {fileID: 183766528}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -996,6 +1006,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lava (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 812e7ddb57ce72146b1cf60a78327d12, type: 3}
 --- !u!4 &211292709 stripped
@@ -1088,6 +1103,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
         type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -1112,7 +1132,7 @@ GameObject:
   - component: {fileID: 261940125}
   - component: {fileID: 261940124}
   - component: {fileID: 261940127}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1284,6 +1304,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lava (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 812e7ddb57ce72146b1cf60a78327d12, type: 3}
@@ -1628,6 +1653,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lava (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 812e7ddb57ce72146b1cf60a78327d12, type: 3}
 --- !u!4 &333360504 stripped
@@ -1645,7 +1675,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 375541764}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Obstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1768,6 +1798,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lava
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 812e7ddb57ce72146b1cf60a78327d12, type: 3}
@@ -1902,7 +1937,7 @@ PrefabInstance:
     - target: {fileID: 6139764898137429702, guid: 42247dae4bbc9064c9b45133ead049ce,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -22.242054
+      value: -7.0808244
       objectReference: {fileID: 0}
     - target: {fileID: 6139764898137429702, guid: 42247dae4bbc9064c9b45133ead049ce,
         type: 3}
@@ -1952,12 +1987,12 @@ PrefabInstance:
     - target: {fileID: 6139764899769258661, guid: 42247dae4bbc9064c9b45133ead049ce,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.104351
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6139764899769258661, guid: 42247dae4bbc9064c9b45133ead049ce,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.6086285
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6139764899769258662, guid: 42247dae4bbc9064c9b45133ead049ce,
         type: 3}
@@ -2137,6 +2172,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
         type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -2232,6 +2272,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
         type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -2280,7 +2325,7 @@ Transform:
   - {fileID: 285477419}
   - {fileID: 2144677085}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &869776130
 PrefabInstance:
@@ -2366,6 +2411,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
         type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -2386,7 +2436,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 912920122}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ==GROUND==
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2410,7 +2460,7 @@ Transform:
   - {fileID: 375541764}
   - {fileID: 1849119791}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &917978356
 GameObject:
@@ -2444,7 +2494,7 @@ Transform:
   - {fileID: 1750748210}
   - {fileID: 936741314}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &932549024
 PrefabInstance:
@@ -2517,6 +2567,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lava (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 812e7ddb57ce72146b1cf60a78327d12, type: 3}
@@ -2619,7 +2674,7 @@ GameObject:
   - component: {fileID: 945859057}
   - component: {fileID: 945859056}
   - component: {fileID: 945859055}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2892,6 +2947,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lava (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 812e7ddb57ce72146b1cf60a78327d12, type: 3}
 --- !u!4 &1027587201 stripped
@@ -2981,6 +3041,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
         type: 3}
@@ -3159,6 +3224,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
         type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -3201,7 +3271,7 @@ Transform:
   - {fileID: 1600602622}
   - {fileID: 682192781}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1201249704
 PrefabInstance:
@@ -3279,6 +3349,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lava (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 812e7ddb57ce72146b1cf60a78327d12, type: 3}
@@ -3378,6 +3453,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
         type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -3392,7 +3472,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1242540184}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: OuterWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3495,6 +3575,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lava (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 812e7ddb57ce72146b1cf60a78327d12, type: 3}
 --- !u!4 &1269467522 stripped
@@ -3579,6 +3664,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lava (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 812e7ddb57ce72146b1cf60a78327d12, type: 3}
@@ -3669,6 +3759,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
         type: 3}
@@ -3807,6 +3902,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lava (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 812e7ddb57ce72146b1cf60a78327d12, type: 3}
 --- !u!4 &1533811526 stripped
@@ -3899,6 +3999,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
         type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -3985,6 +4090,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
         type: 3}
@@ -4116,6 +4226,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lava (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 812e7ddb57ce72146b1cf60a78327d12, type: 3}
 --- !u!4 &1629863051 stripped
@@ -4200,6 +4315,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lava (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 812e7ddb57ce72146b1cf60a78327d12, type: 3}
@@ -4404,6 +4524,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lava (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 812e7ddb57ce72146b1cf60a78327d12, type: 3}
@@ -4777,6 +4902,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Doors
       objectReference: {fileID: 0}
+    - target: {fileID: 5975783942381465643, guid: ef983a61ab0558442ba0db9237c69ce1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5975783942739955501, guid: ef983a61ab0558442ba0db9237c69ce1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5975783943167393191, guid: ef983a61ab0558442ba0db9237c69ce1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef983a61ab0558442ba0db9237c69ce1, type: 3}
 --- !u!4 &1849119791 stripped
@@ -4997,6 +5137,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lava (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 812e7ddb57ce72146b1cf60a78327d12, type: 3}
 --- !u!4 &1995543999 stripped
@@ -5082,6 +5227,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lava (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 812e7ddb57ce72146b1cf60a78327d12, type: 3}
 --- !u!4 &2005854318 stripped
@@ -5123,7 +5273,7 @@ Transform:
   - {fileID: 1820212505}
   - {fileID: 1743204643}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2057714415
 PrefabInstance:
@@ -5206,6 +5356,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
         type: 3}
@@ -5296,6 +5451,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lava (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 812e7ddb57ce72146b1cf60a78327d12, type: 3}
@@ -5423,6 +5583,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lava (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 812e7ddb57ce72146b1cf60a78327d12, type: 3}

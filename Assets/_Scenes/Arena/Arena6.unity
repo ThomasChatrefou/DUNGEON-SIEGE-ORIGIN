@@ -200,6 +200,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lava (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 812e7ddb57ce72146b1cf60a78327d12, type: 3}
 --- !u!4 &1976184 stripped
@@ -221,7 +226,7 @@ GameObject:
   - component: {fileID: 46827678}
   - component: {fileID: 46827677}
   - component: {fileID: 46827680}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -333,6 +338,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Clouds_PS (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2718356078738761557, guid: 78c0ab84460d111468931249a01913c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2718356078738761558, guid: 78c0ab84460d111468931249a01913c9,
         type: 3}
@@ -473,6 +483,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lava (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 812e7ddb57ce72146b1cf60a78327d12, type: 3}
 --- !u!4 &53065580 stripped
@@ -547,6 +562,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 894b96897d428f845ae2bf32c5d7af75, type: 3}
@@ -623,6 +643,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall
       objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 894b96897d428f845ae2bf32c5d7af75, type: 3}
 --- !u!4 &77985241 stripped
@@ -648,6 +673,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Clouds_PS (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2718356078738761557, guid: 78c0ab84460d111468931249a01913c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2718356078738761558, guid: 78c0ab84460d111468931249a01913c9,
         type: 3}
@@ -740,7 +770,7 @@ GameObject:
   - component: {fileID: 102730926}
   - component: {fileID: 102730925}
   - component: {fileID: 102730924}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -854,7 +884,7 @@ GameObject:
   - component: {fileID: 105382983}
   - component: {fileID: 105382982}
   - component: {fileID: 105382981}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1032,6 +1062,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: River (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 1259579012145960445, guid: c409f17c02bed19449f5c772477d5696,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c409f17c02bed19449f5c772477d5696, type: 3}
 --- !u!4 &113051192 stripped
@@ -1053,7 +1088,7 @@ GameObject:
   - component: {fileID: 183766526}
   - component: {fileID: 183766525}
   - component: {fileID: 183766528}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1221,6 +1256,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lava (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 812e7ddb57ce72146b1cf60a78327d12, type: 3}
 --- !u!4 &186652397 stripped
@@ -1301,6 +1341,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Doors
       objectReference: {fileID: 0}
+    - target: {fileID: 5975783942381465643, guid: ef983a61ab0558442ba0db9237c69ce1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5975783942739955501, guid: ef983a61ab0558442ba0db9237c69ce1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5975783943167393191, guid: ef983a61ab0558442ba0db9237c69ce1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef983a61ab0558442ba0db9237c69ce1, type: 3}
 --- !u!4 &191828267 stripped
@@ -1320,6 +1375,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Clouds_PS (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2718356078738761557, guid: 78c0ab84460d111468931249a01913c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2718356078738761558, guid: 78c0ab84460d111468931249a01913c9,
         type: 3}
@@ -1477,6 +1537,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
         type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
@@ -1512,7 +1577,7 @@ GameObject:
   - component: {fileID: 261940125}
   - component: {fileID: 261940124}
   - component: {fileID: 261940127}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1680,6 +1745,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lava (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 812e7ddb57ce72146b1cf60a78327d12, type: 3}
 --- !u!4 &269861923 stripped
@@ -1697,7 +1767,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 272785027}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: River
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1799,6 +1869,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 894b96897d428f845ae2bf32c5d7af75, type: 3}
@@ -2046,7 +2121,7 @@ Transform:
   - {fileID: 663214540}
   - {fileID: 1054991864}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &307368373
 PrefabInstance:
@@ -2114,6 +2189,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lava (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 812e7ddb57ce72146b1cf60a78327d12, type: 3}
@@ -2195,6 +2275,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lava (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 812e7ddb57ce72146b1cf60a78327d12, type: 3}
@@ -2288,6 +2373,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
         type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
@@ -2346,6 +2436,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Clouds_PS (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2718356078738761557, guid: 78c0ab84460d111468931249a01913c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2718356078738761558, guid: 78c0ab84460d111468931249a01913c9,
         type: 3}
@@ -2428,7 +2523,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 375541764}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Obstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2463,7 +2558,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 425835960}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lava
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2573,6 +2668,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: River (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 1259579012145960445, guid: c409f17c02bed19449f5c772477d5696,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c409f17c02bed19449f5c772477d5696, type: 3}
 --- !u!4 &450208413 stripped
@@ -2673,6 +2773,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Clouds_PS (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2718356078738761557, guid: 78c0ab84460d111468931249a01913c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2718356078738761558, guid: 78c0ab84460d111468931249a01913c9,
         type: 3}
@@ -2817,6 +2922,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 894b96897d428f845ae2bf32c5d7af75, type: 3}
@@ -3033,6 +3143,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 894b96897d428f845ae2bf32c5d7af75, type: 3}
 --- !u!4 &581916859 stripped
@@ -3114,6 +3229,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 894b96897d428f845ae2bf32c5d7af75, type: 3}
 --- !u!4 &609075956 stripped
@@ -3131,7 +3251,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 614648520}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ==GROUND==
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3156,7 +3276,7 @@ Transform:
   - {fileID: 375541764}
   - {fileID: 191828267}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &635503151
 PrefabInstance:
@@ -3169,6 +3289,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Clouds_PS (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2718356078738761557, guid: 78c0ab84460d111468931249a01913c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2718356078738761558, guid: 78c0ab84460d111468931249a01913c9,
         type: 3}
@@ -3354,6 +3479,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 894b96897d428f845ae2bf32c5d7af75, type: 3}
 --- !u!4 &674776492 stripped
@@ -3434,6 +3564,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 894b96897d428f845ae2bf32c5d7af75, type: 3}
 --- !u!4 &708066015 stripped
@@ -3509,6 +3644,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lava (26)
       objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 812e7ddb57ce72146b1cf60a78327d12, type: 3}
 --- !u!4 &714935213 stripped
@@ -3534,6 +3674,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Clouds_PS (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2718356078738761557, guid: 78c0ab84460d111468931249a01913c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2718356078738761558, guid: 78c0ab84460d111468931249a01913c9,
         type: 3}
@@ -3620,7 +3765,7 @@ GameObject:
   - component: {fileID: 739035411}
   - component: {fileID: 739035410}
   - component: {fileID: 739035409}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3788,6 +3933,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: River (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1259579012145960445, guid: c409f17c02bed19449f5c772477d5696,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c409f17c02bed19449f5c772477d5696, type: 3}
 --- !u!4 &743382797 stripped
@@ -3807,6 +3957,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Clouds_PS (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2718356078738761557, guid: 78c0ab84460d111468931249a01913c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2718356078738761558, guid: 78c0ab84460d111468931249a01913c9,
         type: 3}
@@ -3947,6 +4102,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 894b96897d428f845ae2bf32c5d7af75, type: 3}
 --- !u!4 &788498918 stripped
@@ -4021,6 +4181,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 894b96897d428f845ae2bf32c5d7af75, type: 3}
@@ -4103,6 +4268,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 894b96897d428f845ae2bf32c5d7af75, type: 3}
 --- !u!4 &860120793 stripped
@@ -4178,6 +4348,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 894b96897d428f845ae2bf32c5d7af75, type: 3}
 --- !u!4 &883884057 stripped
@@ -4252,6 +4427,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lava (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 812e7ddb57ce72146b1cf60a78327d12, type: 3}
@@ -4333,6 +4513,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: River (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 1259579012145960445, guid: c409f17c02bed19449f5c772477d5696,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c409f17c02bed19449f5c772477d5696, type: 3}
 --- !u!4 &914509637 stripped
@@ -4407,6 +4592,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 894b96897d428f845ae2bf32c5d7af75, type: 3}
@@ -4488,6 +4678,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 894b96897d428f845ae2bf32c5d7af75, type: 3}
 --- !u!4 &922467603 stripped
@@ -4508,7 +4703,7 @@ GameObject:
   - component: {fileID: 945859057}
   - component: {fileID: 945859056}
   - component: {fileID: 945859055}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4776,6 +4971,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lava (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 812e7ddb57ce72146b1cf60a78327d12, type: 3}
 --- !u!4 &983332988 stripped
@@ -4850,6 +5050,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 894b96897d428f845ae2bf32c5d7af75, type: 3}
@@ -4926,6 +5131,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 894b96897d428f845ae2bf32c5d7af75, type: 3}
 --- !u!4 &1010394379 stripped
@@ -4979,7 +5189,7 @@ PrefabInstance:
     - target: {fileID: 6139764898137429702, guid: 42247dae4bbc9064c9b45133ead049ce,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.6531012
+      value: 0.01689881
       objectReference: {fileID: 0}
     - target: {fileID: 6139764898137429702, guid: 42247dae4bbc9064c9b45133ead049ce,
         type: 3}
@@ -4989,7 +5199,7 @@ PrefabInstance:
     - target: {fileID: 6139764898137429702, guid: 42247dae4bbc9064c9b45133ead049ce,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.3608246
+      value: -7.0808244
       objectReference: {fileID: 0}
     - target: {fileID: 6139764898137429702, guid: 42247dae4bbc9064c9b45133ead049ce,
         type: 3}
@@ -5165,6 +5375,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 894b96897d428f845ae2bf32c5d7af75, type: 3}
 --- !u!4 &1060334160 stripped
@@ -5182,7 +5397,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1098787642}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Clouds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5289,6 +5504,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: River (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1259579012145960445, guid: c409f17c02bed19449f5c772477d5696,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c409f17c02bed19449f5c772477d5696, type: 3}
 --- !u!4 &1105828827 stripped
@@ -5328,7 +5548,7 @@ Transform:
   - {fileID: 285477419}
   - {fileID: 2144677085}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1140257687 stripped
 Transform:
@@ -5402,6 +5622,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 894b96897d428f845ae2bf32c5d7af75, type: 3}
@@ -5488,6 +5713,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lava (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 812e7ddb57ce72146b1cf60a78327d12, type: 3}
 --- !u!4 &1144987012 stripped
@@ -5562,6 +5792,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 894b96897d428f845ae2bf32c5d7af75, type: 3}
@@ -5686,7 +5921,7 @@ Transform:
   - {fileID: 360420713}
   - {fileID: 512060319}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1169708930
 PrefabInstance:
@@ -5754,6 +5989,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 894b96897d428f845ae2bf32c5d7af75, type: 3}
@@ -5830,6 +6070,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lava (09)
       objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 812e7ddb57ce72146b1cf60a78327d12, type: 3}
 --- !u!4 &1174170125 stripped
@@ -5849,6 +6094,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Clouds_PS (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2718356078738761557, guid: 78c0ab84460d111468931249a01913c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2718356078738761558, guid: 78c0ab84460d111468931249a01913c9,
         type: 3}
@@ -6069,6 +6319,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Clouds_PS (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 2718356078738761557, guid: 78c0ab84460d111468931249a01913c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2718356078738761558, guid: 78c0ab84460d111468931249a01913c9,
         type: 3}
       propertyPath: m_RootOrder
@@ -6213,6 +6468,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lava (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 812e7ddb57ce72146b1cf60a78327d12, type: 3}
 --- !u!4 &1216989198 stripped
@@ -6288,6 +6548,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lava (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 812e7ddb57ce72146b1cf60a78327d12, type: 3}
 --- !u!4 &1227006992 stripped
@@ -6305,7 +6570,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1242540184}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: OuterWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6429,6 +6694,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Clouds_PS (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2718356078738761557, guid: 78c0ab84460d111468931249a01913c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2718356078738761558, guid: 78c0ab84460d111468931249a01913c9,
         type: 3}
@@ -6569,6 +6839,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lava (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 812e7ddb57ce72146b1cf60a78327d12, type: 3}
 --- !u!4 &1272243989 stripped
@@ -6659,6 +6934,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lava (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 812e7ddb57ce72146b1cf60a78327d12, type: 3}
@@ -6781,6 +7061,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lava
       objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 812e7ddb57ce72146b1cf60a78327d12, type: 3}
 --- !u!4 &1323906980 stripped
@@ -6800,6 +7085,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Clouds_PS (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2718356078738761557, guid: 78c0ab84460d111468931249a01913c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2718356078738761558, guid: 78c0ab84460d111468931249a01913c9,
         type: 3}
@@ -6992,6 +7282,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: River (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1259579012145960445, guid: c409f17c02bed19449f5c772477d5696,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c409f17c02bed19449f5c772477d5696, type: 3}
 --- !u!4 &1388551077 stripped
@@ -7079,6 +7374,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 894b96897d428f845ae2bf32c5d7af75, type: 3}
 --- !u!1001 &1486571053
@@ -7158,6 +7458,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: River (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 1259579012145960445, guid: c409f17c02bed19449f5c772477d5696,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c409f17c02bed19449f5c772477d5696, type: 3}
 --- !u!4 &1486571054 stripped
@@ -7177,6 +7482,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Clouds_PS (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2718356078738761557, guid: 78c0ab84460d111468931249a01913c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2718356078738761558, guid: 78c0ab84460d111468931249a01913c9,
         type: 3}
@@ -7322,6 +7632,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: River (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 1259579012145960445, guid: c409f17c02bed19449f5c772477d5696,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c409f17c02bed19449f5c772477d5696, type: 3}
 --- !u!4 &1492417373 stripped
@@ -7402,6 +7717,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 894b96897d428f845ae2bf32c5d7af75, type: 3}
 --- !u!4 &1535769556 stripped
@@ -7421,6 +7741,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Clouds_PS (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2718356078738761557, guid: 78c0ab84460d111468931249a01913c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2718356078738761558, guid: 78c0ab84460d111468931249a01913c9,
         type: 3}
@@ -7561,6 +7886,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 894b96897d428f845ae2bf32c5d7af75, type: 3}
 --- !u!4 &1561612107 stripped
@@ -7641,6 +7971,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 894b96897d428f845ae2bf32c5d7af75, type: 3}
 --- !u!4 &1612988210 stripped
@@ -7715,6 +8050,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 894b96897d428f845ae2bf32c5d7af75, type: 3}
@@ -7791,6 +8131,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: River
       objectReference: {fileID: 0}
+    - target: {fileID: 1259579012145960445, guid: c409f17c02bed19449f5c772477d5696,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c409f17c02bed19449f5c772477d5696, type: 3}
 --- !u!4 &1635960247 stripped
@@ -7810,6 +8155,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Clouds_PS (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2718356078738761557, guid: 78c0ab84460d111468931249a01913c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2718356078738761558, guid: 78c0ab84460d111468931249a01913c9,
         type: 3}
@@ -7950,6 +8300,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lava (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 812e7ddb57ce72146b1cf60a78327d12, type: 3}
 --- !u!4 &1642870654 stripped
@@ -8024,6 +8379,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 894b96897d428f845ae2bf32c5d7af75, type: 3}
@@ -8234,6 +8594,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: River (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1259579012145960445, guid: c409f17c02bed19449f5c772477d5696,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c409f17c02bed19449f5c772477d5696, type: 3}
 --- !u!4 &1646243739 stripped
@@ -8313,6 +8678,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 894b96897d428f845ae2bf32c5d7af75, type: 3}
@@ -8536,6 +8906,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: River (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 1259579012145960445, guid: c409f17c02bed19449f5c772477d5696,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c409f17c02bed19449f5c772477d5696, type: 3}
 --- !u!4 &1692737235 stripped
@@ -8610,6 +8985,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lava (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 812e7ddb57ce72146b1cf60a78327d12, type: 3}
@@ -8692,6 +9072,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: River (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1259579012145960445, guid: c409f17c02bed19449f5c772477d5696,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c409f17c02bed19449f5c772477d5696, type: 3}
 --- !u!4 &1824040113 stripped
@@ -8732,7 +9117,7 @@ Transform:
   - {fileID: 290364140}
   - {fileID: 1885602392}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1840809088
 PrefabInstance:
@@ -8745,6 +9130,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Clouds_PS (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2718356078738761557, guid: 78c0ab84460d111468931249a01913c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2718356078738761558, guid: 78c0ab84460d111468931249a01913c9,
         type: 3}
@@ -8884,6 +9274,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lava (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 812e7ddb57ce72146b1cf60a78327d12, type: 3}
@@ -9190,6 +9585,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 894b96897d428f845ae2bf32c5d7af75, type: 3}
 --- !u!4 &1855480281 stripped
@@ -9338,7 +9738,7 @@ GameObject:
   - component: {fileID: 1943814481}
   - component: {fileID: 1943814480}
   - component: {fileID: 1943814479}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ground (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9491,6 +9891,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lava (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 812e7ddb57ce72146b1cf60a78327d12, type: 3}
 --- !u!4 &1953590734 stripped
@@ -9566,6 +9971,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 894b96897d428f845ae2bf32c5d7af75, type: 3}
 --- !u!4 &1958734850 stripped
@@ -9585,6 +9995,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Clouds_PS (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2718356078738761557, guid: 78c0ab84460d111468931249a01913c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2718356078738761558, guid: 78c0ab84460d111468931249a01913c9,
         type: 3}
@@ -9730,6 +10145,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 894b96897d428f845ae2bf32c5d7af75, type: 3}
 --- !u!1001 &1990133463
@@ -9798,6 +10218,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: River (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1259579012145960445, guid: c409f17c02bed19449f5c772477d5696,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c409f17c02bed19449f5c772477d5696, type: 3}
@@ -9879,6 +10304,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: River (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1259579012145960445, guid: c409f17c02bed19449f5c772477d5696,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c409f17c02bed19449f5c772477d5696, type: 3}
@@ -10033,6 +10463,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Clouds_PS (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 2718356078738761557, guid: 78c0ab84460d111468931249a01913c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2718356078738761558, guid: 78c0ab84460d111468931249a01913c9,
         type: 3}
       propertyPath: m_RootOrder
@@ -10172,6 +10607,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lava (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 812e7ddb57ce72146b1cf60a78327d12, type: 3}
 --- !u!4 &2127041790 stripped
@@ -10189,7 +10629,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2129534135}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -1,16 +1,18 @@
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(PlayerDataManager))]
 public class WeaponUser : MonoBehaviour, IWeaponUser
 {
-    private CharacterDataManager _characterDataManager;
+    private PlayerDataManager _playerDataManager;
     private GameObject _weaponVisuals;
     private IAbilityVisualEffect _weaponAbilityVisualEffect;
     private Coroutine _runningCoroutine = null;
+
+    private IAbility _ability;
     private float _damages;
     private float _attackSpeed;
     private float _range;
-    private IAbility _ability;
 
     public void StartWeaponUse()
     {
@@ -27,17 +29,16 @@ public class WeaponUser : MonoBehaviour, IWeaponUser
 
     private void Awake()
     {
-        _characterDataManager = GetComponent<CharacterDataManager>();
-        CharacterDataSO data = _characterDataManager.Data;
-        _damages = data.Weapon.Damages + data.BaseDamages;
-        _attackSpeed = data.Weapon.AttackSpeed + data.BaseAttackSpeed;
-        _range = data.Weapon.Range + data.BaseRange;
-        _ability = data.Weapon.Ability;
+        _playerDataManager = GetComponent<PlayerDataManager>();
+        _ability = _playerDataManager.Weapon.Ability;
+        _damages = _playerDataManager.Damages;
+        _attackSpeed = _playerDataManager.AttackSpeed;
+        _range = _playerDataManager.Range;
     }
 
     private void Start()
     {
-        WeaponDataSO weapon = _characterDataManager.Data.Weapon;
+        WeaponDataSO weapon = _playerDataManager.Weapon;
         if (weapon.AbilityVisualEffectPrefab != null)
         {
             _weaponVisuals = Instantiate(weapon.AbilityVisualEffectPrefab, transform);
@@ -83,7 +84,6 @@ public class WeaponUser : MonoBehaviour, IWeaponUser
 
     public void ResetDamages()
     {
-        CharacterDataSO data = _characterDataManager.Data;
-        _damages = data.Weapon.Damages + data.BaseDamages;
+        _damages = _playerDataManager.Damages;
     }
 }
