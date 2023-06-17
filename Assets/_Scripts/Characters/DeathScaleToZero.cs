@@ -1,3 +1,6 @@
+using NaughtyAttributes;
+using System.Collections;
+using UnityEngine;
 
 public class DeathScaleToZero : MonoBehaviour
 {
