@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: SceneDataArena5
   m_EditorClassIdentifier: 
   EnemiesType:
-  - {fileID: 1744385130808161210, guid: 17ad5e9c3ff02544ab2127d8a8b77c0e, type: 3}
-  - {fileID: 3290044505870710492, guid: 685bceea697026347a409c8165e80a1e, type: 3}
-  EnemiesCount: 0a00000007000000
+  - {fileID: 8202297556173530283, guid: 9a24b63e746f3494ebb81c13218f2b5b, type: 3}
+  - {fileID: 8590659139627040049, guid: ab960db92c5dd3841b920ccd5cfd09f2, type: 3}
+  - {fileID: 8539252667250699905, guid: a9e363bb0dabcf745a0073d81ceac554, type: 3}
+  EnemiesCount: 060000000600000006000000

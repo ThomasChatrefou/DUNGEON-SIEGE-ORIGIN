@@ -80,7 +80,7 @@ PrefabInstance:
     - target: {fileID: 3290044505870710492, guid: f4cf0644149087643a396928a7b22f31,
         type: 3}
       propertyPath: m_Name
-      value: KiterDownscale
+      value: KiterDownScale
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4cf0644149087643a396928a7b22f31, type: 3}
