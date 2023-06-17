@@ -115,6 +115,7 @@ GameObject:
   - component: {fileID: 9192890628145016184}
   - component: {fileID: -1792114314689731091}
   - component: {fileID: 7928833726321325408}
+  - component: {fileID: 5754100843679757442}
   m_Layer: 9
   m_Name: Turret
   m_TagString: AI
@@ -258,8 +259,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDeathNotified: 1
   _isHitNotified: 0
+  _isInInvincibleState: 0
+  _invincibilityTime: 1.5
   _deathChannel: {fileID: 11400000, guid: 4ffae98a4574b6040a3f772755bc44f0, type: 2}
   _hitChannel: {fileID: 0}
+  _currentHealth: 0
 --- !u!114 &-1792114314689731091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,4 +289,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _takeDamageMaterial: {fileID: 2100000, guid: d0ec6cbfc0ec30246b0241f046080b02, type: 2}
+  _invincibilityMaterial: {fileID: 0}
   _duration: 0.1
+--- !u!114 &5754100843679757442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8315960100409251488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 680506f94d725ae4a810e2367bcd8257, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _destroyObjectChannel: {fileID: 11400000, guid: 4a687312c5918334bb6568fa59d8f2a3,
+    type: 2}
+  _timeForScaling: 0.2
