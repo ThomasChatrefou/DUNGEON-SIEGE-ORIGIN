@@ -99,8 +99,14 @@ public class PlayerDataManager : CharacterDataManager, IDataPersistence
 
     public void LoadData(GameData data)
     {
+        Debug.Log("Current Character ID : " + _playerData.CurrentCharacterId);
+        Debug.Log("Current Weapon ID : " + _playerData.CurrentWeaponId);
+        Debug.Log("Current Character ID Save : " + data.characterID);
+        Debug.Log("Current Weapon ID Save : " + data.weaponID);
         _playerData.CurrentCharacterId = data.weaponID;
         _playerData.CurrentWeaponId = data.weaponID;
+
+        Character = _gameConfig.GetCharacter(data.characterID);
     }
 
     public void SaveData(ref GameData data)

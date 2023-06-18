@@ -7,7 +7,6 @@ public class WeaponChoiceUI : MonoBehaviour, IDataPersistence
 {
 
     public MenuUI menu;
-
     [SerializeField] private Image weaponIcon;
 
     [SerializeField] private WeaponDataSO swordData;
@@ -91,5 +90,6 @@ public class WeaponChoiceUI : MonoBehaviour, IDataPersistence
     public void SaveData(ref GameData data)
     {
         data.weaponID = newWeaponID;
+        data.characterID = newWeaponID;
     }
 }

@@ -1,13 +1,16 @@
+using NaughtyAttributes;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
 public class DataPersistenceManager : MonoBehaviour
 {
-    [Header("File Storage Config")]
+    [BoxGroup("File Storage Config")]
     [SerializeField] private string _fileName;
+    [BoxGroup("File Storage Config")]
     [SerializeField] private bool _isUsingEncryption;
 
+    [SerializeField] PlayerDataSO _playerDataSO;
     public static DataPersistenceManager instance { get; private set; }
 
     private GameData _gameData;
@@ -69,5 +72,10 @@ public class DataPersistenceManager : MonoBehaviour
     {
         IEnumerable<IDataPersistence> dataPersistenceObjects = FindObjectsOfType<MonoBehaviour>().OfType<IDataPersistence>();
         return new List<IDataPersistence>(dataPersistenceObjects);
+    }
+
+    public PlayerDataSO GetPlayerDataSO()
+    {
+        return _playerDataSO;
     }
 }
