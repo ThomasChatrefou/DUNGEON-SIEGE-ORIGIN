@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1361598121683374222}
   - component: {fileID: -5860488665820400447}
   - component: {fileID: 2693456732241199069}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: MagicSphereDownScale
   m_TagString: Untagged
   m_Icon: {fileID: 0}

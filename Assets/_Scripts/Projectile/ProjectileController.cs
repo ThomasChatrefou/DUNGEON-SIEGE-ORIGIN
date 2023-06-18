@@ -38,11 +38,12 @@ public class ProjectileController : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        Debug.Log("OnCollisionEnter other : "   + other.gameObject.TryGetComponent<ICharacterHealth>(out var health));
+        Debug.Log("OnCollisionEnter object : "   + other.gameObject);
+        Debug.Log("OnCollisionEnter health component : "   + other.gameObject.TryGetComponent<ICharacterHealth>(out var test));
         ProjectilePool.Instance.ClearOneProjectile(this.gameObject);
-        if (other.gameObject.TryGetComponent<ICharacterHealth>(out var health2))
+        if (other.gameObject.TryGetComponent<ICharacterHealth>(out var health))
         {
-            health2.TakeDamage(_damages);
+            health.TakeDamage(_damages);
         }
     }
 }
