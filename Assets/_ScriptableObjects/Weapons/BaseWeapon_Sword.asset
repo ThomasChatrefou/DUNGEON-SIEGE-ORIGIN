@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BaseWeapon_Sword
   m_EditorClassIdentifier: 
   Name: Master
-  UISprite: {fileID: 0}
+  UISprite: {fileID: 21300000, guid: c85d66e41193b534997993ae020bd331, type: 3}
   Damages: 1
   AttackSpeed: 0.5
   Range: 2
