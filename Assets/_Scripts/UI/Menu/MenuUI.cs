@@ -21,6 +21,7 @@ public class MenuUI : MonoBehaviour
     */
     public void MenuPlay()
     {
+        DataPersistenceManager.instance.SaveGame();
         transit.LoadPlayScene();
     }
 

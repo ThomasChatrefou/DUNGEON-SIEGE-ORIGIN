@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
@@ -40,14 +39,12 @@ public class DataPersistenceManager : MonoBehaviour
     {
 
         _gameData = _dataHandler.Load();
-        //TOOD - Load saved data
         //If no data can be loaded, initialize to a new game
         if (_gameData == null)
         {
             Debug.Log("No data was found to be loaded. Initializing data to defaults.");
             NewGame();
         }
-        // TODO - push the loaded data to all other script
         foreach (IDataPersistence dataPersistenceObject in _dataPersistenceObjects)
         {
             dataPersistenceObject.LoadData(_gameData);
@@ -56,7 +53,6 @@ public class DataPersistenceManager : MonoBehaviour
 
     public void SaveGame()
     {
-        //TODO - pass the data to others cripts so they can update it
         foreach (IDataPersistence dataPersistenceObject in _dataPersistenceObjects)
         {
             dataPersistenceObject.SaveData(ref _gameData);

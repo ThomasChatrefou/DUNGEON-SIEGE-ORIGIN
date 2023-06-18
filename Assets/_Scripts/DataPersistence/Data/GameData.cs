@@ -5,10 +5,13 @@ using UnityEngine;
 [System.Serializable]
 public class GameData
 {
-    //In Game save data
-
-    //In Run save data
     public bool isInRun;
+
+    public int currentLevel;
+
+    public byte playerID;
+
+    public byte weaponID;
 
     /// <summary>
     /// Constructor
@@ -16,5 +19,8 @@ public class GameData
     public GameData()
     {
         isInRun = false;
+        currentLevel = 0;
+        playerID = 255;
+        weaponID = 255;
     }
 }

@@ -76,6 +76,7 @@ public class FileDataHandler
                     writer.Write(dataToStore);
                 }
             }
+            Debug.Log("Data written to :" + fullPath + " without error");
         }
         catch (Exception e)
         {
