@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerDataManager : CharacterDataManager
+public class PlayerDataManager : CharacterDataManager, IDataPersistence
 {
     [SerializeField] private GameConfigSO _gameConfig;
     [SerializeField] private PlayerDataSO _playerData;
@@ -95,5 +95,16 @@ public class PlayerDataManager : CharacterDataManager
             }
             return result;
         }
+    }
+
+    public void LoadData(GameData data)
+    {
+        _playerData.CurrentCharacterId = data.weaponID;
+        _playerData.CurrentWeaponId = data.weaponID;
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        data.weaponID = _playerData.CurrentWeaponId;
     }
 }
