@@ -12,6 +12,8 @@ public class PeriodicWaveLauncher : MonoBehaviour
     [SerializeField] private IntSenderEventChannelSO _launchWaveChannel;
     [BoxGroup("Broadcast on")]
     [SerializeField] private VoidEventChannelSO _endOfSpawnChannel;
+    [BoxGroup("Broadcast on")]
+    [SerializeField] private FloatSenderEventChannelSO _putTimerValue;
 
     private int _currentWaveIndex = 0;
 
@@ -26,10 +28,12 @@ public class PeriodicWaveLauncher : MonoBehaviour
         {
             if (_currentWaveIndex == 0)
             {
+                
                 yield return new WaitForSeconds(_timeBeforeFirstWave);
             }
             else
             {
+                _putTimerValue.RequestRaiseEvent(_timeBetweenWaves);
                 yield return new WaitForSeconds(_timeBetweenWaves);
             }
             _launchWaveChannel.RequestRaiseEvent(_currentWaveIndex);
