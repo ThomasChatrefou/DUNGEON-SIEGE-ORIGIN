@@ -70,23 +70,31 @@ public class ChoiceUIScript : MonoBehaviour
         for (int i = 0; i < NumberOfTradeChoice; i++)
         {
             DisplayChoiceScript displayChoiceScript = _twoChoiceList[i].GetComponent<DisplayChoiceScript>();
-            int randomChoice = Random.Range(1, 3);
-            switch (randomChoice)
-            {
-                case 1:
-                    displayChoiceScript.SetImageSprite(_swordSprite);
-                    break;
-                case 2:
-                    displayChoiceScript.SetImageSprite(_wandSprite);
-                    break;
-                case 3:
-                    displayChoiceScript.SetImageSprite(_bookSprite);
-                    break;
-                default:
-                    break;
-            }
             displayChoiceScript.SetChoiceType(EChoiceType.TRADE);
             displayChoiceScript._sceneToLoad = _sceneToLoad;
+        }
+        switch (DataPersistenceManager.instance.GetPlayerDataSO().CurrentWeaponId)
+        {
+            case 0:
+                _twoChoiceList[0].GetComponent<DisplayChoiceScript>().SetImageSprite(_bookSprite);
+                _twoChoiceList[0].GetComponent<DisplayChoiceScript>().SetTradeType(ETradeType.BOOK);
+                _twoChoiceList[1].GetComponent<DisplayChoiceScript>().SetImageSprite(_wandSprite);
+                _twoChoiceList[1].GetComponent<DisplayChoiceScript>().SetTradeType(ETradeType.WAND);
+                break;
+            case 1:
+                _twoChoiceList[0].GetComponent<DisplayChoiceScript>().SetImageSprite(_swordSprite);
+                _twoChoiceList[0].GetComponent<DisplayChoiceScript>().SetTradeType(ETradeType.SWORD);
+                _twoChoiceList[1].GetComponent<DisplayChoiceScript>().SetImageSprite(_wandSprite);
+                _twoChoiceList[1].GetComponent<DisplayChoiceScript>().SetTradeType(ETradeType.WAND);
+                break;
+            case 2:
+                _twoChoiceList[0].GetComponent<DisplayChoiceScript>().SetImageSprite(_swordSprite);
+                _twoChoiceList[0].GetComponent<DisplayChoiceScript>().SetTradeType(ETradeType.SWORD);
+                _twoChoiceList[1].GetComponent<DisplayChoiceScript>().SetImageSprite(_bookSprite);
+                _twoChoiceList[1].GetComponent<DisplayChoiceScript>().SetTradeType(ETradeType.BOOK);
+                break;
+            default:
+                break;
         }
     }
 
