@@ -13,39 +13,38 @@ public enum EChoiceType
     TRADESETUP,
 }
 
-public class DisplayChoiceScript : MonoBehaviour
+public enum ETradeType
+{
+    NONE,
+    SWORD,
+    BOOK,
+    WAND,
+}
+
+public class DisplayChoiceScript : MonoBehaviour, IDataPersistence
 {
     [SerializeField] Image _backgroundImage;
 
     public string _sceneToLoad;
     Choice _choice;
-    EChoiceType _type = EChoiceType.NONE;
-    // Start is called before the first frame update
-    void Start()
-    {
+    EChoiceType _choiceType = EChoiceType.NONE;
+    ETradeType _tradeType = ETradeType.NONE;
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    byte newWeaponID = 255;
+    bool upgradeWeapon = false;
 
     public void OnClick()
     {
-        switch (_type)
+        switch (_choiceType)
         {
             case EChoiceType.NONE:
                 Debug.Log("Something went wrong ...");
                 break;
             case EChoiceType.TRADE:
-                Debug.Log("Trade -> TODO: Actual trade weapon logic");
-                SceneManager.LoadSceneAsync(_sceneToLoad);
+                Trade();
                 break;
             case EChoiceType.UPGRADE:
-                Debug.Log("Upgrade -> TODO: Actual upgrade weapon logic");
-                SceneManager.LoadSceneAsync(_sceneToLoad);
+                Upgrade();
                 break;
             case EChoiceType.TRADESETUP:
                 Debug.Log("TradeSetup");
@@ -54,18 +53,73 @@ public class DisplayChoiceScript : MonoBehaviour
             default:
                 break;
         }
-        //foreach (GameObject choice in _otherChoicesInCurrentChoice)
-        //{
-        //    Destroy(choice);
-        //}
     }
+
+    public void Upgrade()
+    {
+        upgradeWeapon = true;
+        DataPersistenceManager.instance.GetPlayerDataSO().IncrementUpgrade();
+        LoadNextScene();
+    }
+
+    public void Trade()
+    {
+        switch (_tradeType)
+        {
+            case ETradeType.NONE:
+                Debug.Log("Something went wrong ...");
+                break;
+            case ETradeType.SWORD:
+                newWeaponID = 0;
+                break;
+            case ETradeType.BOOK:
+                newWeaponID = 1;
+                break;
+            case ETradeType.WAND:
+                newWeaponID = 2;
+                break;
+            default:
+                break;
+        }
+        LoadNextScene();
+    }
+
+    public void LoadNextScene()
+    {
+        DataPersistenceManager.instance.SaveGame();
+        SceneManager.LoadSceneAsync(_sceneToLoad);
+    }
+
+
     public void SetChoiceType(EChoiceType choiceType)
     {
-        _type = choiceType;
+        _choiceType = choiceType;
+    }
+
+    public void SetTradeType(ETradeType tradeType) 
+    {
+        _tradeType = tradeType;
     }
 
     public void SetImageSprite(Sprite newSprite)
     {
         _backgroundImage.sprite = newSprite;
+    }
+
+    public void LoadData(GameData data)
+    {
+        newWeaponID = data.weaponID;
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        if (upgradeWeapon)
+        {
+            data.weaponUpgrade[data.weaponID] += 1;
+        }
+        else
+        {
+            data.weaponID = newWeaponID;
+        }
     }
 }

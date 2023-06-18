@@ -89,6 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0419be9efa1ec644a038c6ac1950ce5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerDataSO: {fileID: 11400000, guid: 71501190d09b90f4b819ba7bc155e5c5, type: 2}
   _upgradeChoiceHolder: {fileID: 3327991065404269450, guid: 7e5108fa817762b4ba91765043e26c91,
     type: 3}
   _twoChoice: {fileID: 2032867194}
