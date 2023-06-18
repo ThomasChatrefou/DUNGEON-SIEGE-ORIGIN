@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ChoiceUIScript : MonoBehaviour
+public class ChoiceUIScript : MonoBehaviour, IDataPersistence
 {
     [SerializeField] GameObject _upgradeChoiceHolder;
     [SerializeField] GameObject _twoChoice;
@@ -27,6 +27,9 @@ public class ChoiceUIScript : MonoBehaviour
     const int NumberOfFirstChoice = 2;
     const int NumberOfTradeChoice = 2;
     const int NumberOfUpgradeChoice = 3;
+
+    private byte newWeaponID = 0;
+    private bool upgradeWeapon = false;
 
     private void OnEnable()
     {
@@ -73,7 +76,7 @@ public class ChoiceUIScript : MonoBehaviour
             displayChoiceScript.SetChoiceType(EChoiceType.TRADE);
             displayChoiceScript._sceneToLoad = _sceneToLoad;
         }
-        switch (DataPersistenceManager.instance.GetPlayerDataSO().CurrentWeaponId)
+        switch (DataPersistenceManager.instance.GetGameData().weaponID)
         {
             case 0:
                 _twoChoiceList[0].GetComponent<DisplayChoiceScript>().SetImageSprite(_bookSprite);
@@ -149,5 +152,33 @@ public class ChoiceUIScript : MonoBehaviour
         ChoiceTwoImage.color = new Color(1, 1, 1, 0);
 
         yield return new WaitForEndOfFrame();
+    }
+
+    public void SetNewWeaponID(byte newID)
+    {
+        newWeaponID = newID;
+    }
+
+    public void SetDoUpgrade(bool doUpgrade) 
+    {
+        upgradeWeapon = doUpgrade;
+    }
+
+    public void LoadData(GameData data)
+    {
+        newWeaponID = data.weaponID;
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        if (upgradeWeapon)
+        {
+            data.weaponUpgrade[data.weaponID] += 1;
+        }
+        else
+        {
+            data.weaponID = newWeaponID;
+            data.characterID = newWeaponID;
+        }
     }
 }

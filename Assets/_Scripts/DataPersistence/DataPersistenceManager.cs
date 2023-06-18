@@ -9,8 +9,6 @@ public class DataPersistenceManager : MonoBehaviour
     [SerializeField] private string _fileName;
     [BoxGroup("File Storage Config")]
     [SerializeField] private bool _isUsingEncryption;
-
-    [SerializeField] PlayerDataSO _playerDataSO;
     public static DataPersistenceManager instance { get; private set; }
 
     private GameData _gameData;
@@ -74,8 +72,8 @@ public class DataPersistenceManager : MonoBehaviour
         return new List<IDataPersistence>(dataPersistenceObjects);
     }
 
-    public PlayerDataSO GetPlayerDataSO()
+    public GameData GetGameData()
     {
-        return _playerDataSO;
+        return _gameData;
     }
 }
