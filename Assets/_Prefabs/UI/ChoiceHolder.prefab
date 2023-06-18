@@ -50,9 +50,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eff2045ad7f98449b0b1d12bb4f6649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _backgroundImage: {fileID: 7725166693588360334}
   _sceneToLoad: 
-  _topText: {fileID: 0}
-  _bottomText: {fileID: 0}
 --- !u!1 &9147898345700849012
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,8 +119,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ec2b2314c7b25c349a54b69d6347e4dd, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

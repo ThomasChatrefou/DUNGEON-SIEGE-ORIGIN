@@ -45,5 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fileName: DungeonSiegeOriginSave.txt
-  _isUsingEncryption: 1
+  _isUsingEncryption: 0
   _playerDataSO: {fileID: 11400000, guid: 71501190d09b90f4b819ba7bc155e5c5, type: 2}

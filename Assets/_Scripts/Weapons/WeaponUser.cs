@@ -29,15 +29,16 @@ public class WeaponUser : MonoBehaviour, IWeaponUser
 
     private void Awake()
     {
+    }
+
+    private void Start()
+    {
         _playerDataManager = GetComponent<PlayerDataManager>();
         _ability = _playerDataManager.Weapon.Ability;
         _damages = _playerDataManager.Damages;
         _attackSpeed = _playerDataManager.AttackSpeed;
         _range = _playerDataManager.Range;
-    }
 
-    private void Start()
-    {
         WeaponDataSO weapon = _playerDataManager.Weapon;
         if (weapon.AbilityVisualEffectPrefab != null)
         {
