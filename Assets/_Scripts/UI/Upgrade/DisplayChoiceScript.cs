@@ -21,7 +21,7 @@ public enum ETradeType
     WAND,
 }
 
-public class DisplayChoiceScript : MonoBehaviour, IDataPersistence
+public class DisplayChoiceScript : MonoBehaviour
 {
     [SerializeField] Image _backgroundImage;
 
@@ -29,10 +29,6 @@ public class DisplayChoiceScript : MonoBehaviour, IDataPersistence
     Choice _choice;
     EChoiceType _choiceType = EChoiceType.NONE;
     ETradeType _tradeType = ETradeType.NONE;
-
-    byte newWeaponID = 255;
-    bool upgradeWeapon = false;
-
     public void OnClick()
     {
         switch (_choiceType)
@@ -57,8 +53,7 @@ public class DisplayChoiceScript : MonoBehaviour, IDataPersistence
 
     public void Upgrade()
     {
-        upgradeWeapon = true;
-        DataPersistenceManager.instance.GetPlayerDataSO().IncrementUpgrade();
+        transform.GetComponentInParent<ChoiceUIScript>().SetDoUpgrade(true);
         LoadNextScene();
     }
 
@@ -70,13 +65,13 @@ public class DisplayChoiceScript : MonoBehaviour, IDataPersistence
                 Debug.Log("Something went wrong ...");
                 break;
             case ETradeType.SWORD:
-                newWeaponID = 0;
+                transform.GetComponentInParent<ChoiceUIScript>().SetNewWeaponID(0);
                 break;
             case ETradeType.BOOK:
-                newWeaponID = 1;
+                transform.GetComponentInParent<ChoiceUIScript>().SetNewWeaponID(1);
                 break;
             case ETradeType.WAND:
-                newWeaponID = 2;
+                transform.GetComponentInParent<ChoiceUIScript>().SetNewWeaponID(2);
                 break;
             default:
                 break;
@@ -104,22 +99,5 @@ public class DisplayChoiceScript : MonoBehaviour, IDataPersistence
     public void SetImageSprite(Sprite newSprite)
     {
         _backgroundImage.sprite = newSprite;
-    }
-
-    public void LoadData(GameData data)
-    {
-        newWeaponID = data.weaponID;
-    }
-
-    public void SaveData(ref GameData data)
-    {
-        if (upgradeWeapon)
-        {
-            data.weaponUpgrade[data.weaponID] += 1;
-        }
-        else
-        {
-            data.weaponID = newWeaponID;
-        }
     }
 }

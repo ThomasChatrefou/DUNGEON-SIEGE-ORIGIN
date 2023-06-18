@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerDataManager : CharacterDataManager, IDataPersistence
+public class PlayerDataManager : CharacterDataManager
 {
     [SerializeField] private GameConfigSO _gameConfig;
     [SerializeField] private PlayerDataSO _playerData;
@@ -12,7 +12,8 @@ public class PlayerDataManager : CharacterDataManager, IDataPersistence
     {
         get
         {
-            if (_gameConfig.TryGetCharacter(_playerData.CurrentCharacterId, out CharacterDataSO character))
+            Debug.Log("Character ID: " + DataPersistenceManager.instance.GetGameData().characterID + " weapon ID: " + DataPersistenceManager.instance.GetGameData().weaponID);
+            if (_gameConfig.TryGetCharacter(DataPersistenceManager.instance.GetGameData().characterID /*_playerData.CurrentCharacterId*/, out CharacterDataSO character))
             {
                 return character;
             }
@@ -30,7 +31,7 @@ public class PlayerDataManager : CharacterDataManager, IDataPersistence
         get
         {
             CharacterDataSO character = Character;
-            if (_gameConfig.TryGetWeapon(_playerData.CurrentWeaponId, out WeaponDataSO weapon))
+            if (_gameConfig.TryGetWeapon(DataPersistenceManager.instance.GetGameData().weaponID /*_playerData.CurrentWeaponId*/, out WeaponDataSO weapon))
             {
                 return weapon;
             }
@@ -53,7 +54,7 @@ public class PlayerDataManager : CharacterDataManager, IDataPersistence
             {
                 foreach (WeaponStatisticUgradeSO upgrade in upgrades)
                 {
-                    int nbCurrentUpgradeToApply = _playerData.CountByUpgradeId[_gameConfig.GetId(upgrade)];
+                    int nbCurrentUpgradeToApply = DataPersistenceManager.instance.GetGameData().weaponUpgrade[_gameConfig.GetId(upgrade)]; //_playerData.CountByUpgradeId[_gameConfig.GetId(upgrade)];
                     result += upgrade.Damages * nbCurrentUpgradeToApply;
                 }
             }
@@ -71,7 +72,7 @@ public class PlayerDataManager : CharacterDataManager, IDataPersistence
             {
                 foreach (WeaponStatisticUgradeSO upgrade in upgrades)
                 {
-                    int nbCurrentUpgradeToApply = _playerData.CountByUpgradeId[_gameConfig.GetId(upgrade)];
+                    int nbCurrentUpgradeToApply = DataPersistenceManager.instance.GetGameData().weaponUpgrade[_gameConfig.GetId(upgrade)]; // _playerData.CountByUpgradeId[_gameConfig.GetId(upgrade)];
                     result += upgrade.AttackSpeed * nbCurrentUpgradeToApply;
                 }
             }
@@ -89,28 +90,11 @@ public class PlayerDataManager : CharacterDataManager, IDataPersistence
             {
                 foreach (WeaponStatisticUgradeSO upgrade in upgrades)
                 {
-                    int nbCurrentUpgradeToApply = _playerData.CountByUpgradeId[_gameConfig.GetId(upgrade)];
+                    int nbCurrentUpgradeToApply = DataPersistenceManager.instance.GetGameData().weaponUpgrade[_gameConfig.GetId(upgrade)]; //_playerData.CountByUpgradeId[_gameConfig.GetId(upgrade)];
                     result += upgrade.Range * nbCurrentUpgradeToApply;
                 }
             }
             return result;
         }
-    }
-
-    public void LoadData(GameData data)
-    {
-        Debug.Log("Current Character ID : " + _playerData.CurrentCharacterId);
-        Debug.Log("Current Weapon ID : " + _playerData.CurrentWeaponId);
-        Debug.Log("Current Character ID Save : " + data.characterID);
-        Debug.Log("Current Weapon ID Save : " + data.weaponID);
-        _playerData.CurrentCharacterId = data.weaponID;
-        _playerData.CurrentWeaponId = data.weaponID;
-
-        Character = _gameConfig.GetCharacter(data.characterID);
-    }
-
-    public void SaveData(ref GameData data)
-    {
-        data.weaponID = _playerData.CurrentWeaponId;
     }
 }

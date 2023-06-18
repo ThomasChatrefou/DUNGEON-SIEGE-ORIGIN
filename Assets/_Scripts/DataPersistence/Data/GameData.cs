@@ -12,7 +12,7 @@ public class GameData
 
     public byte weaponID;
 
-    public Dictionary<byte, int> weaponUpgrade = new Dictionary<byte, int>();
+    public SerializableDictionary<byte, int> weaponUpgrade; 
 
     /// <summary>
     /// Constructor
@@ -22,6 +22,7 @@ public class GameData
         currentLevel = 0;
         characterID = 255;
         weaponID = 255;
+        weaponUpgrade = new SerializableDictionary<byte, int>();
         for (byte i = 0; i < Byte.MaxValue; i++)
         {
             weaponUpgrade[i] = 0;
