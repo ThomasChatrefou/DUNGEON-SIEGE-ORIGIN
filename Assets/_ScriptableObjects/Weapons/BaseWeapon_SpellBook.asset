@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BaseWeapon_SpellBook
   m_EditorClassIdentifier: 
   Name: Wololo
-  UISprite: {fileID: 0}
+  UISprite: {fileID: 21300000, guid: f05839cbb336a14408beacbbbf00a26d, type: 3}
   Damages: 1
   AttackSpeed: 1
   Range: 3
