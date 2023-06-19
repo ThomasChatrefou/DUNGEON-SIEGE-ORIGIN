@@ -757,46 +757,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 715044854}
     m_Modifications:
-    - target: {fileID: 3476956526415471651, guid: 68ae6e37e60528c4fb61ba091771d1fd,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3476956526415471651, guid: 68ae6e37e60528c4fb61ba091771d1fd,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3476956526554701312, guid: 68ae6e37e60528c4fb61ba091771d1fd,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3476956526554701312, guid: 68ae6e37e60528c4fb61ba091771d1fd,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChangeWeapon
-      objectReference: {fileID: 0}
-    - target: {fileID: 3476956526554701312, guid: 68ae6e37e60528c4fb61ba091771d1fd,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: WeaponChoiceUI, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 3476956526554701312, guid: 68ae6e37e60528c4fb61ba091771d1fd,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3476956526567859505, guid: 68ae6e37e60528c4fb61ba091771d1fd,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 715044855}
-    - target: {fileID: 3476956527059643383, guid: 68ae6e37e60528c4fb61ba091771d1fd,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 3476956527313877629, guid: 68ae6e37e60528c4fb61ba091771d1fd,
         type: 3}
       propertyPath: menu
@@ -804,33 +769,9 @@ PrefabInstance:
       objectReference: {fileID: 715044855}
     - target: {fileID: 3476956527313877629, guid: 68ae6e37e60528c4fb61ba091771d1fd,
         type: 3}
-      propertyPath: wandIcon
-      value: 
-      objectReference: {fileID: 21300000, guid: 866886a4c236e1843be677daf70f245a,
-        type: 3}
-    - target: {fileID: 3476956527313877629, guid: 68ae6e37e60528c4fb61ba091771d1fd,
-        type: 3}
-      propertyPath: swordIcon
-      value: 
-      objectReference: {fileID: 21300000, guid: c85d66e41193b534997993ae020bd331,
-        type: 3}
-    - target: {fileID: 3476956527313877629, guid: 68ae6e37e60528c4fb61ba091771d1fd,
-        type: 3}
       propertyPath: weaponIcon
       value: 
       objectReference: {fileID: 1467641057}
-    - target: {fileID: 3476956527313877629, guid: 68ae6e37e60528c4fb61ba091771d1fd,
-        type: 3}
-      propertyPath: _playerDataSO
-      value: 
-      objectReference: {fileID: 11400000, guid: 71501190d09b90f4b819ba7bc155e5c5,
-        type: 2}
-    - target: {fileID: 3476956527313877629, guid: 68ae6e37e60528c4fb61ba091771d1fd,
-        type: 3}
-      propertyPath: spellbookIcon
-      value: 
-      objectReference: {fileID: 21300000, guid: f05839cbb336a14408beacbbbf00a26d,
-        type: 3}
     - target: {fileID: 3476956527313877630, guid: 68ae6e37e60528c4fb61ba091771d1fd,
         type: 3}
       propertyPath: m_RootOrder
@@ -890,11 +831,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Weapons
-      objectReference: {fileID: 0}
-    - target: {fileID: 3476956527313877631, guid: 68ae6e37e60528c4fb61ba091771d1fd,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68ae6e37e60528c4fb61ba091771d1fd, type: 3}

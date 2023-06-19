@@ -1,5 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.Android;
 using UnityEngine;
 using System;
 using System.IO;
@@ -26,9 +26,10 @@ public class FileDataHandler
         {
             try
             {
+                Debug.Log("Found Data To Load");
                 //Load the serialized data from the file
                 string dataToLoad = "";
-                using (FileStream stream = new FileStream(fullPath, FileMode.Open))
+                using (FileStream stream = new FileStream(fullPath, FileMode.Open, FileAccess.Read))
                 {
                     using (StreamReader reader = new StreamReader(stream))
                     {
@@ -69,7 +70,7 @@ public class FileDataHandler
             }
 
             //Write the serialized data
-            using (FileStream stream = new FileStream(fullPath, FileMode.Create))
+            using (FileStream stream = new FileStream(fullPath, FileMode.Create, FileAccess.Write))
             {
                 using (StreamWriter writer = new StreamWriter(stream))
                 {

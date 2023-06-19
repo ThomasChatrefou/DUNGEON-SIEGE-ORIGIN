@@ -12,7 +12,7 @@ public class PlayerDataManager : CharacterDataManager
     {
         get
         {
-            //Debug.Log("Character ID: " + DataPersistenceManager.instance.GetGameData().characterID + " weapon ID: " + DataPersistenceManager.instance.GetGameData().weaponID);
+            Debug.Log("Character ID: " + DataPersistenceManager.instance.GetGameData().characterID + " weapon ID: " + DataPersistenceManager.instance.GetGameData().weaponID);
             if (_gameConfig.TryGetCharacter(DataPersistenceManager.instance.GetGameData().characterID /*_playerData.CurrentCharacterId*/, out CharacterDataSO character))
             {
                 return character;
