@@ -89,7 +89,10 @@ public class WeaponChoiceUI : MonoBehaviour, IDataPersistence
     
     public void SaveData(ref GameData data)
     {
+        Debug.Log("New Weapon ID: " + newWeaponID);
         data.weaponID = newWeaponID;
+        Debug.Log("data.weaponID: " + data.weaponID);
         data.characterID = newWeaponID;
+        Debug.Log("data.characterID: " + data.characterID);
     }
 }

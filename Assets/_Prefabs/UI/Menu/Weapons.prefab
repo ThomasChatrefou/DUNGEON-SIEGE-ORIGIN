@@ -124,11 +124,11 @@ MonoBehaviour:
       - m_Target: {fileID: 3476956527313877629}
         m_TargetAssemblyTypeName: WeaponChoiceUI, Assembly-CSharp
         m_MethodName: ChangeWeapon
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -393,11 +393,11 @@ MonoBehaviour:
       - m_Target: {fileID: 3476956527313877629}
         m_TargetAssemblyTypeName: WeaponChoiceUI, Assembly-CSharp
         m_MethodName: ChangeWeapon
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1640,7 +1640,7 @@ MonoBehaviour:
       - m_Target: {fileID: 3476956527313877629}
         m_TargetAssemblyTypeName: WeaponChoiceUI, Assembly-CSharp
         m_MethodName: ChangeWeapon
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1979,7 +1979,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3476956527313877631}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -13, y: 0, z: 195.5669}
   m_LocalScale: {x: 0.9086779, y: 0.9086779, z: 0.9086779}
   m_ConstrainProportionsScale: 0
@@ -2005,18 +2005,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menu: {fileID: 0}
+  weaponIcon: {fileID: 0}
   swordData: {fileID: 11400000, guid: d764cf70ad9ae234992ecd39bcab30e1, type: 2}
   spellbookData: {fileID: 11400000, guid: 2c9affc90b2b87244b4a5a1facb299a5, type: 2}
   wandData: {fileID: 11400000, guid: 89a55d2ae80f3ac43b6eaa43dc9873fb, type: 2}
   swordAD: {fileID: 3476956527861066372}
   swordAS: {fileID: 3476956526650699125}
   swordAR: {fileID: 3476956528139801197}
+  swordIcon: {fileID: 21300000, guid: c85d66e41193b534997993ae020bd331, type: 3}
   spellbookAD: {fileID: 3476956528421877547}
   spellbookAS: {fileID: 3476956528358600088}
   spellbookAR: {fileID: 3476956527593735040}
+  spellbookIcon: {fileID: 21300000, guid: f05839cbb336a14408beacbbbf00a26d, type: 3}
   wandAD: {fileID: 3476956527740096159}
   wandAS: {fileID: 3476956527576130897}
   wandAR: {fileID: 3476956528408147254}
+  wandIcon: {fileID: 21300000, guid: 866886a4c236e1843be677daf70f245a, type: 3}
 --- !u!1 &3476956527441784441
 GameObject:
   m_ObjectHideFlags: 0

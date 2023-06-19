@@ -2,6 +2,9 @@ using NaughtyAttributes;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.Android;
+using System.Collections;
+using System;
 
 public class DataPersistenceManager : MonoBehaviour
 {
@@ -22,12 +25,14 @@ public class DataPersistenceManager : MonoBehaviour
             Debug.LogError("Found more than one Data Persistence Manager");
         }
         instance = this;
+        _dataPersistenceObjects = new List<IDataPersistence>();
     }
 
     private void Start()
     {
+        StartCoroutine(AskForPermissions());
         _dataHandler = new FileDataHandler(Application.persistentDataPath, _fileName, _isUsingEncryption);
-        _dataPersistenceObjects = FindAllDataPersistenceObjects();
+        FindAllDataPersistenceObjects();
         LoadGame();
     }
 
@@ -38,7 +43,7 @@ public class DataPersistenceManager : MonoBehaviour
 
     public void LoadGame()
     {
-
+        FindAllDataPersistenceObjects();
         _gameData = _dataHandler.Load();
         //If no data can be loaded, initialize to a new game
         if (_gameData == null)
@@ -54,6 +59,7 @@ public class DataPersistenceManager : MonoBehaviour
 
     public void SaveGame()
     {
+        FindAllDataPersistenceObjects();
         foreach (IDataPersistence dataPersistenceObject in _dataPersistenceObjects)
         {
             dataPersistenceObject.SaveData(ref _gameData);
@@ -66,14 +72,52 @@ public class DataPersistenceManager : MonoBehaviour
         SaveGame();
     }
 
-    private List<IDataPersistence> FindAllDataPersistenceObjects()
+    private void FindAllDataPersistenceObjects()
     {
         IEnumerable<IDataPersistence> dataPersistenceObjects = FindObjectsOfType<MonoBehaviour>().OfType<IDataPersistence>();
-        return new List<IDataPersistence>(dataPersistenceObjects);
+        dataPersistenceObjects.ToList().ForEach(i => { _dataPersistenceObjects.Add(i); Debug.Log("Adding: " + i + " to dataPersistenceArray"); });
     }
 
     public GameData GetGameData()
     {
         return _gameData;
     }
+    private IEnumerator AskForPermissions()
+    {
+#if UNITY_ANDROID
+        List<bool> permissions = new List<bool>() { false, false};
+        List<bool> permissionsAsked = new List<bool>() { false, false};
+        List<Action> actions = new List<Action>()
+    {
+        new Action(() => {
+            permissions[0] = Permission.HasUserAuthorizedPermission(Permission.ExternalStorageWrite);
+            if (!permissions[0] && !permissionsAsked[2])
+            {
+                Permission.RequestUserPermission(Permission.ExternalStorageWrite);
+                permissionsAsked[0] = true;
+                return;
+            }
+        }),
+        new Action(() => {
+            permissions[1] = Permission.HasUserAuthorizedPermission(Permission.ExternalStorageRead);
+            if (!permissions[1] && !permissionsAsked[3])
+            {
+                Permission.RequestUserPermission(Permission.ExternalStorageRead);
+                permissionsAsked[1] = true;
+                return;
+            }
+        })
+    };
+        for (int i = 0; i < permissionsAsked.Count;)
+        {
+            actions[i].Invoke();
+            if (permissions[i])
+            {
+                ++i;
+            }
+            yield return new WaitForEndOfFrame();
+        }
+#endif
+    }
+
 }

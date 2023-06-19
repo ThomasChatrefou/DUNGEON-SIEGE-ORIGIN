@@ -40,6 +40,7 @@ public class MenuUI : MonoBehaviour
     public void WeaponsBack()
     {
         HideWeapons();
+        DataPersistenceManager.instance.SaveGame();
         ShowMenu();
     }
 

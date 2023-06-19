@@ -5,6 +5,7 @@ public class SceneTransition : MonoBehaviour
 {
     private void GoToScene(string sceneName)
     {
+        DataPersistenceManager.instance.SaveGame();
         SceneManager.LoadScene(sceneName);
     }
 
