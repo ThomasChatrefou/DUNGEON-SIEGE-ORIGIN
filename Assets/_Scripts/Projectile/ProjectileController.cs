@@ -38,8 +38,6 @@ public class ProjectileController : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        Debug.Log("OnCollisionEnter object : "   + other.gameObject);
-        Debug.Log("OnCollisionEnter health component : "   + other.gameObject.TryGetComponent<ICharacterHealth>(out var test));
         ProjectilePool.Instance.ClearOneProjectile(this.gameObject);
         if (other.gameObject.TryGetComponent<ICharacterHealth>(out var health))
         {
