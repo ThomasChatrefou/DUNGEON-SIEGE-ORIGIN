@@ -17,4 +17,9 @@ public class SceneTransition : MonoBehaviour
     {
         GoToScene("HomeMenu");
     }
+
+    public void LoadTutorialScene()
+    {
+        GoToScene("Tutorial 1");
+    }
 }

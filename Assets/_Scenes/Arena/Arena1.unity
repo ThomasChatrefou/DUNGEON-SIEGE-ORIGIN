@@ -3128,7 +3128,7 @@ PrefabInstance:
     - target: {fileID: 6139764898137429702, guid: 42247dae4bbc9064c9b45133ead049ce,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -22.242044
+      value: -22.24205
       objectReference: {fileID: 0}
     - target: {fileID: 6139764898137429702, guid: 42247dae4bbc9064c9b45133ead049ce,
         type: 3}
@@ -3178,12 +3178,12 @@ PrefabInstance:
     - target: {fileID: 6139764899769258661, guid: 42247dae4bbc9064c9b45133ead049ce,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.0497708
+      value: -3.0497663
       objectReference: {fileID: 0}
     - target: {fileID: 6139764899769258661, guid: 42247dae4bbc9064c9b45133ead049ce,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.3313355
+      value: -2.3313322
       objectReference: {fileID: 0}
     - target: {fileID: 6139764899769258662, guid: 42247dae4bbc9064c9b45133ead049ce,
         type: 3}
@@ -3361,6 +3361,12 @@ PrefabInstance:
       propertyPath: _waveCounterTextField
       value: 
       objectReference: {fileID: 614706629}
+    - target: {fileID: 80575821236525086, guid: 5c4c64649994f074b904f025cbc802a2,
+        type: 3}
+      propertyPath: _launchLevelTransitionChannel
+      value: 
+      objectReference: {fileID: 11400000, guid: 0161a2d43a5f43e4f9516484504474bd,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c4c64649994f074b904f025cbc802a2, type: 3}
 --- !u!4 &1403310292 stripped

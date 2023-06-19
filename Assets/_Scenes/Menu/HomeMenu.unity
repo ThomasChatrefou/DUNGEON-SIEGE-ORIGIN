@@ -980,6 +980,21 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 715044855}
+    - target: {fileID: 6725501403195485510, guid: 6346a584e5e737c4f9e26561de48208c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 715044856}
+    - target: {fileID: 6725501403195485510, guid: 6346a584e5e737c4f9e26561de48208c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadTutorialScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 6725501403195485510, guid: 6346a584e5e737c4f9e26561de48208c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SceneTransition, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6346a584e5e737c4f9e26561de48208c, type: 3}
 --- !u!1001 &5262937666007872998
