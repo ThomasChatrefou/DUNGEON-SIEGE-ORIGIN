@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06da3fa2c2a3fc0448098a391b8fbd9a, type: 3}
   m_Name: AITurretData
   m_EditorClassIdentifier: 
+  Name: 
+  UISprite: {fileID: 0}
   MaxHealth: 1
   MovementSpeed: 0
-  BaseDamages: 1
-  BaseAttackSpeed: 1
+  BaseDamages: 0.75
+  BaseAttackSpeed: 0.75
   BaseRange: 20
-  Weapon: {fileID: 0}
+  BaseWeapon: {fileID: 0}
   CharacterLook: {fileID: 0}

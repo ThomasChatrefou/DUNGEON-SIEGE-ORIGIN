@@ -492,7 +492,7 @@ PrefabInstance:
         type: 3}
       propertyPath: currentSceneData
       value: 
-      objectReference: {fileID: 11400000, guid: 871e137043fa867438d9acabde916aff,
+      objectReference: {fileID: 11400000, guid: 7fb9d82bbe0a5f94892226644b4eb2d1,
         type: 2}
     - target: {fileID: 4997977044625170523, guid: 90c73aaf4ce4ee04996d1e00e1eae436,
         type: 3}

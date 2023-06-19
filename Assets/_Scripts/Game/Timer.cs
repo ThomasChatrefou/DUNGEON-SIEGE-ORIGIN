@@ -78,7 +78,7 @@ public class Timer : MonoBehaviour
         {
             _currentWave += 1;
             _wholeTimerUI.SetActive(false);
-            _timerTextField.text = "";
+            _timerTextField.canvasRenderer.SetAlpha(0f);
             _waveOnlyUI.SetActive(true);
         }
     }
@@ -87,7 +87,7 @@ public class Timer : MonoBehaviour
     {
         _waveOnlyUI.SetActive(false);
         _wholeTimerUI.SetActive(false);
-        _timerTextField.text = "";
-        _waveCounterTextField.text = "";
+        _timerTextField.canvasRenderer.SetAlpha(0f);
+        _waveCounterTextField.canvasRenderer.SetAlpha(0f);
     }
 }

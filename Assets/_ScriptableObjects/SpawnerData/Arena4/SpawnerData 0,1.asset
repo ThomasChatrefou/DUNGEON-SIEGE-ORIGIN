@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2efa1caf50ec64943a22c7e0303786b2, type: 3}
   m_Name: SpawnerData 0,1
   m_EditorClassIdentifier: 
-  WaveOptions: []
+  WaveOptions:
+  - DoSpawn: 1
+    Prefab: {fileID: 8590659139627040049, guid: ab960db92c5dd3841b920ccd5cfd09f2,
+      type: 3}

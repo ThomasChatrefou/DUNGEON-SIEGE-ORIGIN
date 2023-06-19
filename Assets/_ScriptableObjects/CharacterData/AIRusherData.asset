@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06da3fa2c2a3fc0448098a391b8fbd9a, type: 3}
   m_Name: AIRusherData
   m_EditorClassIdentifier: 
+  Name: 
+  UISprite: {fileID: 0}
   MaxHealth: 3
-  MovementSpeed: 3
-  BaseDamages: 2
+  MovementSpeed: 3.5
+  BaseDamages: 1.5
   BaseAttackSpeed: 0.5
   BaseRange: 0.7
-  Weapon: {fileID: 0}
+  BaseWeapon: {fileID: 0}
   CharacterLook: {fileID: 0}
