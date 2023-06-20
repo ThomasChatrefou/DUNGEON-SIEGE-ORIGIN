@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Jeanne (oskour)
   UISprite: {fileID: 0}
   MaxHealth: 5
-  MovementSpeed: 7
+  MovementSpeed: 10
   BaseDamages: 1
   BaseAttackSpeed: 0.5
   BaseRange: 0

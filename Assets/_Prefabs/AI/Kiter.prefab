@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: -8867959400488616808}
   - component: {fileID: 9041901533141217053}
   - component: {fileID: -7307243309012692044}
+  - component: {fileID: 2088096461914428664}
   m_Layer: 9
   m_Name: Kiter
   m_TagString: AI
@@ -244,3 +245,15 @@ MonoBehaviour:
   _destroyObjectChannel: {fileID: 11400000, guid: 4a687312c5918334bb6568fa59d8f2a3,
     type: 2}
   _timeForScaling: 0.2
+--- !u!114 &2088096461914428664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3290044505870710492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc11a403fe5246a40924419a1dfda93e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

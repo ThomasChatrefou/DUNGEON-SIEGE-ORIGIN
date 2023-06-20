@@ -243,7 +243,7 @@ GameObject:
   - component: {fileID: 46827678}
   - component: {fileID: 46827677}
   - component: {fileID: 46827680}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -462,7 +462,7 @@ GameObject:
   - component: {fileID: 57605624}
   - component: {fileID: 57605623}
   - component: {fileID: 57605622}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1061,6 +1061,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
         type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
@@ -1155,6 +1160,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
         type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
@@ -1190,7 +1200,7 @@ GameObject:
   - component: {fileID: 183766526}
   - component: {fileID: 183766525}
   - component: {fileID: 183766528}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1365,6 +1375,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
         type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
@@ -1465,6 +1480,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
         type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
@@ -1494,7 +1514,7 @@ GameObject:
   - component: {fileID: 261940125}
   - component: {fileID: 261940124}
   - component: {fileID: 261940127}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1666,6 +1686,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lava (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
         type: 3}
@@ -1900,6 +1925,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
         type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
@@ -2048,6 +2078,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lava
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
         type: 3}
@@ -2463,6 +2498,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
         type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
@@ -2560,6 +2600,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
         type: 3}
@@ -2832,6 +2877,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
         type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
@@ -2989,6 +3039,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lava (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
         type: 3}
@@ -3452,6 +3507,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
         type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
@@ -3549,6 +3609,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
         type: 3}
@@ -3732,6 +3797,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
         type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
@@ -3860,6 +3930,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
         type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
@@ -3963,6 +4038,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
         type: 3}
@@ -4166,6 +4246,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
         type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
@@ -4258,6 +4343,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lava (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
         type: 3}
@@ -4492,6 +4582,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
         type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
@@ -4634,6 +4729,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
         type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
@@ -4734,6 +4834,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
         type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
@@ -4825,6 +4930,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
         type: 3}
@@ -4963,6 +5073,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
         type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
@@ -5058,6 +5173,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
         type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
@@ -5150,6 +5270,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lava (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
         type: 3}
@@ -5577,6 +5702,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
         type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
@@ -5669,6 +5799,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lava (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
         type: 3}
@@ -5807,6 +5942,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
         type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419500302159816080, guid: 894b96897d428f845ae2bf32c5d7af75,
+        type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
@@ -5899,6 +6039,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lava (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
         type: 3}
@@ -6000,6 +6145,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lava (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1112788930794599599, guid: 812e7ddb57ce72146b1cf60a78327d12,
         type: 3}

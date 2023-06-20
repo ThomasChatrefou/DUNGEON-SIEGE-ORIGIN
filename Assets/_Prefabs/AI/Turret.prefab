@@ -116,6 +116,7 @@ GameObject:
   - component: {fileID: -1792114314689731091}
   - component: {fileID: 7928833726321325408}
   - component: {fileID: 5754100843679757442}
+  - component: {fileID: 682019575801003698}
   m_Layer: 9
   m_Name: Turret
   m_TagString: AI
@@ -306,3 +307,15 @@ MonoBehaviour:
   _destroyObjectChannel: {fileID: 11400000, guid: 4a687312c5918334bb6568fa59d8f2a3,
     type: 2}
   _timeForScaling: 0.2
+--- !u!114 &682019575801003698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8315960100409251488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc11a403fe5246a40924419a1dfda93e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

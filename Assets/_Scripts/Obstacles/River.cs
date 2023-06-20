@@ -4,29 +4,23 @@ using UnityEngine;
 
 public class River : MonoBehaviour
 {
-    [SerializeField] private float slowdown = 0.5f;
+    [SerializeField] private float _slowdown = 0.5f;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Character"))
+        RiverInteraction riverInteractionComponent = other.GetComponent<RiverInteraction>();
+        if (riverInteractionComponent != null)
         {
-            PlayerController playerController = other.gameObject.GetComponent<PlayerController>();
-            if(playerController != null)
-            {
-                playerController.SetPlayerSpeed(playerController.GetPlayerSpeed() * slowdown);
-            }
+            riverInteractionComponent.SlowCharacterSpeed(_slowdown);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Character"))
+        RiverInteraction riverInteractionComponent = other.GetComponent<RiverInteraction>();
+        if (riverInteractionComponent != null)
         {
-            PlayerController playerController = other.gameObject.GetComponent<PlayerController>();
-            if (playerController != null)
-            {
-                playerController.SetPlayerSpeed(playerController.GetPlayerSpeed() / slowdown);
-            }
+            riverInteractionComponent.RemoveSlowCharacterSpeed(_slowdown);
         }
     }
 }
