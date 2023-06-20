@@ -123,6 +123,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &127532946 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3476956527873507933, guid: 68ae6e37e60528c4fb61ba091771d1fd,
+    type: 3}
+  m_PrefabInstance: {fileID: 3476956527777388287}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &172030081 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3476956528434241958, guid: 68ae6e37e60528c4fb61ba091771d1fd,
+    type: 3}
+  m_PrefabInstance: {fileID: 3476956527777388287}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &284488485 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4653056621042819074, guid: 6346a584e5e737c4f9e26561de48208c,
@@ -395,6 +407,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5262937666007872998}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1252980215 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3476956526567859507, guid: 68ae6e37e60528c4fb61ba091771d1fd,
+    type: 3}
+  m_PrefabInstance: {fileID: 3476956527777388287}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1409575337
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,6 +481,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1463906305 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3476956527660565854, guid: 68ae6e37e60528c4fb61ba091771d1fd,
+    type: 3}
+  m_PrefabInstance: {fileID: 3476956527777388287}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1467641057 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7576247034302940114, guid: 6346a584e5e737c4f9e26561de48208c,
@@ -475,6 +499,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1576073338 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3476956527441784441, guid: 68ae6e37e60528c4fb61ba091771d1fd,
+    type: 3}
+  m_PrefabInstance: {fileID: 3476956527777388287}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1594915059
 GameObject:
   m_ObjectHideFlags: 0
@@ -769,9 +799,34 @@ PrefabInstance:
       objectReference: {fileID: 715044855}
     - target: {fileID: 3476956527313877629, guid: 68ae6e37e60528c4fb61ba091771d1fd,
         type: 3}
+      propertyPath: titleGO
+      value: 
+      objectReference: {fileID: 1463906305}
+    - target: {fileID: 3476956527313877629, guid: 68ae6e37e60528c4fb61ba091771d1fd,
+        type: 3}
+      propertyPath: weapon1GO
+      value: 
+      objectReference: {fileID: 127532946}
+    - target: {fileID: 3476956527313877629, guid: 68ae6e37e60528c4fb61ba091771d1fd,
+        type: 3}
+      propertyPath: weapon2GO
+      value: 
+      objectReference: {fileID: 172030081}
+    - target: {fileID: 3476956527313877629, guid: 68ae6e37e60528c4fb61ba091771d1fd,
+        type: 3}
+      propertyPath: weapon3GO
+      value: 
+      objectReference: {fileID: 1576073338}
+    - target: {fileID: 3476956527313877629, guid: 68ae6e37e60528c4fb61ba091771d1fd,
+        type: 3}
       propertyPath: weaponIcon
       value: 
       objectReference: {fileID: 1467641057}
+    - target: {fileID: 3476956527313877629, guid: 68ae6e37e60528c4fb61ba091771d1fd,
+        type: 3}
+      propertyPath: buttonbackGO
+      value: 
+      objectReference: {fileID: 1252980215}
     - target: {fileID: 3476956527313877630, guid: 68ae6e37e60528c4fb61ba091771d1fd,
         type: 3}
       propertyPath: m_RootOrder

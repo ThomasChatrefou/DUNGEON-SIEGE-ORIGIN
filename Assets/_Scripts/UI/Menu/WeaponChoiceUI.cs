@@ -18,8 +18,6 @@ public class WeaponChoiceUI : MonoBehaviour, IDataPersistence
     [SerializeField] private TextMeshProUGUI swordAR;
     [SerializeField] private Sprite swordIcon;
 
-
-
     [SerializeField] private TextMeshProUGUI spellbookAD;
     [SerializeField] private TextMeshProUGUI spellbookAS;
     [SerializeField] private TextMeshProUGUI spellbookAR;
@@ -29,6 +27,13 @@ public class WeaponChoiceUI : MonoBehaviour, IDataPersistence
     [SerializeField] private TextMeshProUGUI wandAS;
     [SerializeField] private TextMeshProUGUI wandAR;
     [SerializeField] private Sprite wandIcon;
+
+    [SerializeField] public GameObject titleGO;
+    [SerializeField] public GameObject buttonbackGO;
+    [SerializeField] public GameObject weapon1GO;
+    [SerializeField] public GameObject weapon2GO;
+    [SerializeField] public GameObject weapon3GO;
+
 
     private byte newWeaponID = 0;
 
@@ -47,6 +52,13 @@ public class WeaponChoiceUI : MonoBehaviour, IDataPersistence
         wandAD.text = wandData.Damages.ToString();
         wandAS.text = wandData.AttackSpeed.ToString();
         wandAR.text = wandData.Range.ToString();
+
+        Debug.Log(DataPersistenceManager.instance.GetGameData().weaponID);
+        Debug.Log(newWeaponID);
+        newWeaponID = DataPersistenceManager.instance.GetGameData().weaponID;
+
+        ChangeIcon();
+
     }
 
     // Update is called once per frame
@@ -58,6 +70,8 @@ public class WeaponChoiceUI : MonoBehaviour, IDataPersistence
     public void ChangeWeapon(int _weaponID)
     {
         newWeaponID = ((byte)_weaponID);
+        DataPersistenceManager.instance.GetGameData().weaponID = newWeaponID;
+        DataPersistenceManager.instance.GetGameData().characterID = newWeaponID;
         ChangeIcon();
         /* To link here */
         menu.WeaponsBack();
