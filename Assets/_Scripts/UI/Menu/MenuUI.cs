@@ -9,10 +9,13 @@ public class MenuUI : MonoBehaviour
     [SerializeField] public GameObject weaponsPanel;
     SceneTransition transit;
 
+    WeaponChoiceUI weaponChoiceUI;
+
     void Start()
     {
         transit = gameObject.GetComponent<SceneTransition>();
         HideSettings();
+        weaponChoiceUI = weaponsPanel.GetComponent<WeaponChoiceUI>();
         HideWeapons();
     }
 
@@ -90,11 +93,19 @@ public class MenuUI : MonoBehaviour
 
     public void ShowWeapons()
     {
-        weaponsPanel.SetActive(true);
+        weaponChoiceUI.titleGO.SetActive(true);
+        weaponChoiceUI.buttonbackGO.SetActive(true);
+        weaponChoiceUI.weapon1GO.SetActive(true);
+        weaponChoiceUI.weapon2GO.SetActive(true);
+        weaponChoiceUI.weapon3GO.SetActive(true);
     }
 
     public void HideWeapons()
     {
-        weaponsPanel.SetActive(false);
+        weaponChoiceUI.titleGO.SetActive(false);
+        weaponChoiceUI.buttonbackGO.SetActive(false);
+        weaponChoiceUI.weapon1GO.SetActive(false);
+        weaponChoiceUI.weapon2GO.SetActive(false);
+        weaponChoiceUI.weapon3GO.SetActive(false);
     }
 }
