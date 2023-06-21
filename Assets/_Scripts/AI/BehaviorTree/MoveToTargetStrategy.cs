@@ -3,7 +3,7 @@ using UnityEngine.AI;
 
 public class MoveToTargetStrategy : IBehaviorTree
 {
-    private BlackBoard _blackboard;
+    public BlackBoard _blackboard;
     private Transform _target;
     private float _attackRange;
     private float _attackCooldown;
