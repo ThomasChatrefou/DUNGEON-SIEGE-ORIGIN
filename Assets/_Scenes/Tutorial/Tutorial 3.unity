@@ -1910,7 +1910,7 @@ MonoBehaviour:
   _deathScreen: {fileID: 1389367300}
   _deathScreenBG: {fileID: 851933503}
   _buttonPause: {fileID: 0}
-  _fadeTimer: 0
+  _fadeTimer: 1
 --- !u!114 &1391108564
 MonoBehaviour:
   m_ObjectHideFlags: 0
