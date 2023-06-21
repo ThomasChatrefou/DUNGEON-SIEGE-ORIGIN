@@ -100,4 +100,9 @@ public class PlayerController : MonoBehaviour
         _playerSpeed = _speed;
     }
 
+    public void ResetSpeed()
+    {
+        _playerSpeed = _characterDataManager.Data.MovementSpeed;
+    }
+
 }

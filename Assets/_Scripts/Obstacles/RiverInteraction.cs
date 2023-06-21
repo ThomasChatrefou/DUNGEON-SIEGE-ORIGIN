@@ -5,26 +5,31 @@ public class RiverInteraction : MonoBehaviour
 {
     private PlayerController _playerControllerComponent;
     private NavMeshAgent _navMeshAgentComponent;
-    private KiterController _kiterController;
-    private RusherController _rusherController;
+    private int _countSlowCaseTrigger = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         _playerControllerComponent = GetComponent<PlayerController>();
         _navMeshAgentComponent = GetComponent<NavMeshAgent>();
-        TryGetComponent<KiterController>(out KiterController _kiterController);
-        TryGetComponent<RusherController>(out RusherController _rusherController);
     }
 
     public void SlowPlayerSpeed(float slowdown)
     {
-        _playerControllerComponent.SetPlayerSpeed(_playerControllerComponent.GetPlayerSpeed() * slowdown);
+        if (_countSlowCaseTrigger == 0)
+        {
+            _playerControllerComponent.SetPlayerSpeed(_playerControllerComponent.GetPlayerSpeed() * slowdown);
+        }
+            _countSlowCaseTrigger++;
     }
 
     public void RemoveSlowPlayerSpeed(float slowdown)
     {
-        _playerControllerComponent.SetPlayerSpeed(_playerControllerComponent.GetPlayerSpeed() / slowdown);
+        _countSlowCaseTrigger--;
+        if (_countSlowCaseTrigger == 0)
+        {
+            _playerControllerComponent.ResetSpeed();
+        }
     }
 
     public void SlowAiSpeed(float slowdown)
