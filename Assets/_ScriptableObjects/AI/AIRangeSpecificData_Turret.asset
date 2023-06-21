@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: AIRangeSpecificData_Turret
   m_EditorClassIdentifier: 
   DeltaRange: 0
-  ProjectileSpeed: 10
+  ProjectileSpeed: 9
   ProjectileLifeTime: 6

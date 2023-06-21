@@ -15,4 +15,3 @@ MonoBehaviour:
   LinkedWeapon: {fileID: 11400000, guid: d764cf70ad9ae234992ecd39bcab30e1, type: 2}
   Upgrades:
   - {fileID: 11400000, guid: d8341161920c55744a402b9ebb4b4464, type: 2}
-  - {fileID: 11400000, guid: b9614c821726cc047a99033fea18f920, type: 2}

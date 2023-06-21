@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Michel
   UISprite: {fileID: 0}
-  MaxHealth: 8
-  MovementSpeed: 8
-  BaseDamages: 2
-  BaseAttackSpeed: 1
+  MaxHealth: 15
+  MovementSpeed: 12
+  BaseDamages: 0
+  BaseAttackSpeed: 0
   BaseRange: 0
   BaseWeapon: {fileID: 11400000, guid: 2c9affc90b2b87244b4a5a1facb299a5, type: 2}
   CharacterLook: {fileID: 3861122734894233436, guid: b46142260fb960741936371b02e0b826,
