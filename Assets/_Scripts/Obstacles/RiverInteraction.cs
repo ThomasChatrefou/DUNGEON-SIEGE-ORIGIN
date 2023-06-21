@@ -1,26 +1,39 @@
-using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.AI;
 using UnityEngine;
 
 public class RiverInteraction : MonoBehaviour
 {
-    private CharacterDataManager _characterDataManagerComponent;
+    private PlayerController _playerControllerComponent;
+    private NavMeshAgent _navMeshAgentComponent;
+    private KiterController _kiterController;
+    private RusherController _rusherController;
 
     // Start is called before the first frame update
     void Start()
     {
-        _characterDataManagerComponent = GetComponent<CharacterDataManager>();
+        _playerControllerComponent = GetComponent<PlayerController>();
+        _navMeshAgentComponent = GetComponent<NavMeshAgent>();
+        TryGetComponent<KiterController>(out KiterController _kiterController);
+        TryGetComponent<RusherController>(out RusherController _rusherController);
     }
 
-    public void SlowCharacterSpeed(float slowdown)
+    public void SlowPlayerSpeed(float slowdown)
     {
-        // do not work, the data speed from character data manager component is used on a awake so it is useless to change it in runtime
-        _characterDataManagerComponent.Data.MovementSpeed = _characterDataManagerComponent.Data.MovementSpeed * slowdown;
+        _playerControllerComponent.SetPlayerSpeed(_playerControllerComponent.GetPlayerSpeed() * slowdown);
     }
 
-    public void RemoveSlowCharacterSpeed(float slowdown)
+    public void RemoveSlowPlayerSpeed(float slowdown)
     {
-        Debug.Log("exit");
-        _characterDataManagerComponent.Data.MovementSpeed = _characterDataManagerComponent.Data.MovementSpeed / slowdown;
+        _playerControllerComponent.SetPlayerSpeed(_playerControllerComponent.GetPlayerSpeed() / slowdown);
+    }
+
+    public void SlowAiSpeed(float slowdown)
+    { 
+        _navMeshAgentComponent.speed = _navMeshAgentComponent.speed * slowdown;
+    }
+
+    public void RemoveSlowAiSpeed(float slowdown)
+    {
+        _navMeshAgentComponent.speed = _navMeshAgentComponent.speed / slowdown;
     }
 }

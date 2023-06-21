@@ -9,9 +9,14 @@ public class River : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         RiverInteraction riverInteractionComponent = other.GetComponent<RiverInteraction>();
+
         if (riverInteractionComponent != null)
         {
-            riverInteractionComponent.SlowCharacterSpeed(_slowdown);
+            if(other.gameObject.CompareTag("Player"))
+                riverInteractionComponent.SlowPlayerSpeed(_slowdown);
+            else if(other.gameObject.CompareTag("AI"))
+            Debug.Log(other.gameObject.name);
+                riverInteractionComponent.SlowAiSpeed(_slowdown);
         }
     }
 
@@ -20,7 +25,10 @@ public class River : MonoBehaviour
         RiverInteraction riverInteractionComponent = other.GetComponent<RiverInteraction>();
         if (riverInteractionComponent != null)
         {
-            riverInteractionComponent.RemoveSlowCharacterSpeed(_slowdown);
+            if (other.gameObject.CompareTag("Player"))
+                riverInteractionComponent.RemoveSlowPlayerSpeed(_slowdown);
+            else if (other.gameObject.CompareTag("AI"))
+                riverInteractionComponent.RemoveSlowAiSpeed(_slowdown);
         }
     }
 }
