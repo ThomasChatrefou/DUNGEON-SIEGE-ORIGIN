@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Robert
   UISprite: {fileID: 0}
-  MaxHealth: 10
-  MovementSpeed: 6
-  BaseDamages: 3
-  BaseAttackSpeed: 2
+  MaxHealth: 20
+  MovementSpeed: 15
+  BaseDamages: 0
+  BaseAttackSpeed: 0
   BaseRange: 0
   BaseWeapon: {fileID: 11400000, guid: d764cf70ad9ae234992ecd39bcab30e1, type: 2}
   CharacterLook: {fileID: 3861122734894233436, guid: 9d1682b655339ba49ba30b740c55954d,

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: AIRangeSpecificData_Kiter
   m_EditorClassIdentifier: 
   DeltaRange: 3
-  ProjectileSpeed: 10
+  ProjectileSpeed: 9
   ProjectileLifeTime: 6

@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Baguette
   UISprite: {fileID: 21300000, guid: 866886a4c236e1843be677daf70f245a, type: 3}
   Damages: 1
-  AttackSpeed: 0.75
+  AttackSpeed: 0.5
   Range: 6
   Ability: {fileID: 11400000, guid: 850ce9158f9507b4c9c1bf823a15daf1, type: 2}
   AbilityVisualEffectPrefab: {fileID: 8207281649134700329, guid: ac6c3e304ef9fe74f8a443be8b3b318a,

@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Jeanne (oskour)
   UISprite: {fileID: 0}
-  MaxHealth: 5
+  MaxHealth: 10
   MovementSpeed: 10
-  BaseDamages: 1
-  BaseAttackSpeed: 0.5
+  BaseDamages: 0
+  BaseAttackSpeed: 0
   BaseRange: 0
   BaseWeapon: {fileID: 11400000, guid: 89a55d2ae80f3ac43b6eaa43dc9873fb, type: 2}
   CharacterLook: {fileID: 3861122734894233436, guid: b52c38e5b48f6874cadf8abd27431da2,

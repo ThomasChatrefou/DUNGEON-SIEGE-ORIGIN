@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   UISprite: {fileID: 0}
-  MaxHealth: 3
-  MovementSpeed: 3.5
-  BaseDamages: 1.5
-  BaseAttackSpeed: 0.5
+  MaxHealth: 6
+  MovementSpeed: 8
+  BaseDamages: 2
+  BaseAttackSpeed: 2
   BaseRange: 0.7
   BaseWeapon: {fileID: 0}
   CharacterLook: {fileID: 0}
