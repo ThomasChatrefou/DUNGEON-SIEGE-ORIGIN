@@ -718,11 +718,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 387168420892555337, guid: f06b18c9c9b69ae408c50a29605a8ec2,
-        type: 3}
-      propertyPath: _isUsingEncryption
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2776710285843898976, guid: f06b18c9c9b69ae408c50a29605a8ec2,
         type: 3}
       propertyPath: m_Name
@@ -877,6 +872,11 @@ PrefabInstance:
       objectReference: {fileID: 1467641057}
     - target: {fileID: 3476956527313877629, guid: 68ae6e37e60528c4fb61ba091771d1fd,
         type: 3}
+      propertyPath: _wandUpgrade
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3476956527313877629, guid: 68ae6e37e60528c4fb61ba091771d1fd,
+        type: 3}
       propertyPath: buttonbackGO
       value: 
       objectReference: {fileID: 1252980215}
@@ -886,6 +886,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: d05be170c5bff954d9898844891ba594,
         type: 2}
+    - target: {fileID: 3476956527313877629, guid: 68ae6e37e60528c4fb61ba091771d1fd,
+        type: 3}
+      propertyPath: _swordUpgrade
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3476956527313877629, guid: 68ae6e37e60528c4fb61ba091771d1fd,
+        type: 3}
+      propertyPath: _spellbookUpgrade
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3476956527313877630, guid: 68ae6e37e60528c4fb61ba091771d1fd,
         type: 3}
       propertyPath: m_RootOrder
