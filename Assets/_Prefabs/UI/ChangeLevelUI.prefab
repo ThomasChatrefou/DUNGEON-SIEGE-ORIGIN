@@ -89,7 +89,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0419be9efa1ec644a038c6ac1950ce5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameConfigSO: {fileID: 11400000, guid: d05be170c5bff954d9898844891ba594, type: 2}
   _playerDataSO: {fileID: 11400000, guid: 71501190d09b90f4b819ba7bc155e5c5, type: 2}
+  _swordDataSO: {fileID: 11400000, guid: d764cf70ad9ae234992ecd39bcab30e1, type: 2}
+  _swordUpgradeSO: {fileID: 11400000, guid: 0dcf86d94a79e0c47b5955f4b4545cf8, type: 2}
+  _wandDataSO: {fileID: 11400000, guid: 89a55d2ae80f3ac43b6eaa43dc9873fb, type: 2}
+  _wandUpgradeSO: {fileID: 11400000, guid: c1d6242dff23c5f44809f077a194a1ba, type: 2}
+  _bookDataSO: {fileID: 11400000, guid: 2c9affc90b2b87244b4a5a1facb299a5, type: 2}
+  _bookUpgradeSO: {fileID: 11400000, guid: 7c520acf9b2b4bc4a8130cc7c26a62d9, type: 2}
   _upgradeChoiceHolder: {fileID: 3327991065404269450, guid: 7e5108fa817762b4ba91765043e26c91,
     type: 3}
   _twoChoice: {fileID: 2032867194}
@@ -100,12 +107,9 @@ MonoBehaviour:
   _backgroundGO: {fileID: 1775850111663267083}
   _launchLevelTransitionChannel: {fileID: 11400000, guid: 0161a2d43a5f43e4f9516484504474bd,
     type: 2}
-  _sceneToLoad: HomeMenu
+  _sceneToLoad: Arena2
   _tradeSprite: {fileID: 21300000, guid: d49bd43bac7c970458c7a29e8ab02641, type: 3}
   _upgradeSprite: {fileID: 21300000, guid: 05034e516645b9d429ca6f50d600db2f, type: 3}
-  _swordSprite: {fileID: 21300000, guid: c6e325ea3d2890742aeb01843f0935be, type: 3}
-  _bookSprite: {fileID: 21300000, guid: 5f1e96308e545f64a825ddf1e3f7ccf1, type: 3}
-  _wandSprite: {fileID: 21300000, guid: bfd2cb20639b19347acccb07ef6474b6, type: 3}
 --- !u!1 &1775850111663267083
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,8 +8,8 @@ public class PlayerDataSO : ScriptableObject
     public byte CurrentWeaponId = GameConfigSO.INVALID_ID;
     public Dictionary<byte, int> CountByUpgradeId = new();
 
-    public void IncrementUpgrade()
+    public void IncrementUpgrade(byte upgradeID)
     {
-        CountByUpgradeId[CurrentWeaponId]++;
+        CountByUpgradeId[upgradeID]++;
     }
 }

@@ -1,13 +1,13 @@
 using UnityEngine;
 
-[RequireComponent(typeof(CharacterDataManager))]
+[RequireComponent(typeof(PlayerDataManager))]
 public class CharacterLookSetter : MonoBehaviour
 {
-    private CharacterDataManager _characterDataManager;
+    private PlayerDataManager _playerDataManager;
 
-    private void Awake()
+    private void Start()
     {
-        _characterDataManager = GetComponent<CharacterDataManager>();
-        Instantiate(_characterDataManager.Data.CharacterLook, transform);
+        _playerDataManager = GetComponent<PlayerDataManager>();
+        Instantiate(_playerDataManager.Data.CharacterLook, transform);
     }
 }

@@ -718,6 +718,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 387168420892555337, guid: f06b18c9c9b69ae408c50a29605a8ec2,
+        type: 3}
+      propertyPath: _isUsingEncryption
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2776710285843898976, guid: f06b18c9c9b69ae408c50a29605a8ec2,
         type: 3}
       propertyPath: m_Name
@@ -787,11 +792,59 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 715044854}
     m_Modifications:
+    - target: {fileID: 3476956526415471651, guid: 68ae6e37e60528c4fb61ba091771d1fd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3476956526415471651, guid: 68ae6e37e60528c4fb61ba091771d1fd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: 2c9affc90b2b87244b4a5a1facb299a5,
+        type: 2}
+    - target: {fileID: 3476956526415471651, guid: 68ae6e37e60528c4fb61ba091771d1fd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: WeaponDataSO, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3476956526554701312, guid: 68ae6e37e60528c4fb61ba091771d1fd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3476956526554701312, guid: 68ae6e37e60528c4fb61ba091771d1fd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: 89a55d2ae80f3ac43b6eaa43dc9873fb,
+        type: 2}
+    - target: {fileID: 3476956526554701312, guid: 68ae6e37e60528c4fb61ba091771d1fd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: WeaponDataSO, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 3476956526567859505, guid: 68ae6e37e60528c4fb61ba091771d1fd,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 715044855}
+    - target: {fileID: 3476956527059643383, guid: 68ae6e37e60528c4fb61ba091771d1fd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3476956527059643383, guid: 68ae6e37e60528c4fb61ba091771d1fd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: d764cf70ad9ae234992ecd39bcab30e1,
+        type: 2}
+    - target: {fileID: 3476956527059643383, guid: 68ae6e37e60528c4fb61ba091771d1fd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: WeaponDataSO, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 3476956527313877629, guid: 68ae6e37e60528c4fb61ba091771d1fd,
         type: 3}
       propertyPath: menu
@@ -827,6 +880,12 @@ PrefabInstance:
       propertyPath: buttonbackGO
       value: 
       objectReference: {fileID: 1252980215}
+    - target: {fileID: 3476956527313877629, guid: 68ae6e37e60528c4fb61ba091771d1fd,
+        type: 3}
+      propertyPath: _gameConfigSO
+      value: 
+      objectReference: {fileID: 11400000, guid: d05be170c5bff954d9898844891ba594,
+        type: 2}
     - target: {fileID: 3476956527313877630, guid: 68ae6e37e60528c4fb61ba091771d1fd,
         type: 3}
       propertyPath: m_RootOrder
@@ -974,7 +1033,7 @@ PrefabInstance:
     - target: {fileID: 6099592351374701576, guid: 6346a584e5e737c4f9e26561de48208c,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6725501403195485510, guid: 6346a584e5e737c4f9e26561de48208c,
         type: 3}

@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _targetTag: AI
   _senderTag: Player
-  _lifeTime: 5
+  _hitableLayerName: Player
 --- !u!65 &7631224129398412855
 BoxCollider:
   m_ObjectHideFlags: 0

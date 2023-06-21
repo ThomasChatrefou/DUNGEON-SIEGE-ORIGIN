@@ -13,14 +13,6 @@ public enum EChoiceType
     TRADESETUP,
 }
 
-public enum ETradeType
-{
-    NONE,
-    SWORD,
-    BOOK,
-    WAND,
-}
-
 public class DisplayChoiceScript : MonoBehaviour
 {
     [SerializeField] Image _backgroundImage;
@@ -28,7 +20,7 @@ public class DisplayChoiceScript : MonoBehaviour
     public string _sceneToLoad;
     Choice _choice;
     EChoiceType _choiceType = EChoiceType.NONE;
-    ETradeType _tradeType = ETradeType.NONE;
+    byte newWeaponID = 0;
     public void OnClick()
     {
         switch (_choiceType)
@@ -59,23 +51,7 @@ public class DisplayChoiceScript : MonoBehaviour
 
     public void Trade()
     {
-        switch (_tradeType)
-        {
-            case ETradeType.NONE:
-                Debug.Log("Something went wrong ...");
-                break;
-            case ETradeType.SWORD:
-                transform.GetComponentInParent<ChoiceUIScript>().SetNewWeaponID(0);
-                break;
-            case ETradeType.BOOK:
-                transform.GetComponentInParent<ChoiceUIScript>().SetNewWeaponID(1);
-                break;
-            case ETradeType.WAND:
-                transform.GetComponentInParent<ChoiceUIScript>().SetNewWeaponID(2);
-                break;
-            default:
-                break;
-        }
+        transform.GetComponentInParent<ChoiceUIScript>().SetNewWeaponID(newWeaponID);
         LoadNextScene();
     }
 
@@ -91,13 +67,13 @@ public class DisplayChoiceScript : MonoBehaviour
         _choiceType = choiceType;
     }
 
-    public void SetTradeType(ETradeType tradeType) 
-    {
-        _tradeType = tradeType;
-    }
-
     public void SetImageSprite(Sprite newSprite)
     {
         _backgroundImage.sprite = newSprite;
+    }
+
+    public void SetNewWeaponID(byte _newWeaponID)
+    {
+        newWeaponID = _newWeaponID;
     }
 }
