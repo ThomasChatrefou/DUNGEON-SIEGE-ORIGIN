@@ -53,10 +53,6 @@ public class WeaponChoiceUI : MonoBehaviour, IDataPersistence
         wandAS.text = wandData.AttackSpeed.ToString();
         wandAR.text = wandData.Range.ToString();
 
-        Debug.Log(DataPersistenceManager.instance.GetGameData().weaponID);
-        Debug.Log(newWeaponID);
-        newWeaponID = DataPersistenceManager.instance.GetGameData().weaponID;
-
         ChangeIcon();
 
     }
@@ -70,8 +66,6 @@ public class WeaponChoiceUI : MonoBehaviour, IDataPersistence
     public void ChangeWeapon(int _weaponID)
     {
         newWeaponID = ((byte)_weaponID);
-        DataPersistenceManager.instance.GetGameData().weaponID = newWeaponID;
-        DataPersistenceManager.instance.GetGameData().characterID = newWeaponID;
         ChangeIcon();
         /* To link here */
         menu.WeaponsBack();
