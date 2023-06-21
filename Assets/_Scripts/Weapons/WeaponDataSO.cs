@@ -6,6 +6,7 @@ public class WeaponDataSO : ScriptableObject
 {
     public string Name;
     public Sprite UISprite;
+    public Sprite TradeIcon;
 
     [Space(20)]
     public int Damages;

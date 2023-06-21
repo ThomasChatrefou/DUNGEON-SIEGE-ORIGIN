@@ -27,10 +27,6 @@ public class WeaponUser : MonoBehaviour, IWeaponUser
         _runningCoroutine = null;
     }
 
-    private void Awake()
-    {
-    }
-
     private void Start()
     {
         _playerDataManager = GetComponent<PlayerDataManager>();

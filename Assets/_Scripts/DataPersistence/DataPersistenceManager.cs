@@ -12,6 +12,11 @@ public class DataPersistenceManager : MonoBehaviour
     [SerializeField] private string _fileName;
     [BoxGroup("File Storage Config")]
     [SerializeField] private bool _isUsingEncryption;
+    [SerializeField] GameConfigSO _gameConfigSO;
+    [BoxGroup("Default setting")]
+    [SerializeField] WeaponDataSO _defaultWeapon;
+    [BoxGroup("Default setting")]
+    [SerializeField] CharacterDataSO _defaultCharacter;
     public static DataPersistenceManager instance { get; private set; }
 
     private GameData _gameData;
@@ -27,19 +32,20 @@ public class DataPersistenceManager : MonoBehaviour
         instance = this;
         _dataPersistenceObjects = new List<IDataPersistence>();
 
-        
-    }
-
-    private void Start()
-    {
         _dataHandler = new FileDataHandler(Application.persistentDataPath, _fileName, _isUsingEncryption);
         FindAllDataPersistenceObjects();
         LoadGame();
     }
 
+    private void Start()
+    {
+    }
+
     public void NewGame()
     {
         _gameData = new GameData();
+        _gameData.weaponID = _gameConfigSO.GetId(_defaultWeapon);
+        _gameData.characterID = _gameConfigSO.GetId(_defaultCharacter);
     }
 
     public void LoadGame()

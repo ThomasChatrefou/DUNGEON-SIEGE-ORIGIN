@@ -20,8 +20,8 @@ public class GameData
     public GameData()
     {
         currentLevel = 0;
-        characterID = 0;
-        weaponID = 0;
+        characterID = 255;
+        weaponID = 255;
         weaponUpgrade = new SerializableDictionary<byte, int>();
         for (byte i = 0; i < Byte.MaxValue; i++)
         {
