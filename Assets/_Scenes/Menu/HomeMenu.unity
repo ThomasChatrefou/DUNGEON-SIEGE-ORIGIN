@@ -718,6 +718,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 387168420892555337, guid: f06b18c9c9b69ae408c50a29605a8ec2,
+        type: 3}
+      propertyPath: _isUsingEncryption
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2776710285843898976, guid: f06b18c9c9b69ae408c50a29605a8ec2,
         type: 3}
       propertyPath: m_Name
