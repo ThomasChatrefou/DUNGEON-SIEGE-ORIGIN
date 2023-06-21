@@ -9,6 +9,7 @@ public class WeaponChoiceUI : MonoBehaviour, IDataPersistence
     public MenuUI menu;
     [SerializeField] private Image weaponIcon;
 
+    [SerializeField] private GameConfigSO _gameConfigSO;
     [SerializeField] private WeaponDataSO swordData;
     [SerializeField] private WeaponDataSO spellbookData;
     [SerializeField] private WeaponDataSO wandData;
@@ -16,17 +17,14 @@ public class WeaponChoiceUI : MonoBehaviour, IDataPersistence
     [SerializeField] private TextMeshProUGUI swordAD;
     [SerializeField] private TextMeshProUGUI swordAS;
     [SerializeField] private TextMeshProUGUI swordAR;
-    [SerializeField] private Sprite swordIcon;
 
     [SerializeField] private TextMeshProUGUI spellbookAD;
     [SerializeField] private TextMeshProUGUI spellbookAS;
     [SerializeField] private TextMeshProUGUI spellbookAR;
-    [SerializeField] private Sprite spellbookIcon;
 
     [SerializeField] private TextMeshProUGUI wandAD;
     [SerializeField] private TextMeshProUGUI wandAS;
     [SerializeField] private TextMeshProUGUI wandAR;
-    [SerializeField] private Sprite wandIcon;
 
     [SerializeField] public GameObject titleGO;
     [SerializeField] public GameObject buttonbackGO;
@@ -53,10 +51,6 @@ public class WeaponChoiceUI : MonoBehaviour, IDataPersistence
         wandAS.text = wandData.AttackSpeed.ToString();
         wandAR.text = wandData.Range.ToString();
 
-        Debug.Log(DataPersistenceManager.instance.GetGameData().weaponID);
-        Debug.Log(newWeaponID);
-        newWeaponID = DataPersistenceManager.instance.GetGameData().weaponID;
-
         ChangeIcon();
 
     }
@@ -67,11 +61,9 @@ public class WeaponChoiceUI : MonoBehaviour, IDataPersistence
         
     }
 
-    public void ChangeWeapon(int _weaponID)
+    public void ChangeWeapon(WeaponDataSO _weaponData)
     {
-        newWeaponID = ((byte)_weaponID);
-        DataPersistenceManager.instance.GetGameData().weaponID = newWeaponID;
-        DataPersistenceManager.instance.GetGameData().characterID = newWeaponID;
+        newWeaponID = _gameConfigSO.GetId(_weaponData);
         ChangeIcon();
         /* To link here */
         menu.WeaponsBack();
@@ -79,20 +71,7 @@ public class WeaponChoiceUI : MonoBehaviour, IDataPersistence
 
     private void ChangeIcon()
     {
-        switch (newWeaponID)
-        {
-            case 0:
-                weaponIcon.sprite = swordIcon;
-                break;
-            case 1:
-                weaponIcon.sprite = spellbookIcon;
-                break;
-            case 2:
-                weaponIcon.sprite = wandIcon;
-                break;
-            default:
-                break;
-        }
+        weaponIcon.sprite = _gameConfigSO.GetWeapon(newWeaponID).UISprite;
     }
 
     public void LoadData(GameData data)
@@ -103,10 +82,7 @@ public class WeaponChoiceUI : MonoBehaviour, IDataPersistence
     
     public void SaveData(ref GameData data)
     {
-        Debug.Log("New Weapon ID: " + newWeaponID);
         data.weaponID = newWeaponID;
-        Debug.Log("data.weaponID: " + data.weaponID);
-        data.characterID = newWeaponID;
-        Debug.Log("data.characterID: " + data.characterID);
+        data.characterID = (byte)(newWeaponID - _gameConfigSO.BaseWeapons.Count);
     }
 }

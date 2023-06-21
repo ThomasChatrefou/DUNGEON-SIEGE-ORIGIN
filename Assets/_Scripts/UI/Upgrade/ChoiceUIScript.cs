@@ -6,6 +6,14 @@ using UnityEngine.UI;
 
 public class ChoiceUIScript : MonoBehaviour, IDataPersistence
 {
+    [SerializeField] GameConfigSO _gameConfigSO;
+    [SerializeField] PlayerDataSO _playerDataSO;
+    [SerializeField] WeaponDataSO _swordDataSO;
+    [SerializeField] GameConfigWeaponUpgradesSO _swordUpgradeSO;
+    [SerializeField] WeaponDataSO _wandDataSO;
+    [SerializeField] GameConfigWeaponUpgradesSO _wandUpgradeSO;
+    [SerializeField] WeaponDataSO _bookDataSO;
+    [SerializeField] GameConfigWeaponUpgradesSO _bookUpgradeSO;
     [SerializeField] GameObject _upgradeChoiceHolder;
     [SerializeField] GameObject _twoChoice;
     [SerializeField] List<GameObject> _twoChoiceList = new List<GameObject>();
@@ -19,9 +27,6 @@ public class ChoiceUIScript : MonoBehaviour, IDataPersistence
     [Header("Sprite")]
     [SerializeField] Sprite _tradeSprite;
     [SerializeField] Sprite _upgradeSprite;
-    [SerializeField] Sprite _swordSprite;
-    [SerializeField] Sprite _bookSprite;
-    [SerializeField] Sprite _wandSprite;
 
     //Constants
     const int NumberOfFirstChoice = 2;
@@ -76,25 +81,25 @@ public class ChoiceUIScript : MonoBehaviour, IDataPersistence
             displayChoiceScript.SetChoiceType(EChoiceType.TRADE);
             displayChoiceScript._sceneToLoad = _sceneToLoad;
         }
-        switch (DataPersistenceManager.instance.GetGameData().weaponID)
+        switch (newWeaponID)
         {
-            case 0:
-                _twoChoiceList[0].GetComponent<DisplayChoiceScript>().SetImageSprite(_bookSprite);
-                _twoChoiceList[0].GetComponent<DisplayChoiceScript>().SetTradeType(ETradeType.BOOK);
-                _twoChoiceList[1].GetComponent<DisplayChoiceScript>().SetImageSprite(_wandSprite);
-                _twoChoiceList[1].GetComponent<DisplayChoiceScript>().SetTradeType(ETradeType.WAND);
+            case 3:
+                _twoChoiceList[0].GetComponent<DisplayChoiceScript>().SetImageSprite(_bookDataSO.TradeIcon);
+                _twoChoiceList[0].GetComponent<DisplayChoiceScript>().SetNewWeaponID(_gameConfigSO.GetId(_bookDataSO));
+                _twoChoiceList[1].GetComponent<DisplayChoiceScript>().SetImageSprite(_wandDataSO.TradeIcon);
+                _twoChoiceList[1].GetComponent<DisplayChoiceScript>().SetNewWeaponID(_gameConfigSO.GetId(_wandDataSO));
                 break;
-            case 1:
-                _twoChoiceList[0].GetComponent<DisplayChoiceScript>().SetImageSprite(_swordSprite);
-                _twoChoiceList[0].GetComponent<DisplayChoiceScript>().SetTradeType(ETradeType.SWORD);
-                _twoChoiceList[1].GetComponent<DisplayChoiceScript>().SetImageSprite(_wandSprite);
-                _twoChoiceList[1].GetComponent<DisplayChoiceScript>().SetTradeType(ETradeType.WAND);
+            case 4:
+                _twoChoiceList[0].GetComponent<DisplayChoiceScript>().SetImageSprite(_swordDataSO.TradeIcon);
+                _twoChoiceList[0].GetComponent<DisplayChoiceScript>().SetNewWeaponID(_gameConfigSO.GetId(_swordDataSO));
+                _twoChoiceList[1].GetComponent<DisplayChoiceScript>().SetImageSprite(_wandDataSO.TradeIcon);
+                _twoChoiceList[1].GetComponent<DisplayChoiceScript>().SetNewWeaponID(_gameConfigSO.GetId(_wandDataSO));
                 break;
-            case 2:
-                _twoChoiceList[0].GetComponent<DisplayChoiceScript>().SetImageSprite(_swordSprite);
-                _twoChoiceList[0].GetComponent<DisplayChoiceScript>().SetTradeType(ETradeType.SWORD);
-                _twoChoiceList[1].GetComponent<DisplayChoiceScript>().SetImageSprite(_bookSprite);
-                _twoChoiceList[1].GetComponent<DisplayChoiceScript>().SetTradeType(ETradeType.BOOK);
+            case 5:
+                _twoChoiceList[0].GetComponent<DisplayChoiceScript>().SetImageSprite(_swordDataSO.TradeIcon);
+                _twoChoiceList[0].GetComponent<DisplayChoiceScript>().SetNewWeaponID(_gameConfigSO.GetId(_swordDataSO));
+                _twoChoiceList[1].GetComponent<DisplayChoiceScript>().SetImageSprite(_bookDataSO.TradeIcon);
+                _twoChoiceList[1].GetComponent<DisplayChoiceScript>().SetNewWeaponID(_gameConfigSO.GetId(_bookDataSO));
                 break;
             default:
                 break;
@@ -162,6 +167,12 @@ public class ChoiceUIScript : MonoBehaviour, IDataPersistence
     public void SetDoUpgrade(bool doUpgrade) 
     {
         upgradeWeapon = doUpgrade;
+        WeaponStatisticUgradeSO[] weaponUpgrades;
+        _gameConfigSO.TryGetWeaponUpgrades(_gameConfigSO.GetWeapon(newWeaponID), out weaponUpgrades);
+        foreach (WeaponStatisticUgradeSO weaponUpgrade in weaponUpgrades)
+        {
+            _playerDataSO.IncrementUpgrade(_gameConfigSO.GetId(weaponUpgrade));
+        }
     }
 
     public void LoadData(GameData data)
@@ -173,12 +184,16 @@ public class ChoiceUIScript : MonoBehaviour, IDataPersistence
     {
         if (upgradeWeapon)
         {
-            data.weaponUpgrade[data.weaponID] += 1;
+            WeaponStatisticUgradeSO[] weaponUpgrades;
+            _gameConfigSO.TryGetWeaponUpgrades(_gameConfigSO.GetWeapon(newWeaponID), out weaponUpgrades);
+            foreach (WeaponStatisticUgradeSO weaponUpgrade in weaponUpgrades)
+            {
+                data.weaponUpgrade[_gameConfigSO.GetId(weaponUpgrade)] += 1 ;
+            }
         }
         else
         {
             data.weaponID = newWeaponID;
-            data.characterID = newWeaponID;
         }
     }
 }

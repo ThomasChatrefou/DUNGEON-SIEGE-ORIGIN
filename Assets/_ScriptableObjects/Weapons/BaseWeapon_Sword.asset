@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Master
   UISprite: {fileID: 21300000, guid: c85d66e41193b534997993ae020bd331, type: 3}
+  TradeIcon: {fileID: 21300000, guid: c6e325ea3d2890742aeb01843f0935be, type: 3}
   Damages: 1
   AttackSpeed: 1
   Range: 2
