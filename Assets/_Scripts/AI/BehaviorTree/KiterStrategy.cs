@@ -3,7 +3,8 @@ using UnityEngine.AI;
 
 public class KiterStrategy : IBehaviorTree
 {
-    private BlackBoard _blackboard;
+    
+    public BlackBoard _blackboard;
     private IBehaviorNode _root;
 
     public KiterStrategy(Transform entityTransform, NavMeshAgent agent, Transform target, CharacterDataSO characterData, AIRangeSpecificDataSO kiterData)
