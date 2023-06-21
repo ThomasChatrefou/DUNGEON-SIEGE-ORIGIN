@@ -5445,7 +5445,7 @@ PrefabInstance:
     - target: {fileID: 1937929690477609749, guid: 7fd7baef5f4cb1a4eac5c92f9a4c6a66,
         type: 3}
       propertyPath: _timeBetweenWaves
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1937929690477609750, guid: 7fd7baef5f4cb1a4eac5c92f9a4c6a66,
         type: 3}
