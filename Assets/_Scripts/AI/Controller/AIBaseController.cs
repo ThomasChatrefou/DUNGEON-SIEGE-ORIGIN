@@ -9,7 +9,7 @@ public class AIBaseController : MonoBehaviour
         set { _target = value; }
     }
 
-    protected IBehaviorTree _behaviorTree;
+    public IBehaviorTree _behaviorTree;
     protected CharacterDataManager _characterDataManager;
     
     private Transform _target;
